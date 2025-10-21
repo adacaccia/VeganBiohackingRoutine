@@ -1,48 +1,104 @@
-# 🎬 Il trito funzionale
-### Vegan Biohacking Routine — EP02
+# 🎬 EP02 – Il Trito Funzionale  
+### Vegan Biohacking Routine · La ritualità del mix settimanale
 
 ---
 
-## 🧭 Sintesi
-*(2–3 righe sull’obiettivo dell’episodio)*
+## 📋 Scaletta video
+Durata complessiva stimata: **4:00 minuti**
 
 ---
 
-## 🗓️ Contesto
-- **Data:** 2025-10-21
-- **Luogo / contesto:** …
-- **Riferimento dati:** (Consuntivo_Integrato_YYYY-MM.md / Cronometer / Palestra)
+### 1️⃣ Intro (0:00 – 0:30)
+**Voce / testo:**
+> “Nel primo video vi avevo mostrato il barattolo già pieno,  
+> oggi invece vi porto dietro le quinte,  
+> per vedere come preparo il mio mix settimanale.”
+
+**Visual / azioni:**
+- Inquadratura saluto breve, tono naturale.  
+- Mostra il barattolo vuoto, setup del piano di lavoro.
 
 ---
 
-## 🎙️ Script / Testo voce
-*(voce o testo principale)*
+### 2️⃣ Presentazione ingredienti (0:30 – 1:00)
+**Elementi mostrati:**
+- semi di lino  
+- nigella sativa  
+- kelp in polvere  
+- cacao nibs *(se già inclusi)*
+
+**Dettaglio pratico:**
+> Mostra la scatola con gli ingredienti e il foglio A4 piegato in quattro,  
+> che servirà a convogliare la polvere caduta durante il travaso.
 
 ---
 
-## 🎥 Struttura video suggerita
-| Seq | Contenuto | Visual / B-roll | Audio |
-|-----|-----------|------------------|-------|
-| 1 | Intro | … | … |
-| 2 | Key point | … | … |
-| 3 | CTA | … | … |
+### 3️⃣ Procedura pratica (1:00 – 3:00)
+**Voce / testo:**
+> “Uso la bilancia per pesare il contenuto dei vasetti.  
+> Poi verso e macino con il macinacaffè elettrico.  
+> Il trucco è il foglio A4 piegato: evita sprechi e tiene pulito il piano.”
+
+**Visual:**
+- Close-up dei pesi sulla bilancia.  
+- Ripresa ravvicinata del gesto con il foglio convogliatore.  
+- Focus sulla texture del mix finito.
 
 ---
 
-## 🔬 Dati / grafici correlati
-- …
+### 4️⃣ Nota biohacking (mentre lavori) (2:00 – 3:00)
+**Voce / testo:**
+> “Questo mix segue una proporzione precisa:  
+> 0,2 grammi di kelp su 10 grammi totali di polvere.  
+> Così ottengo lo iodio che serve senza eccessi.  
+> L’importante è che la routine resti ripetibile e sostenibile.”
+
+**Visual / taglio:**
+- Parla mentre continui a versare o macinare.  
+- Inserisci brevi titoli sovrimpressi con i benefici:
+  - *Lino → omega 3, fibre, equilibrio ormonale*  
+  - *Nigella → antinfiammatoria*  
+  - *Kelp → iodio naturale*  
+  - *Cacao nibs → magnesio, tono mentale*
 
 ---
 
-## 🧩 Meta
-| Campo | Valore |
-|------|--------|
-| **Codice** | EP02 |
-| **Titolo** | Il trito funzionale |
-| **Stato** | 🟡 In sviluppo |
-| **Conversione MD** | ✅ |
-| **Pubblicazione** | — |
+### 5️⃣ Risultato finale (3:00 – 3:30)
+**Voce / testo:**
+> “In pochi minuti preparo un mix preciso,  
+> che mi garantisce costanza e qualità per tutta la settimana.”
+
+**Visual:**
+- Mostra il vasetto pieno.  
+- Chiusura lenta, luce naturale.
 
 ---
 
-© 2025 Vegan Biohacking Routine — Template Episodio (MD)
+### 6️⃣ Outro (3:30 – 4:00)
+**Voce / testo:**
+> “Nulla dies sine linea — neanche a colazione.”  
+> “Se questo tipo di routine ti ispira, lascia un like,  
+> iscriviti e raccontami nei commenti se hai rituali simili.”
+
+**Visual:**
+- Logo VBR + end screen universale.  
+- CTA: *Continua il percorso →*  
+- Fade-out su musica Outro.
+
+---
+
+## 🎧 Tono e ritmo
+- Parlato tranquillo, quasi meditativo.  
+- Ogni sezione ha un micro–respiro prima del cambio scena.  
+- Background musicale costante, volume –8 dB.
+
+---
+
+## 🎯 Messaggio chiave
+> “Un piccolo gesto ripetuto ogni settimana  
+> vale più di cento tentativi senza continuità.”
+
+---
+
+© 2025 Vegan Biohacking Routine — EP02 Il Trito Funzionale  
+Licenza CC-BY-NC 4.0
