@@ -1,0 +1,30 @@
+🧠 COME USARLO
+
+Copia il file FG-NewEpisode_Setup.sh nella root del progetto (accanto a 00-Docs/ e 10-Episodi/).
+
+Apri il terminale nella directory FunctionalGourmet/.
+
+Esegui:
+chmod +x FG-NewEpisode_Setup.sh
+./FG-NewEpisode_Setup.sh EP05 "Circadiana"
+
+Lo script creerà automaticamente la struttura completa:
+10-Episodi/
+└── EP05-Circadiana/
+    ├── audio/
+    ├── immagini/
+    ├── progetto_Kdenlive/
+    ├── testi/
+    │   ├── Video_Script-FG_Circadiana.md
+    │   ├── Video_B-Roll-FG_Circadiana.md
+    │   ├── Video_YT-description-FG_Circadiana.md
+    │   ├── Video_YT-miniature-FG_Circadiana.md
+    │   └── Video_YT-Outro+CTA-FG_Circadiana.md
+    ├── voce/
+    ├── video_base/
+    ├── export/
+    └── FG-EP05_Template.md
+
+Il nuovo episodio verrà anche registrato automaticamente in 90-Archive/FG-Archive_Index.md.
+🪷 Ogni episodio inizia da un comando.
+Ogni comando, da un’idea di equilibrio.
