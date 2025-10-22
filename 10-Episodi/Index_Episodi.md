@@ -3,18 +3,18 @@
 
 | Codice | Titolo (slug) | Stato | Script | Audio | Video | Montaggio | Storyboard | Checklists | Pubblicato |
 |---:|:-------------------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---|
-| EP01 | la-colazione-consapevole | 🟡 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ⬜ | ⬜ |
-| EP02 | il-trito-funzionale | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ✅ | ⬜ |
-| EP03 | spinaci-e-densita-nutritiva | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ✅ | ⬜ |
-| EP04 | passata-di-pomodoro-il-carburante-lento | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ✅ | ⬜ |
-| EP05 | legumi-il-motore-silenzioso | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ✅ | ⬜ |
-| EP06 | vegan-fisiologia-non-ideologia | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
-| EP07 | caffe-filtrato | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
-| EP08 | denti-performance | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
+| EP01 | colazione | 🟡 | ✅ | ⬜ | ✅ | ⬜ | ✅ | ✅ | ⬜ |
+| EP02 | trito | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
+| EP03 | spinaci | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
+| EP04 | passata | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
+| EP05 | legumi | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
+| EP06 | vegan | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
+| EP07 | caffe | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
+| EP08 | denti | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
 | EP09 | germogli | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
-| EP10 | fitness-e-coerenza-metabolica | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| EP11 | report-e-consapevolezza-dei-dati | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| EP12 | nulla-dies-sine-linea | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| EP10 | fitness | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
+| EP11 | report | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
+| EP12 | fine | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
 
 ---
 
