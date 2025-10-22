@@ -11,7 +11,7 @@
 | EP06 | vegan-fisiologia-non-ideologia | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
 | EP07 | caffe-filtrato | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
 | EP08 | denti-performance | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
-| EP09 | germogli-vita-in-miniatura | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| EP09 | germogli | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
 | EP10 | fitness-e-coerenza-metabolica | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | EP11 | report-e-consapevolezza-dei-dati | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | EP12 | nulla-dies-sine-linea | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
