@@ -10,7 +10,7 @@
 | EP05 | legumi-il-motore-silenzioso | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ✅ | ⬜ |
 | EP06 | vegan-fisiologia-non-ideologia | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
 | EP07 | caffe-filtrato | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
-| EP08 | denti-e-performance | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| EP08 | denti-performance | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ |
 | EP09 | germogli-vita-in-miniatura | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | EP10 | fitness-e-coerenza-metabolica | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | EP11 | report-e-consapevolezza-dei-dati | 🟡 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
