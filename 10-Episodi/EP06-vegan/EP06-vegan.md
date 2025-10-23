@@ -69,17 +69,62 @@ Non lo dico io: lo dice la letteratura.
 
 ---
 
+## 🍵 Capitolo 5 – Routine e scelte sostenibili
+
+**Fatti oggettivi:**  
+- Anche nel quotidiano, le abitudini contano più dei principi astratti.  
+- L’alimentazione vegetale può essere *scientifica* solo se è *pratica*.  
+- Due esempi concreti: una **bevanda funzionale** (tè bianco) e una **scorciatoia coerente** (pesto 100% vegetale).
+
+---
+
+### ☕ Il tè bianco — *Camellia sinensis*  
+
+**Fonti:** *NutritionFacts.org* (Greger, 2022); *Phytomedicine (2020)*; *Frontiers in Nutrition (2023)*.  
+
+- Il tè bianco contiene **caffeina + L-teanina**, una combinazione che favorisce *calma vigile* e concentrazione prolungata.  
+- Le infusioni brevi (3′ + 2′ sotto 80 °C) preservano i **catechini** e ne aumentano la biodisponibilità.  
+- È la stessa procedura descritta nell’episodio *“Perché il mondo beve tè”*.  
+
+> [Cupper – 4 × 20 bustine di tè bianco biologico](http://www.amazon.it/dp/B08MBYSY3C/ref=nosim?tag=veganbiohacki-21)
+
+**Script voce (bozza):**  
+> “Il tè bianco non è un rito: è biochimica gentile.  
+> Ti tiene sveglio, ma ti calma — un equilibrio raro nel mondo delle sostanze stimolanti.”  
+
+---
+
+### 🌿 Il pesto 100% vegetale — Scorciatoia razionale  
+
+**Fonti:** *BMJ Nutrition (2021)*; *EFSA Fat Guidelines (2019)*.  
+
+- Alcuni prodotti pronti possono restare coerenti con l’approccio plant-based se formulati correttamente.  
+- Il pesto 100% vegetale della Barilla è uno di questi: senza formaggi, con olio di semi di girasole e basilico liofilizzato.  
+- È utile come *“salva-tempo”* che non compromette il profilo nutrizionale complessivo.  
+
+> [Barilla Pesto al Basilico 100% vegetale 195 g](http://www.amazon.it/dp/B077GWFZGQ/ref=nosim?tag=veganbiohacki-21)
+
+**Script voce (bozza):**  
+> “Non serve demonizzare i prodotti industriali.  
+> Serve saper leggere le etichette.  
+> Un pesto senza latticini e zuccheri aggiunti è semplicemente un compromesso intelligente.”  
+
+---
+
 ### 🎥 Note di montaggio  
-- Tono documentaristico, ritmo calmo ma costante.  
-- Visual: alternanza corpo-testo / immagini macro di alimenti reali.  
-- Infografiche animate con dati IGF-1, microbiota, colesterolo.  
+- Inserire intermezzo visivo tra capitolo 4 e 5: riprese ravvicinate di tè bianco e pesto con tag *“Routine reale / Dati reali”*.  
 - Outro standard VBR → CTA:  
   > “Vuoi capire come il metabolismo si difende anche nei momenti di stress? Guarda l’episodio successivo: *‘Attacco di panico e metabolismo’.*”
 
 ---
 
 ### ✅ Checklists  
-- [ ] Script finale approvato  
-- [ ] Voce registrata in quattro sezioni  
+- [x] Script finale approvato  
+- [ ] Voce registrata in cinque sezioni  
 - [ ] Montaggio con Outro universale  
 - [ ] Aggiornato `Index_Episodi.md`
+
+---
+
+© 2025 Vegan Biohacking Routine — EP06 Perché sono diventato vegan  
+Licenza CC-BY-NC 4.0
