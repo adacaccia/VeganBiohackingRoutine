@@ -1,75 +1,91 @@
-# 🎬 Checklist di registrazione — EP03 · Spinaci e densità nutritiva  
-### Vegan Biohacking Routine — Produzione autonoma
+# 🎙️ Checklist Registrazione — EP03 · Spinaci e densità nutritiva  
+### Vegan Biohacking Routine · La forza della semplicità
 
 ---
 
-## 🎙️ Audio
-| Controllo | Descrizione | Stato |
-|------------|-------------|:----:|
-| 🎤 Microfono | Lavalier o direzionale, posizione a 20–25 cm | ⬜ |
-| 🔈 Livello ingresso | –12 dB in media, picchi max –6 dB | ⬜ |
-| 🚫 Rumori di fondo | Frigo spento, finestra chiusa, silenzio completo | ⬜ |
-| 🎧 Test registrazione | 10 s di prova, verifica chiarezza e rumore di fondo | ⬜ |
+## 🎧 Voce narrante
+- [ ] Microfono: cardioide (condensatore o lavalier)  
+- [ ] Distanza: 20–25 cm  
+- [ ] Gain: medio (picchi −6 dB, media −12 dB)  
+- [ ] Ambiente: silenzioso, tende chiuse, nessun ronzio elettrico  
+- [ ] File: `voice_EP03_spinaci.wav`  
+- [ ] Durata target: 5′30″ ± 15 s  
+- [ ] 5 s di silenzio iniziale per noise profiling  
 
-💡 *Consiglio:* registra la voce a parte se stai maneggiando gli spinaci o usando acqua.  
-
----
-
-## 💡 Illuminazione
-| Controllo | Descrizione | Stato |
-|------------|-------------|:----:|
-| 🌤️ Luce naturale | Finestra frontale o laterale, orario mattina | ⬜ |
-| 💡 Luce artificiale | Softbox 4500K, diffusore bianco, nessuna ombra dura | ⬜ |
-| 🌿 Colore spinaci | Controlla saturazione e bilanciamento bianco (verde naturale, non fosforescente) | ⬜ |
-
-💡 *Tip:* imposta il bilanciamento del bianco manuale: 4800–5000K.  
-Gli spinaci devono risultare “morbidi”, non acidi nei toni.
+**Tono:** calmo, disincantato, ironico nei punti “crunch” e “shrinkflation”.
 
 ---
 
-## 🎥 Inquadrature principali
-| Controllo | Descrizione | Stato |
-|------------|-------------|:----:|
-| 🎞️ Wide shot | Tavolo, busta di spinaci, mani in movimento | ⬜ |
-| 🥬 Dettagli ingredienti | Close-up su consistenza e colore foglie | ⬜ |
-| 💧 Lavaggio | Angolazione 45°, luce laterale, riflessi controllati | ⬜ |
-| 🧺 Asciugatura | Panno neutro o centrifuga, piano pulito | ⬜ |
-| 🧊 Conservazione | Inquadratura barattolo o contenitore trasparente | ⬜ |
-
-💡 *Tip:* se riprendi da solo, usa un treppiede e blocca il fuoco manuale.  
-
----
-
-## 🧭 Ritmo narrativo
-| Controllo | Descrizione | Stato |
-|------------|-------------|:----:|
-| ⏱️ Durata target | 5′30″ complessivi | ⬜ |
-| 🗣️ Tono voce | Calmo, chiaro, sincero | ⬜ |
-| 🧘‍♂️ Pause | Piccole pause fra sezioni (ingredienti / lavaggio / routine) | ⬜ |
-| 🎵 Musica | Solo in post, neutra e regolare | ⬜ |
+## 🥬 Riprese principali (A-roll)
+- [ ] Apertura con presentazione frontale: “Gli spinaci, l’alimento più sottovalutato.”  
+- [ ] Close-up foglie fresche nella busta.  
+- [ ] Ripresa diretta “crunch come chips”:  
+  - Registrare in ambiente silenzioso.  
+  - Posizionare il microfono a 30–40 cm lateralmente.  
+  - Ripetere 3 volte il gesto per avere varianti (una più secca, una più morbida).  
+  - Salvare come `crunch_raw_take1.wav` ecc.  
+- [ ] Ripresa busta 400 g (con etichetta visibile).  
+- [ ] Ripresa finale frontale (riflessione + chiusura).
 
 ---
 
-## 🧩 Accessori utili
-| Oggetto | Motivo | Stato |
-|----------|--------|:----:|
-| 🧤 Guanti in lattice | per non sporcare le foglie durante le riprese | ⬜ |
-| 🧺 Panno bianco o carta assorbente | estetica pulita durante l’asciugatura | ⬜ |
-| ⚖️ Bilancia da cucina | se vuoi mostrare pesi reali (200 g) | ⬜ |
-| 🥣 Contenitore trasparente | per evidenziare il volume della porzione | ⬜ |
-| 📱 Telefono 2° camera | per close-up aggiuntivi | ⬜ |
+## 💻 Cattura schermo Cronometer
+- [ ] Aprire **Cronometer.com** in modalità “Nutrients” → tab “Lutein + Zeaxanthin”.  
+- [ ] Registrare lo schermo (1920×1080, 25 fps) con OBS o simile.  
+- [ ] Fase 1: mostrare barre piene (spinaci inclusi).  
+- [ ] Fase 2: rimuovere gli spinaci dal log giornaliero → barre crollano a 0.  
+- [ ] Pausa 2 s.  
+- [ ] Fase 3: reinserire spinaci → barre tornano al 100 %.  
+- [ ] Salvare file: `cronometer_LZ_demo.mp4`.  
+- [ ] Volume click mouse: −12 dB.
 
 ---
 
-## 🧾 Post-sessione
-| Controllo | Descrizione | Stato |
-|------------|-------------|:----:|
-| 💾 Backup | Copia i file in `10-Episodi/EP03-spinaci/assets/raw/` | ⬜ |
-| 🧹 Pulizia area | Pulisci piano e stoviglie subito (stile VBR) | ⬜ |
-| 🎧 Ascolto rapido | 10 s per clip → elimina quelle rumorose | ⬜ |
-| 🗂️ Build Index | Esegui `./Build_Episode_Index.sh` → Audio / Video ✅ | ⬜ |
+## 🎛️ Audio aggiuntivo
+- [ ] Musica: pad ambientale A-minor (base usata anche in EP01/EP02).  
+- [ ] Rumori ambiente naturali (sfondo cucina).  
+- [ ] Rumore busta spinaci separato in `busta_opening.wav` (–10 dB).  
+- [ ] “Crunch crunch” sincronizzato su A3 durante montaggio.  
+- [ ] Verificare sincronia gesto → suono (±0.05 s max).
 
 ---
 
-> “La luce naturale e un gesto semplice bastano a rendere un video coerente.”  
-> — *Vegan Biohacking Routine, 2025*
+## 🎨 Overlay & grafica da registrare
+- [ ] Schermata Cronometer (nutrienti + valori NT) per screenshot.  
+- [ ] Grafico personalizzato “400 g = 100 % NT ✅”.  
+- [ ] Mini infografica “Crudi = massima densità / minima dispersione”.  
+- [ ] Clip logo VBR (Outro universale, 8 s).
+
+---
+
+## 🧠 Note operative
+- Niente “scene di cottura” → solo gesto reale: apertura busta e consumo.  
+- Evita guanti o oggetti estranei: tutto deve apparire spontaneo.  
+- Mantieni luce naturale (4800–5000 K, vicino finestra).  
+- Inserire nel log note: “EP03-record-LZdemo” (per archivio analisi).  
+- Backup finale di tutti i file in `EP03-spinaci/assets/raw/`.
+
+---
+
+## 📦 File da generare
+| Tipo | Nome file | Cartella |
+|------|------------|-----------|
+| Audio voce | `voice_EP03_spinaci.wav` | assets/voice/raw |
+| Crunch take | `crunch_raw_take1.wav`–`take3.wav` | assets/voice/raw |
+| Rumore busta | `busta_opening.wav` | assets/voice/raw |
+| Cronometer demo | `cronometer_LZ_demo.mp4` | assets/screen/ |
+| Video finale | `EP03_spinaci_final.mp4` | assets/final/ |
+
+---
+
+## ✅ Prima di registrare
+- [ ] Idratazione (acqua a temperatura ambiente).  
+- [ ] Nessuna caffeina 1 h prima della voce.  
+- [ ] Breathing check: 30 s respirazione nasale profonda.  
+- [ ] Test microfono → breve frase di prova (“Gli spinaci sono croccanti come chips”).  
+- [ ] Verifica che il click del mouse non sovrasti la voce nella cattura schermo.
+
+---
+
+© 2025 Vegan Biohacking Routine — EP03 Spinaci e densità nutritiva  
+Licenza CC-BY-NC 4.0

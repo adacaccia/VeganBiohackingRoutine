@@ -3,136 +3,147 @@
 
 ---
 
-## 🎥 Script video completo
+## 🎧 Script principale
+
+### 0:00 – 1:30 · Introduzione
+> “Gli spinaci sono forse l’alimento più sottovalutato della dieta quotidiana.  
+> Tutti li conoscono, pochi li considerano davvero.  
+>  
+> Eppure, in una singola ciotola di spinaci crudi  
+> c’è un concentrato di ferro, magnesio, vitamina K, clorofilla e fibre solubili:  
+> tutto quello che serve per riempire la giornata, con pochissime calorie.”
+
+*(Overlay: valori Cronometer – ferro, magnesio, vitamina K)*
 
 ---
 
-### 0:00 – 0:30 · Intro personale
-**Voce / testo:**
-> Ciao!  
-> Avevo promesso di fare questo video già da giorni,  
-> ma — come sempre — la routine quotidiana mi ha travolto.  
-> E proprio da questa fatica nasce il senso del video di oggi.
+### 1:30 – 2:30 · Densità nutritiva
+> “La densità nutritiva non è una moda:  
+> è il rapporto tra valore reale e volume apparente.  
+>  
+> Mentre molti alimenti si presentano ‘ricchi’ ma sono vuoti,  
+> gli spinaci restano una certezza:  
+> 100 g → nutrienti al massimo,  
+> zero zuccheri aggiunti, zero grassi inutili.  
+>  
+> E l’acqua, che è la maggior parte del loro peso,  
+> favorisce digestione e leggerezza,  
+> senza aggiungere nulla di superfluo.”
 
-**Visual:**
-- Inquadratura frontale, luce naturale.  
-- Voce calma, tono sincero e realistico.  
-- Nessuna musica nei primi secondi: respiro e presenza.
-
----
-
-### 0:30 – 1:30 · Il gesto quotidiano
-**Voce / testo:**
-> Oggi vi parlo di una cosa semplice: **gli spinaci**.  
-> Semplici, ma centrali nella mia alimentazione quotidiana.  
-> Negli ultimi mesi ho capito che non serve inventarsi sempre piatti nuovi:  
-> serve trovare una base stabile, densa di nutrienti,  
-> che diventi automatica come respirare.
-
-**Visual:**
-- Mostra il piano di lavoro, la busta di spinaci, la preparazione.  
-- Dettagli ravvicinati su consistenza e colore.  
-- Overlay titolo: “Spinaci e densità nutritiva”.
+*(Overlay: “100 g = Nutrient Density Max”)*
 
 ---
 
-### 1:30 – 2:30 · Il valore della costanza
-**Voce / testo:**
-> Avevo provato mille alternative: insalate miste, carote, cavoli, germogli...  
-> ma il risultato era sempre diverso: un giorno troppo volume, un altro troppi zuccheri,  
-> un altro ancora fibra eccessiva o tempi di digestione lunghi.  
-> Gli spinaci, invece, sono costanti.  
-> Hanno pochi carboidrati, ma una **densità micronutrizionale altissima**:  
-> vitamina A, vitamina E, luteina, zeaxantina, magnesio, ferro…  
-> e la cosa più importante è che sono facili da reperire, economici e replicabili.
-
-**Visual:**
-- Grafico Cronometer o infografica nutrienti (A, E, ferro, magnesio).  
-- Sequenza ingredienti → taglio → piano → ciotola.  
-- Musica leggera, costante, 70 bpm.
+### 2:30 – 3:30 · Perché crudi — e “crunch come chips”
+> “Io li mangio direttamente dalla busta.  
+> Fa lo stesso rumore delle patatine: *crunch crunch!*  
+>  
+> Ma qui non ci sono grassi, non c’è sale,  
+> e non c’è niente da friggere.  
+>  
+> In bocca, la sensazione è identica,  
+> ma nutrizionalmente è un altro pianeta:  
+> un volume enorme, calorie quasi zero,  
+> e micronutrienti che restano vivi e biodisponibili.”
 
 ---
 
-### 2:30 – 3:30 · Routine pratica
-**Voce / testo:**
-> La mia base fissa è questa:  
-> una busta di spinaci crudi al giorno — circa 200 grammi.  
-> La preparo la sera prima: lavaggio rapido, asciugatura, e via in frigo.  
-> La mattina li uso come base della colazione salata,  
-> oppure li aggiungo al piatto del pranzo.  
-> Con questo semplice gesto,  
-> copro più del 100% della vitamina A e una buona parte della E,  
-> ogni singolo giorno, **senza pensarci**.
+#### 🔬 Perché crudi – spiegazione scientifica
+> “Cuocere gli spinaci significa perderne parte del valore reale.  
+>  
+> La cottura in acqua disperde le vitamine idrosolubili —  
+> in particolare **vitamina C**, **folati (B9)** e **vitamine del gruppo B** —  
+> e il calore degrada **clorofilla**, **luteina** e **zeaxantina**,  
+> antiossidanti fondamentali per vista e cervello.  
+>  
+> Al contrario, crudi e ben masticati,  
+> gli spinaci mantengono intatti questi composti,  
+> e la masticazione rompe le cellule vegetali,  
+> liberando enzimi e fitonutrienti come la **nitrato-reduttasi**,  
+> che favorisce la vasodilatazione e la produzione naturale di ossido nitrico.  
+>  
+> In pratica: la bocca diventa il primo laboratorio biochimico della giornata.”
 
-**Visual:**
-- Gestualità semplice: lavaggio, asciugatura, contenitore.  
-- Didascalie: “Routine serale”, “Base pronta al mattino”.  
-- Close-up su spinaci freschi con luce naturale.
-
----
-
-### 3:30 – 4:30 · Significato biohacking
-**Voce / testo:**
-> La ripetibilità è la vera forza di una routine.  
-> Avere un gesto che si ripete — anche banale —  
-> elimina il rumore mentale e libera energia.  
-> Non è una mania da perfezionista:  
-> è un modo per non perdere tempo in decisioni irrilevanti.  
-> Gli spinaci diventano una tela neutra:  
-> puoi aggiungerci semi, condimenti, spezie,  
-> e il piatto resta sempre leggero e bilanciato.  
-> Un cibo “funzionale” nel senso più letterale:  
-> fa il suo lavoro senza chiedere attenzioni.
-
-**Visual:**
-- Transizioni lente tra scene di preparazione.  
-- Zoom su piatto completo e consistenza del mix.  
-- Overlay: “Funzionale = Ripetibile”.
+*(Overlay: “Crudi = massima densità / minima dispersione”)*
 
 ---
 
-### 4:30 – 5:00 · Chiusura e riflessione
-**Voce / testo:**
-> Alla fine, quello che ottengo non è solo una buona alimentazione,  
-> ma **una base stabile per tutto il resto**:  
-> allenamento, concentrazione, umore.  
-> Quando la parte nutrizionale è risolta,  
-> posso concentrarmi su ciò che conta davvero.  
-> Nulla dies sine linea —  
-> neanche nel piatto.
+### 3:30 – 4:15 · Gancio su Cronometer — Luteina e Zeaxantina
+> “E se andiamo su Cronometer e togliamo gli spinaci dal piano alimentare,  
+> si apre un buco evidente:  
+> le barre di **luteina** e **zeaxantina** crollano quasi a zero.  
+>  
+> Sono due antiossidanti difficili da ottenere da altre verdure,  
+> e sono proprio loro a dare agli spinaci  
+> quel *quid* in più che li rende insostituibili.  
+>  
+> Ecco perché gli spinaci restano, per me,  
+> il ‘verde base’ della giornata:  
+> facili, completi, e praticamente perfetti.”
 
-**Visual:**
-- Close-up finale, tono intimo.  
-- Luce morbida, fade out su colore neutro.  
-- Outro universale + End Screen 8 s.
-
----
-
-### 5:00 – 5:30 · CTA finale
-**Voce / testo:**
-> Se anche tu cerchi una routine semplice e concreta,  
-> iscriviti al canale e raccontami nei commenti  
-> quale alimento, per te, rappresenta stabilità.
-
-**Visual:**
-- Logo + testo: “Continua il percorso →”  
-- Outro Universale VBR  
-- Dissolvenza su musica Outro.
+*(Overlay: Cronometer Nutrients → Lutein + Zeaxanthin ↓ rosso → ritorno ↑ verde con Spinaci)*
 
 ---
 
-## 🎧 Indicazioni tecniche
-- **Durata totale:** 5′30″ ±15″  
-- **Tono:** calmo, pratico, sincero  
-- **Musica:** costante, neutra, volume –8 dB  
-- **Camera:** 1080p25fps, luce naturale o softbox 4500K  
-- **Output video:** `EP03-spinaci_final.mp4`
+### 4:15 – 4:45 · Una nota sul mondo reale — la shrinkflation
+> “Oggi ho trovato solo la busta da 400 grammi —  
+> una volta erano 500, e sì: ce ne siamo accorti tutti.  
+>  
+> Prima mi sarei lamentato.  
+> Ora invece guardo Cronometer… sorpresa:  
+> anche con 400 g resto al 100 %  
+> di ferro, magnesio e vitamina K.  
+>  
+> Quindi, *est modus in rebus*: va bene così.  
+> Spallucce. La porzione cambia, la consapevolezza no.”
+
+*(Overlay: “400 g = 100 % Nutrition Target ✅”)*
 
 ---
 
-## 🎯 Messaggio chiave
+### 4:45 – 5:15 · Sintesi e riflessione
 > “La semplicità non è povertà: è controllo.  
-> Chi sceglie una base stabile, sceglie libertà.”  
+>  
+> Capire quanto basta, e non quanto manca,  
+> è il vero atto di consapevolezza.  
+>  
+> Densità nutritiva, routine ripetibile, calma interiore —  
+> sono questi i parametri veri del benessere,  
+> non le mode alimentari del momento.”
+
+*(Overlay citazione: “Densità nutritiva > Varietà casuale”)*
+
+---
+
+### 5:15 – 5:30 · Outro
+> “Nulla dies sine linea — neanche nel piatto.”
+
+*(Logo VBR · musica Outro universale)*
+
+---
+
+## 🧠 Approfondimento scientifico sintetico
+
+| Nutriente / fattore | Effetto della cottura | Beneficio se crudo |
+|----------------------|----------------------|--------------------|
+| **Vitamina C** | ↓ oltre 40 % dopo 5 min bollitura | preservata, supporta ferro e immunità |
+| **Folati (B9)** | ridotti del 35–50 % | biodisponibili intatti |
+| **Clorofilla, luteina, zeaxantina** | degradati dal calore | pigmenti integri, antiossidanti attivi |
+| **Ferro e magnesio** | stabili | assorbimento ↑ con vit. C naturale |
+| **Acqua e fibre** | perdita di volume e idratazione | stimolo digestivo e sazietà prolungata |
+
+*(Fonti: USDA FoodData Central, Nutrient Retention Factors; EFSA Nutrient Data 2023; NASEM DRIs 2020.)*
+
+---
+
+## 🎨 Note tecniche
+- **Durata:** 5′30″ ±15″  
+- **Tono:** calmo, divulgativo, autoironico  
+- **Suoni reali:** busta spinaci (*crunch crunch*)  
+- **Audio:** voce −2 dB, musica soft −8 dB  
+- **Palette:** bianco caldo `#f6f3e9`, verde naturale `#4a6d41`, testo `#333`  
+- **Luce:** naturale 4800–5000 K, diffusa  
+- **Formato:** 1080p 25 fps  
 
 ---
 
