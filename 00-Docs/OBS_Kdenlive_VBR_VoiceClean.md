@@ -69,12 +69,50 @@ Poi riavvia Kdenlive:
 
 ---
 
-## 🎯 OBIETTIVI FINALI
+## 🎯 4️⃣ OBIETTIVI FINALI
 | Fase | Target | Note |
 |------|---------|------|
 | Registrazione (OBS) | Picchi –12 dBFS | segnale pulito, dinamica viva |
 | Montaggio (Kdenlive) | Mix medio –14 LUFS / –14 dB RMS | equilibrio voce–musica |
 | Export | –1 dBTP max | MP4 H.264 48 kHz stereo |
+
+---
+
+## 🎚️ 5️⃣ TEST DI VERIFICA AUDIO (senza plugin)
+
+### 🔸 In OBS Studio
+1. Registra 20 secondi di voce continua (tono medio, non urlato).  
+2. Riproduci la clip e osserva il meter:
+   - La barra **verde** deve occupare 70–80%.  
+   - I picchi in **giallo** non devono toccare il **rosso**.  
+   - Volume percepito costante, niente “pumping”.
+
+👉 Se il volume è basso → aumenta *Output Gain* del compressor (+1/+2 dB).  
+👉 Se la voce è troppo “stretta” → riduci la ratio del compressor (2:1).
+
+---
+
+### 🔸 In Kdenlive
+1. Inserisci il file audio o video registrato in timeline.  
+2. Attiva il meter (`Visualizza → Mixer Audio`).  
+3. Riproduci la traccia e controlla:
+   - Il livello medio deve oscillare tra **–15 e –13 dB RMS**.  
+   - Il picco non deve superare **–1 dB**.  
+   - Se il mix voce+musica “pompa”, abbassa la musica di 2–3 dB.  
+
+4. Se vuoi un riferimento pratico:
+   - Voce sola = –14 LUFS  
+   - Voce + musica soft = –13 LUFS  
+   - Voce + musica energica = –12 LUFS  
+   (YouTube normalizza comunque tutto a –14 LUFS).
+
+---
+
+### 🔸 Check finale export
+Dopo l’esportazione:
+1. Riproduci il file `.mp4` con **VLC** o **MPV**.  
+2. Se il volume generale è uguale ai video YouTube di riferimento → perfetto.  
+3. Se è troppo alto o basso, rientra in Kdenlive e regola il **Normalizzatore** di ±2 dB.
 
 ---
 
