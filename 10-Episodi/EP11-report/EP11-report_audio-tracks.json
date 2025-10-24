@@ -1,0 +1,323 @@
+{
+  "project": {
+    "name": "EP11_Report_Consapevolezza",
+    "fps": 30,
+    "sample_rate_hz": 48000,
+    "target_loudness_LUFS": -14,
+    "true_peak_dbTP": -1.0
+  },
+  "buses": [
+    {
+      "name": "MAIN",
+      "type": "stereo",
+      "color": "White",
+      "plugins": []
+    },
+    {
+      "name": "VO_BUS",
+      "type": "mono",
+      "color": "Blue",
+      "plugins": [
+        {
+          "type": "EQ_HPF",
+          "params": {
+            "freq_hz": 80,
+            "slope_db_per_oct": 12
+          }
+        },
+        {
+          "type": "DE_ESSER",
+          "params": {
+            "freq_hz": 6500,
+            "reduction_db": 3
+          }
+        },
+        {
+          "type": "COMPRESSOR",
+          "params": {
+            "threshold_db": -16,
+            "ratio": 2.5,
+            "attack_ms": 15,
+            "release_ms": 120,
+            "makeup_db": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "MUS_BUS",
+      "type": "stereo",
+      "color": "Green",
+      "plugins": [
+        {
+          "type": "COMPRESSOR_SIDECHAIN",
+          "params": {
+            "threshold_db": -20,
+            "ratio": 3.0,
+            "attack_ms": 15,
+            "release_ms": 250,
+            "duck_db": 6,
+            "sidechain_from": "VO_BUS"
+          }
+        }
+      ]
+    },
+    {
+      "name": "FX_BUS",
+      "type": "stereo",
+      "color": "Yellow",
+      "plugins": []
+    },
+    {
+      "name": "AMB_BUS",
+      "type": "stereo",
+      "color": "Cyan",
+      "plugins": [
+        {
+          "type": "LPF",
+          "params": {
+            "freq_hz": 12000,
+            "slope_db_per_oct": 12
+          }
+        },
+        {
+          "type": "COMPRESSOR",
+          "params": {
+            "threshold_db": -22,
+            "ratio": 2.0,
+            "attack_ms": 25,
+            "release_ms": 200
+          }
+        }
+      ]
+    }
+  ],
+  "routing": [
+    {
+      "from": "VO_BUS",
+      "to": "MAIN"
+    },
+    {
+      "from": "MUS_BUS",
+      "to": "MAIN"
+    },
+    {
+      "from": "FX_BUS",
+      "to": "MAIN"
+    },
+    {
+      "from": "AMB_BUS",
+      "to": "MAIN"
+    }
+  ],
+  "tracks": [
+    {
+      "id": "A1",
+      "name": "VOCE_LEAD",
+      "role": "dialogue",
+      "channels": "mono",
+      "color": "Blue",
+      "gain_db": -3.0,
+      "pan": 0,
+      "bus": "VO_BUS",
+      "plugins": [
+        {
+          "type": "EQ_HPF",
+          "params": {
+            "freq_hz": 80,
+            "slope_db_per_oct": 12
+          }
+        },
+        {
+          "type": "DE_ESSER",
+          "params": {
+            "freq_hz": 6500,
+            "reduction_db": 3
+          }
+        },
+        {
+          "type": "COMPRESSOR",
+          "params": {
+            "threshold_db": -18,
+            "ratio": 2.5,
+            "attack_ms": 12,
+            "release_ms": 120,
+            "makeup_db": 1
+          }
+        },
+        {
+          "type": "NOISE_GATE",
+          "params": {
+            "threshold_db": -45,
+            "attack_ms": 5,
+            "release_ms": 120
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "VOCE_DBL",
+      "role": "dialogue_double",
+      "channels": "mono",
+      "color": "Blue",
+      "gain_db": -9.0,
+      "pan": 0,
+      "mute": true,
+      "bus": "VO_BUS",
+      "plugins": [
+        {
+          "type": "EQ_HPF",
+          "params": {
+            "freq_hz": 80,
+            "slope_db_per_oct": 12
+          }
+        },
+        {
+          "type": "DE_ESSER",
+          "params": {
+            "freq_hz": 6500,
+            "reduction_db": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "BREATHS_FOLEY",
+      "role": "breaths_foley",
+      "channels": "mono",
+      "color": "Purple",
+      "gain_db": -12.0,
+      "pan": 0,
+      "bus": "VO_BUS",
+      "plugins": [
+        {
+          "type": "EQ_BELL",
+          "params": {
+            "freq_hz": 300,
+            "gain_db": -2.5,
+            "Q": 1.0
+          }
+        },
+        {
+          "type": "LPF",
+          "params": {
+            "freq_hz": 10000,
+            "slope_db_per_oct": 12
+          }
+        }
+      ]
+    },
+    {
+      "id": "M1",
+      "name": "MUSICA_BASE",
+      "role": "music",
+      "channels": "stereo",
+      "color": "Green",
+      "gain_db": -18.0,
+      "pan": 0,
+      "bus": "MUS_BUS",
+      "plugins": [
+        {
+          "type": "EQ_SHELF",
+          "params": {
+            "freq_hz": 120,
+            "gain_db": -1.5
+          }
+        },
+        {
+          "type": "LIMITER",
+          "params": {
+            "threshold_db": -2.0,
+            "release_ms": 200
+          }
+        }
+      ]
+    },
+    {
+      "id": "F1",
+      "name": "FX_DATA",
+      "role": "sfx_data",
+      "channels": "stereo",
+      "color": "Yellow",
+      "gain_db": -12.0,
+      "pan": 0,
+      "bus": "FX_BUS",
+      "plugins": [
+        {
+          "type": "EQ_BELL",
+          "params": {
+            "freq_hz": 2500,
+            "gain_db": 1.0,
+            "Q": 0.7
+          }
+        },
+        {
+          "type": "REVERB_SHORT",
+          "params": {
+            "time_ms": 250,
+            "mix_pct": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "FX_BATTITO",
+      "role": "sfx_heartbeat",
+      "channels": "mono",
+      "color": "Red",
+      "gain_db": -16.0,
+      "pan": 0,
+      "bus": "FX_BUS",
+      "plugins": [
+        {
+          "type": "EQ_BELL",
+          "params": {
+            "freq_hz": 80,
+            "gain_db": 2.0,
+            "Q": 1.0
+          }
+        },
+        {
+          "type": "COMPRESSOR",
+          "params": {
+            "threshold_db": -20,
+            "ratio": 2.0,
+            "attack_ms": 5,
+            "release_ms": 150
+          }
+        }
+      ]
+    },
+    {
+      "id": "S1",
+      "name": "AMBIENTE_ROOMTONE",
+      "role": "ambience",
+      "channels": "stereo",
+      "color": "Cyan",
+      "gain_db": -30.0,
+      "pan": 0,
+      "bus": "AMB_BUS",
+      "plugins": [
+        {
+          "type": "LPF",
+          "params": {
+            "freq_hz": 12000,
+            "slope_db_per_oct": 12
+          }
+        }
+      ]
+    }
+  ],
+  "deliverable": {
+    "export_format": "mp4",
+    "video_codec": "H.264",
+    "video_bitrate_mbps": 20,
+    "audio_codec": "AAC",
+    "audio_bitrate_kbps": 192,
+    "mixdown": "stereo",
+    "notes": "Conformare a -14 LUFS integrato, -1 dBTP. Controllo finale con True Peak limiter su MAIN."
+  }
+}

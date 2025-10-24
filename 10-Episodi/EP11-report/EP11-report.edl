@@ -1,0 +1,76 @@
+TITLE: EP11_Report_Consapevolezza
+FCM: NON-DROP FRAME
+
+001  AX       V     C        00:00:00:00 00:00:15:00 00:00:00:00 00:00:15:00
+* FROM CLIP NAME: INTRO
+* DESCRIPTION: “A settembre ho smesso di chiedermi…”
+* AUDIO/FX: Battito cardiaco lento + respiro fade-in
+* VISUAL: Schermo nero → titolo digitato
+
+002  AX       V     C        00:00:15:00 00:00:45:00 00:00:15:00 00:00:45:00
+* FROM CLIP NAME: Riflessione iniziale
+* DESCRIPTION: “Non perché la bilancia sia più onesta…”
+* AUDIO/FX: Data-pulse -24 dB
+* VISUAL: Testo bianco progressivo su sfondo nero
+
+003  AX       V     C        00:00:45:00 00:01:20:00 00:00:45:00 00:01:20:00
+* FROM CLIP NAME: Documentazione Cronometer
+* AUDIO/FX: Piano morbido + metronomo HRV (70 bpm)
+* VISUAL: Overlay Cronometer (Energy/Protein/Carbs/Fat)
+
+004  AX       V     C        00:01:20:00 00:02:00:00 00:01:20:00 00:02:00:00
+* FROM CLIP NAME: Curva calorica
+* DESCRIPTION: Surplus→deficit
+* AUDIO/FX: Crescendo elettronico
+* VISUAL: Grafico curva calorica
+
+005  AX       V     C        00:02:00:00 00:02:30:00 00:02:00:00 00:02:30:00
+* FROM CLIP NAME: Riflessione surplus
+* AUDIO/FX: Piano + archi leggeri
+* VISUAL: Transizione bianca → macro cibo
+
+006  AX       V     C        00:02:30:00 00:03:15:00 00:02:30:00 00:03:15:00
+* FROM CLIP NAME: Micronutrienti
+* AUDIO/FX: Crescendo elettronico low→high-pass
+* VISUAL: Grafico barre (Vit K, Mg, Omega-3, Folati)
+
+007  AX       V     C        00:03:15:00 00:03:50:00 00:03:15:00 00:03:50:00
+* FROM CLIP NAME: Surplus funzionale
+* AUDIO/FX: EQ voce +1.5 dB medi
+* VISUAL: Sfondo neutro + citazione testuale
+
+008  AX       V     C        00:03:50:00 00:04:20:00 00:03:50:00 00:04:20:00
+* FROM CLIP NAME: HRV e sonno
+* AUDIO/FX: Battito regolare + respiro ampio
+* VISUAL: Scatter HRV–BRPM (r=-0.59)
+
+009  AX       V     C        00:04:20:00 00:04:45:00 00:04:20:00 00:04:45:00
+* FROM CLIP NAME: Riflessione recupero
+* AUDIO/FX: Delay stereo 0.2s
+* VISUAL: Notte blu, dissolvenza lenta
+
+010  AX       V     C        00:04:45:00 00:05:15:00 00:04:45:00 00:05:15:00
+* FROM CLIP NAME: Dati biometrici
+* AUDIO/FX: Archi sintetici + “data ping”
+* VISUAL: Card biometriche (peso, BF, SMM, età metabolica)
+
+011  AX       V     C        00:05:15:00 00:05:40:00 00:05:15:00 00:05:40:00
+* FROM CLIP NAME: Frase chiave
+* DESCRIPTION: “Non ho perso peso. Ho perso inerzia.”
+* AUDIO/FX: Basso profondo -30 dB
+* VISUAL: Silhouette corpo → nero
+
+012  AX       V     C        00:05:40:00 00:06:00:00 00:05:40:00 00:06:00:00
+* FROM CLIP NAME: Adattamento
+* AUDIO/FX: Soft-funk (basso + hi-hat)
+* VISUAL: Still alimenti 3×0.5s
+
+013  AX       V     C        00:06:00:00 00:06:30:00 00:06:00:00 00:06:30:00
+* FROM CLIP NAME: Consapevolezza
+* AUDIO/FX: Piano + chime lento (10s)
+* VISUAL: Log palestre → dati
+
+014  AX       V     C        00:06:30:00 00:07:00:00 00:06:30:00 00:07:00:00
+* FROM CLIP NAME: Chiusura + Outro
+* AUDIO/FX: Battito che rallenta → logo sonoro VBR
+* VISUAL: HRV → bianco → nero → logo finale

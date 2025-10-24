@@ -1,0 +1,19 @@
+# EP11_Report_Consapevolezza_markers.txt
+# Vegan Biohacking Routine — EP11 “Report e Consapevolezza dei Dati”
+# Timeline markers (hh:mm:ss:ff, 30 fps)
+
+00:00:00:00 | INTRO | “A settembre ho smesso di chiedermi come mi vedo allo specchio…” | battito cardiaco lento + respiro fade-in | titolo su nero
+00:00:15:00 | RIFLESSIONE INIZIALE | “Non perché la bilancia sia più onesta…” | data-pulse -24 dB | testo bianco su nero
+00:00:45:00 | DOCUMENTAZIONE | “Settembre è stato documentato con precisione maniacale…” | piano morbido + click HRV | overlay Cronometer
+00:01:20:00 | CURVA CALORICA | “Quattro settimane, una curva…” | crescendo elettronico | grafico curva calorica
+00:02:00:00 | RIFLESSIONE SUL SURPLUS | “Il corpo è entrato e uscito dal surplus…” | piano + archi leggeri | macro alimenti
+00:02:30:00 | MICRONUTRIENTI | “Vitamina K oltre duemila per cento…” | crescendo low→high-pass | barre Vit K, Mg, Omega-3, Folati
+00:03:15:00 | SURPLUS FUNZIONALE | “Non c’è più carenza da correggere…” | EQ voce +1.5 dB medi | citazione su sfondo neutro
+00:03:50:00 | HRV E SONNO | “Di notte il corpo lavora in silenzio…” | battito regolare + respiro | scatter HRV–BRPM (r=-0.59)
+00:04:20:00 | RIFLESSIONE RECUPERO | “È come se il corpo avesse imparato…” | delay stereo 0.2 s | notte blu dissolvenza
+00:04:45:00 | DATI BIOMETRICI | “Peso sessantasei e mezzo…” | archi sintetici + ping dati | card biometriche
+00:05:15:00 | FRASE CHIAVE | “Non ho perso peso, ho perso inerzia.” | basso profondo -30 dB | silhouette corpo
+00:05:40:00 | ADATTAMENTO | “L’imprevisto salva la giornata…” | soft-funk basso+hi-hat | still indivia + pesche
+00:06:00:00 | CONSAPEVOLEZZA | “Il vero allenamento non è in palestra…” | piano + chime lento | log palestra → dati
+00:06:30:00 | CHIUSURA | “I dati sono memoria…” | battito che rallenta → silenzio | HRV → bianco → nero
+00:06:45:00 | OUTRO | Logo VBR 2025 | logo sonoro VBR + fade-out 2s | logo bianco su fondo scuro

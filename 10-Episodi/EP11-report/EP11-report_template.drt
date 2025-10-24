@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<xmeml version="5">
+  <sequence id="EP11_Report_Consapevolezza">
+    <name>EP11_Report_Consapevolezza</name>
+    <duration>12600</duration> <!-- ~7 minuti a 30 fps -->
+    <rate>
+      <timebase>30</timebase>
+      <ntsc>FALSE</ntsc>
+    </rate>
+    <timecode>
+      <rate>
+        <timebase>30</timebase>
+        <ntsc>FALSE</ntsc>
+      </rate>
+      <string>00:00:00:00</string>
+      <frame>0</frame>
+      <displayformat>NDF</displayformat>
+    </timecode>
+
+    <marker>
+      <name>INTRO</name>
+      <comment>“A settembre ho smesso di chiedermi come mi vedo allo specchio…” — battito cardiaco lento + respiro fade-in</comment>
+      <in>0</in>
+      <color>Blue</color>
+    </marker>
+
+    <marker>
+      <name>RIFLESSIONE INIZIALE</name>
+      <comment>“Non perché la bilancia sia più onesta…” — data-pulse -24 dB</comment>
+      <in>450</in>
+      <color>Blue</color>
+    </marker>
+
+    <marker>
+      <name>DOCUMENTAZIONE</name>
+      <comment>“Settembre è stato documentato con precisione maniacale…” — piano morbido + click HRV</comment>
+      <in>1350</in>
+      <color>Cyan</color>
+    </marker>
+
+    <marker>
+      <name>CURVA CALORICA</name>
+      <comment>“Quattro settimane, una curva…” — crescendo elettronico</comment>
+      <in>2400</in>
+      <color>Green</color>
+    </marker>
+
+    <marker>
+      <name>RIFLESSIONE SUL SURPLUS</name>
+      <comment>“Il corpo è entrato e uscito dal surplus…” — archi leggeri</comment>
+      <in>3600</in>
+      <color>Green</color>
+    </marker>
+
+    <marker>
+      <name>MICRONUTRIENTI</name>
+      <comment>“Vitamina K oltre duemila per cento…” — crescendo low→high-pass</comment>
+      <in>4500</in>
+      <color>Yellow</color>
+    </marker>
+
+    <marker>
+      <name>SURPLUS FUNZIONALE</name>
+      <comment>“Non c’è più carenza da correggere…” — EQ voce +1.5 dB medi</comment>
+      <in>5850</in>
+      <color>Yellow</color>
+    </marker>
+
+    <marker>
+      <name>HRV E SONNO</name>
+      <comment>“Di notte il corpo lavora in silenzio…” — battito regolare + respiro</comment>
+      <in>6750</in>
+      <color>Orange</color>
+    </marker>
+
+    <marker>
+      <name>RIFLESSIONE RECUPERO</name>
+      <comment>“Il corpo ha imparato a ricaricarsi da solo” — delay stereo 0.2s</comment>
+      <in>7860</in>
+      <color>Orange</color>
+    </marker>
+
+    <marker>
+      <name>DATI BIOMETRICI</name>
+      <comment>“Peso sessantasei e mezzo...” — archi sintetici + data ping</comment>
+      <in>8850</in>
+      <color>Red</color>
+    </marker>
+
+    <marker>
+      <name>FRASE CHIAVE</name>
+      <comment>“Non ho perso peso. Ho perso inerzia.” — basso profondo</comment>
+      <in>9450</in>
+      <color>Red</color>
+    </marker>
+
+    <marker>
+      <name>ADATTAMENTO</name>
+      <comment>“L’imprevisto salva la giornata: indivia e pesche.” — soft-funk</comment>
+      <in>10200</in>
+      <color>Magenta</color>
+    </marker>
+
+    <marker>
+      <name>CONSAPEVOLEZZA</name>
+      <comment>“Il vero allenamento non è in palestra…” — piano + chime lento</comment>
+      <in>10800</in>
+      <color>Magenta</color>
+    </marker>
+
+    <marker>
+      <name>CHIUSURA</name>
+      <comment>“I dati sono memoria — la memoria del mio corpo.” — battito rallenta → silenzio</comment>
+      <in>11700</in>
+      <color>White</color>
+    </marker>
+
+    <marker>
+      <name>OUTRO</name>
+      <comment>Logo VBR 2025 — logo sonoro + fade-out</comment>
+      <in>12150</in>
+      <color>White</color>
+    </marker>
+
+  </sequence>
+</xmeml>
