@@ -1,66 +1,137 @@
-# 🧭 Vegan Biohacking Routine – Season Summary 2025
+# 🌿 VEGAN BIOHACKING ROUTINE — Season Summary 2025  
+_Versione finale integrata · per archivio di progetto_
 
-**Periodo coperto:** Febbraio → Ottobre 2025  
+---
+
+## 🧭 1️⃣ Struttura generale
+**Periodo coperto:** febbraio → ottobre 2025  
 **Struttura:** 12 episodi + 2 speciali (Functional Gourmet, White Tea Storyline)  
-**Obiettivo:** Dimagrimento in salute attraverso nutrizione vegetale, consapevolezza metabolica e allenamento adattivo.
+**Fonti:** Cronometer · Garmin · Palestra · Biometria diretta  
+**Obiettivo:** dimagrimento in salute e ricomposizione corporea su base 100% vegetale.  
+**Metodo:**  
+1. Quantificazione (fase iniziale)  
+2. Ottimizzazione (fase centrale)  
+3. Interiorizzazione (fase finale)
 
 ---
 
-## 📊 Evoluzione biometrica
+## 📈 2️⃣ Evoluzione nutrizionale (macro e micronutrienti)
 
-| Mese | Peso (kg) | Body Fat (%) | Muscolo Scheletrico (%) | Età Metabolica | Note |
-|------|------------|--------------|--------------------------|----------------|------|
-| Febbraio | 69.2 | 20.4 | 40.1 | 49 | Inizio percorso – assetto ipercalorico |
-| Aprile | 67.8 | 18.5 | 41.0 | 46 | Stabilizzazione e prime variazioni HRV |
-| Giugno | 66.5 | 18.0 | 41.5 | 45 | Entrata in fase “SunshinEat” |
-| Luglio | 66.0 | 17.8 | 41.9 | 44 | Routine completa, HRV medio 26 ms |
-| Settembre | 65.0 | 17.0 | 42.3 | 43 | Ottimo equilibrio carico/recupero |
-| Ottobre | 64.8 | 16.0 | 43.0 | 42 | Fine ciclo: metabolismo ringiovanito di 11 anni |
+| Mese | Calorie (kcal) | Proteine (g) | Carboidrati (g) | Grassi (g) | Fibra (g) | Sintesi |
+|------|----------------|---------------|------------------|-------------|------------|----------|
+| Feb–Mar | 2000 | 85 | 320 | 65 | 75 | Avvio e prime calibrazioni |
+| Apr–Mag | 2150 | 90 | 340 | 70 | 78 | Adattamento e varietà |
+| Giugno | 2150 | 90 | 340 | 70 | 78 | Adattamento iniziale |
+| Luglio | 2250 | 95 | 360 | 75 | 80 | Stabilizzazione |
+| Settembre | 2300 | 100 | 370 | 75 | 85 | Ottimizzazione |
+| Ottobre | 2100 | 105 | 330 | 65 | 80 | Sintesi e recupero |
 
----
-
-## 🥦 Nutrizione media mensile (estratto Cronometer)
-
-| Mese | Calorie (kcal) | Proteine (g) | Carboidrati (g) | Grassi (g) | Fibra (g) |
-|------|----------------|---------------|------------------|-------------|-----------|
-| Giugno | 2150 | 90 | 340 | 70 | 78 |
-| Luglio | 2250 | 95 | 360 | 75 | 80 |
-| Settembre | 2300 | 100 | 370 | 75 | 85 |
-| Ottobre | 2100 | 105 | 330 | 65 | 80 |
-
-**Micronutrienti chiave:**  
+🔹 **Micronutrienti chiave (Cronometer):**  
 Vitamina K > 1800 µg/die (1800–2500 % RDA)  
-Folate > 250 % RDA  
+Folati > 250 % RDA  
 Magnesio ≈ 350 % RDA  
-Omega-3 ≈ 500 % RDA
+Omega-3 ≈ 500 % RDA  
+
+🔹 **Nessuna carenza registrata**, micronutrienti sopra soglia per tutto il periodo.  
+🔹 **Stile alimentare consolidato:** colazione funzionale + pasti vegetali bilanciati.  
 
 ---
 
-## 🧠 HRV – Sonno – Recupero
+## 🏋️ 3️⃣ Progressione allenamento (Full-Body A/B/C)
 
-| Periodo | HRV medio (ms) | Recovery (%) | Sleep Score | Commento |
-|----------|----------------|---------------|--------------|-----------|
-| Giugno–Luglio | 26 | 54 | 72 | Variabilità ampia, stress residuo |
-| Settembre | 28 | 56 | 76 | Equilibrio e recupero stabile |
-| Ottobre | 29 | 58 | 78 | Miglioramento spontaneo, ritmo circadiano regolare |
+| Esercizio | Feb 2025 | Ott 2025 | Δ | Andamento |
+|------------|-----------|-----------|-------------|-------------|
+| Lat Machine | 35 kg | 47.5 kg | +36 % | ↑ costante |
+| Hip Thrust | 6 kg | 18 kg | +200 % | ↑ accelerato |
+| Shoulder Press | 6 kg | 10 kg | +67 % | ↑ regolare |
+| Push-up | 3×10 | 3×15 | +50 % | ↑ regolare |
+| Plank | 3×30″ | 4×60″ (dinamico) | +100 % | ↑ stabile |
+| Affondi | +40 % carico | — | — | miglior stabilità |
 
-**Correlazione HRV ↔ Respirazione (5′)** = −0.59 → dominanza parasimpatica notturna costante.
-
----
-
-## 🏋️‍♂️ Progressione tecnica
-
-- **Lat Machine:** 35 → 47.5 kg (test 50 kg superato a fine ottobre)  
-- **Hip Thrust:** 6 → 18 kg (target 20 kg raggiungibile)  
-- **Push-up:** 3×10 → 3×15 rip.  
-- **Plank:** da 3×60″ statico a 4×60″ dinamico  
-- **Affondi:** +40 % carico, stabilità migliorata
+🟢 *Progressione lineare, nessun infortunio, core stability rafforzato.*  
+🟢 Alternanza palestra / casa / RSC (elastici) → mantenimento costante e zero regressioni.  
 
 ---
 
-## 🌱 Sintesi stagionale
+## 💠 4️⃣ Evoluzione biometrica mensile
 
-> “Ho iniziato contando i grammi, ho finito ascoltando i segnali.”
+| Mese | Peso (kg) | Body Fat (%) | SMM (%) | Età Metabolica | Note |
+|------|------------|--------------|---------|----------------|------|
+| Febbraio | 69.2 | 20.4 | 40.1 | 49 | Avvio percorso, assetto ipercalorico |
+| Aprile | 67.8 | 18.5 | 41.0 | 46 | Stabilizzazione, prime variazioni HRV |
+| Giugno | 66.5 | 18.0 | 41.5 | 45 | Fase “SunshinEat” |
+| Luglio | 66.0 | 17.8 | 41.9 | 44 | Routine completa, HRV medio 26 ms |
+| Settembre | 65.0 | 17.0 | 42.3 | 43 | Equilibrio carico/recupero |
+| Ottobre | 64.8 | 16.0 | 43.0 | 42 | Fine ciclo, metabolismo ringiovanito di 11 anni |
+
+📊 *Trend: ricomposizione progressiva, perdita di grasso senza calo muscolare.*  
+
+---
+
+## 🧘 5️⃣ Indicatori fisiologici (media 2025)
+
+| Periodo | HRV (ms) | Recovery (%) | Sleep Score | BRPM | Commento |
+|----------|-----------|---------------|--------------|--------|-----------|
+| Giugno–Luglio | 26 | 54 | 72 | 14 | Variabilità ampia, stress residuo |
+| Settembre | 28 | 56 | 76 | 13.5 | Equilibrio e recupero stabile |
+| Ottobre | 29 | 58 | 78 | 13 | Miglioramento spontaneo e ritmo regolare |
+
+**Correlazione HRV ↔ Respirazione (5′)** = −0.59 → dominanza parasimpatica costante.  
+
+🔹 Nessun segno di overtraining.  
+🔹 Sonno profondo e cicli REM coerenti con carico fisico.  
+🔹 Recupero medio +5 % rispetto a inizio stagione.
+
+---
+
+## 📊 6️⃣ Grafico sintetico di progresso (ASCII)
+
+```
+Forza      |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■↑
+HRV        |■■■■■■■■■■■■■■■■■■■■■■■■■■■→
+Peso       |■■■■■■■■■■■■■■■■■■■■■■■↓
+BF%        |■■■■■■■■■■■■■■■■■■■■■■■■■↓
+SMM%       |■■■■■■■■■■■■■■■■■■■■■■■■■■↑
+Micronutr. |■■■■■■■■■■■■■■■■■■■■■■■■■■■■→↑
+Consapevo. |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■↑↑
+```
+
+↑ = miglioramento  
+→ = stabilità positiva  
+↓ = riduzione fisiologica  
+
+---
+
+## 🧩 7️⃣ Sintesi metodologica — “Biohacking naturale”
+
+1. **Dati come fase di coscienza.**  
+   Il monitoraggio serve a capire, non a controllare.  
+
+2. **Flessibilità come competenza.**  
+   L’imprevisto (come “indivia + pesche”) non interrompe il piano: lo completa.  
+
+3. **Routine come linguaggio.**  
+   Quando i numeri cessano di essere necessari, resta il ritmo corporeo:  
+   alimentazione vegetale, sonno regolare, movimento funzionale.  
+
+---
+
+## ⚙️ 8️⃣ Strumenti e software utilizzati
+
+| Ambito | Strumento | Funzione |
+|---------|------------|-----------|
+| Nutrizione | **Cronometer.com** | Tracking macro/micronutrienti |
+| Biometria | **Garmin Connect + HRV Export** | HRV, Recovery, Sleep Score |
+| Allenamento | **Palestra + RSC (Elastici)** | Full-Body A/B/C, progressione |
+| Analisi dati | **LibreOffice Calc / Python** | Sintesi mensili e grafici |
+| Video & audio | **OBS Studio / Kdenlive** | Registrazione, montaggio, normalizzazione −14 LUFS |
+| Archiviazione | **Git + Markdown Docs** | Versionamento e trasparenza progetto |
+
+---
+
+## 🌱 9️⃣ Sintesi stagionale
+
+> “Ho iniziato contando i grammi, ho finito ascoltando i segnali.”  
 
 - Transizione completa da **controllo a consapevolezza**.  
 - Mantenimento massa magra con riduzione graduale del grasso.  
@@ -70,21 +141,29 @@ Omega-3 ≈ 500 % RDA
 
 ---
 
-## 🎬 Coda post-credit (facoltativa)
+## 🎬 🔟 Coda post-credit
 
 > “Il corpo non finisce: cambia linguaggio.  
->  Vegan Biohacking Routine tornerà nel 2026,  
->  con un corpo nuovo e la stessa curiosità scientifica.”
+> Vegan Biohacking Routine tornerà nel 2026  
+> con un corpo nuovo e la stessa curiosità scientifica.”
 
----
-
-## 📁 File collegati
-
+📁 **File collegati**
 - `EP11-report.md` → Analisi e consapevolezza dei dati  
 - `EP12-fine.md` → Chiusura del ciclo e sintesi  
-- `Functional_Gourmet_Manifesto2026.md` → base per la nuova stagione  
+- `Functional_Gourmet_Manifesto2026_Motion.md` → Base nuova stagione  
 
 ---
 
-**Stato:** ✅ Conclusa la stagione 2025  
-**Prossimo step:** apertura cartella `00-Docs/FG-Manifesto2026_Motion.md` per avvio *Functional Gourmet* 2026.
+## 🪶 11️⃣ Conclusione narrativa
+
+> “Il corpo non finisce: cambia linguaggio.  
+> Il biohacking non è controllo: è dialogo.  
+> Ogni giorno misuro meno e capisco di più.”  
+
+🟩 Stato finale: equilibrio sostenibile, metabolismo giovane,  
+autoconsapevolezza consolidata → **Fine ciclo Vegan Biohacking Routine 2025.**
+
+---
+
+© 2025 Vegan Biohacking Routine — Season Summary Finale  
+Licenza CC-BY-NC 4.0
