@@ -1,19 +1,18 @@
-# 🏠 Scheda Allenamento Casa + RSC — Elastici Integrati · Ottobre 2025  
+# 🏠 Scheda Allenamento Casa + RSC — Elastici Integrati · Ottobre 2025
 
-*Adattata alla “Full-Body Uomo 50+” per lavoro domestico e outdoor, con combinazioni di elastici calibrate in base alle tensioni reali (Assunzione B: rating pieno a 100% di allungamento).*  
-
-**Frequenza:** 4 giorni a settimana (A / B / C / D)  
-**Recupero:** 45–75″ tra le serie  
-**Progressione:** quando completi tutte le serie nel range alto → +1 serie **oppure** elastico più duro **oppure** +2–5 ripetizioni totali.  
+**Frequenza:** 4 giorni/sett. (A / B / C / D)  
+**Recupero:** 45–75″  
+**Progressione:** completate le serie → +1 serie o elastico più duro o +2–5 rip.  
+**Assunzione B:** rating pieno a 100% di allungamento (L = 250 cm)
 
 ---
 
-## 🔹 Giorno A — Trazioni + Core  
+## 🔹 Giorno A — Trazioni + Core
 **Obiettivo:** schiena, bicipiti, addome profondo  
 
 | Esercizio | Serie × Ripetizioni | Setup Elastici / Note |
 |------------|---------------------|------------------------|
-| **Trazioni alla barra** *(o assistite)* | 4×max (target 6–10) | 🔴 + ⚫ (50 + 40 lbs) ≈ 18–22 kg · ancora sopra la barra, piede nel loop → assistenza progressiva |
+| **Trazioni alla barra (assistite)** | 4×max (target 6–10) | 🔴 + ⚫ (50 + 40 lbs) ≈ 18–22 kg · ancora sopra la barra, piede nel loop → assistenza progressiva |
 | **Rematore con elastico lungo** | 3×12 | 🔵 + 🟢 (30 + 20 lbs) ≈ 12–15 kg · tirata verso ombelico, scapole addotte |
 | **Curl bicipiti con elastico corto** | 3×12 | ⚫ 40 lbs opp. 🔴 50 lbs · ≈ 9–12 kg · un braccio per volta, corsa completa |
 | **Plank frontale** | 3×60″ | — |
@@ -22,21 +21,21 @@
 
 ---
 
-## 🔹 Giorno B — Gambe + Addome  
+## 🔹 Giorno B — Gambe + Addome
 **Obiettivo:** tono arti inferiori e core  
 
 | Esercizio | Serie × Ripetizioni | Setup Elastici / Note |
 |------------|---------------------|------------------------|
-| **Squat a corpo libero + elastico** | 4×15 | 🟢 20 lbs (+ 🟡 10 lbs se serve) · ≈ 6–8 kg · banda sopra le ginocchia → attivazione glutei |
+| **Squat corpo libero + mini loop** | 4×15 | 🔵 loop moderato (Decathlon) ≈ 6–8 kg · sopra le ginocchia, attivazione glutei |
 | **Affondi alternati** | 3×10/gamba | — |
-| **Hip Thrust da terra** | 3×15 | 🔵 30 lbs opp. ⚫ 40 lbs · ≈ 8–10 kg · attorno al bacino, spinta verticale |
+| **Hip Thrust da terra** | 3×15 | 🔵 loop moderato (Decathlon) ≈ 8–10 kg · attorno al bacino o sopra le ginocchia, spinta verticale |
 | **Ponte monopodalico (glute bridge 1 gamba)** | 3×10/lato | 🟢 20 lbs ≈ 5 kg · banda sopra il ginocchio, focus gluteo medio |
 | **Sollevamento gambe tese da terra** | 3×12 | — |
 | **Side Plank** | 2×40–60″/lato | — |
 
 ---
 
-## 🔹 Giorno C — Spinte + Braccia  
+## 🔹 Giorno C — Spinte + Braccia
 **Obiettivo:** petto, spalle, tricipiti  
 
 | Esercizio | Serie × Ripetizioni | Setup Elastici / Note |
@@ -50,7 +49,7 @@
 
 ---
 
-## 🌳 Giorno D — RSC Park (Cardio & Total Body outdoor)  
+## 🌳 Giorno D — RSC Park (Cardio & Total Body outdoor)
 **Obiettivo:** condizionamento e resistenza generale  
 
 **Circuito:** 3–4 giri · recupero 30–60″ tra i giri  
@@ -60,14 +59,14 @@
 | 1 | **Corda per saltare** | 1′ | ritmo costante, piedi leggeri, schiena alta |
 | 2 | **Jump squat** | 15 rep | spinta fluida, ammortizza bene la discesa |
 | 3 | **Push-up** | max reps | corpo rigido, petto a terra |
-| 4 | **Elastico Row** | 12 rep | 🔵 30 lbs (+ 🟢 20 lbs se livello avanzato) ≈ 8–12 kg · ancora a palo o barra |
+| 4 | **Elastico Row (da stazione 4)** | 12 rep | 🔵 30 lbs (+ 🟢 20 lbs se livello avanzato) ≈ 8–12 kg · ancoraggio a palo o barra |
 | 5 | **Plank dinamico** | 30″ | mani alternate, bacino fermo |
 | 6 | **ABS Wheel Roll-out** | 10 rep | movimento lento, nessun inarcamento |
 
 **Progressione:**  
-- Base → 3 giri · 60″ recupero  
-- Intermedio → 4 giri · 45″ recupero  
-- Avanzato → 4–5 giri · 30″ recupero  
+Base → 3 giri · 60″ recupero  
+Intermedio → 4 giri · 45″ recupero  
+Avanzato → 4–5 giri · 30″ recupero  
 
 ---
 
@@ -77,6 +76,7 @@
 - Allenamenti brevi e regolari mantengono insulina e cortisolo stabili.  
 - Evita estensioni oltre 250 cm (200 %) → durata banda maggiore.  
 - Progressione → aumenta combinazione (🔵 → 🔵+🟢 → ⚫).  
+- Quando lavori a braccio singolo, la tensione effettiva percepita è ~ +20 %.  
 
 ---
 
