@@ -70,6 +70,15 @@ l’uso eccessivo di detergenti antibatterici riduce la diversità microbica cut
 (*Nature Reviews Microbiology*, 2021).  
 La pelle si difende meglio quando non la sterilizzi ogni giorno.
 
+### 🌿 Cura naturale post-doccia
+Dopo la doccia, la pelle va protetta ma non soffocata.  
+Uso solo deodoranti **non antitraspiranti**, che rispettano la traspirazione e il microbioma:
+
+> [lavera Crema deodorante a base sensitiva, naturale e biologica (50 ml)](http://www.amazon.it/dp/B09WJLCFTZ/ref=nosim?tag=veganbiohacki-21)
+
+Formulata con **aloe vera biologica** e **minerali naturali**, offre una protezione duratura senza sali d’alluminio – in linea con la filosofia *“pelle viva, non sterilizzata”*.  
+Perfetta come chiusura “gentile” dopo il *Phytorelax Tea Tree*.
+
 ---
 
 ## 💆 Capitolo 5 – Capelli “put to the test”
@@ -96,7 +105,7 @@ Uso prodotti che — letteralmente — **sono stati messi alla prova scientifica
 ## 🦶 Capitolo 6 – Piede d’atleta e difese locali
 In passato, frequentando palestre e piscine, mi capitava spesso il cosiddetto “piede d’atleta”:  
 infezione fungina opportunista favorita dal lavaggio aggressivo e da scarpe umide.  
-Uso la crema più naturale che abbia trovato:  
+Usavo la crema più naturale che abbia trovato:  
 
 > [Altrapelle – Gel multifunzionale micosi piede 30 ml](http://www.amazon.it/dp/B0BDZL47GC/ref=nosim?tag=veganbiohacki-21)
 
@@ -115,7 +124,7 @@ Una prova ulteriore che **alimentazione e cura personale fanno parte dello stess
 ---
 
 ## 🧘 Capitolo 8 – Reset e consapevolezza
-Ogni sabato mattina, mentre Noemi è in piscina, faccio la mia “Routine Reset”:  
+Ogni sabato mattina, mentre mia figlia è in piscina, faccio la mia “Routine Reset”:  
 respiro quadrato, corda, stretching, silenzio.  
 È un modo per ricordarmi che **l’equilibrio è un muscolo**.  
 E anche la motivazione va allenata.
