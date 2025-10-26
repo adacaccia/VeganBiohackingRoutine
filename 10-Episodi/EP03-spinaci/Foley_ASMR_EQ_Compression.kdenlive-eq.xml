@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect tag="audioeq" id="foley_asmr_eq_comp" version="1">
+  <name>Foley ASMR EQ + Compression</name>
+  <description>Preset per Foley ASMR - taglio bassi, brillantezza e compressione leggera</description>
+  <parameter name="eq_0" value="-12"/> <!-- 80 Hz: taglio basso -->
+  <parameter name="eq_1" value="-6"/>  <!-- 150 Hz -->
+  <parameter name="eq_2" value="0"/>   <!-- 300 Hz -->
+  <parameter name="eq_3" value="+3"/>  <!-- 4.5 kHz - brillantezza -->
+  <parameter name="eq_4" value="+1"/>  <!-- 8 kHz -->
+  <parameter name="eq_5" value="0"/>   <!-- 12 kHz -->
+  <parameter name="eq_6" value="0"/>   <!-- 16 kHz -->
+  <parameter name="output_gain" value="0"/>
+  <parameter name="compressor_enable" value="1"/>
+  <parameter name="compressor_threshold" value="-14"/>
+  <parameter name="compressor_ratio" value="2.5"/>
+  <parameter name="compressor_attack" value="20"/>
+  <parameter name="compressor_release" value="100"/>
+  <parameter name="compressor_makeup" value="3"/>
+  <parameter name="compressor_knee" value="2"/>
+  <parameter name="compressor_output_gain" value="0"/>
+  <parameter name="compressor_mix" value="100"/>
+</effect>
