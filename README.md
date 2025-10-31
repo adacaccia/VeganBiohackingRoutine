@@ -19,10 +19,8 @@ Il fine non è la performance estrema, ma la **longevità funzionale**: mantener
 
 **VeganBiohackingRoutine/**
 
-- **00-Docs/** — Documenti ufficiali e consuntivi mensili  
+- **00-Docs/** — Documenti ufficiali  
   - `Manifesto_VBR_2025.md`  
-  - `Consuntivo_Integrato_2025-09.md`  
-  - `Consuntivo_Integrato_2025-10.md`  
   - `Appendice_Scientifica_Te_Bianco.md`
 - **01-Dati/** — Dati grezzi e diari di allenamento  
   - `Palestra_2025-09.txt`  
@@ -36,6 +34,9 @@ Il fine non è la performance estrema, ma la **longevità funzionale**: mantener
 - **03-Analisi/** — Correlazioni e trend biometrici  
   - `Correlazioni_Sonno_Recupero.md`  
   - `Trend_Massa_Magra_vs_Fat.md`
+- **04-Report/** — Consuntivi mensili  
+  - `Consuntivo_Integrato_2025-09.md`  
+  - `Consuntivo_Integrato_2025-10.md`  
 - **10-Episodi/** — Testi e concept video (YT / shorts)  
   - `EP01-colazione/`  
   - `EP02-trito/`  
