@@ -42,9 +42,15 @@ Il fine non è la performance estrema, ma la **longevità funzionale**: mantener
   - `EP02-trito/`  
   - `EP03-spinaci/`  
   - `EP04-passata/`  
-  - `EP05-legumi/`  
+  - `EP05-legumi/`
+  - `EP06-vegan/`
+  - `EP07-caffe/`
+  - `EP08-denti/`
+  - `EP09-germogli/`
+  - `EP10-fitness/`
   - `EP11-report/`  
   - `EP12-fine/`
+  - Index_Episodi.md
 - **FG-System_Check.sh** — Script di validazione struttura  
 - **README.md** — Questo file
 
