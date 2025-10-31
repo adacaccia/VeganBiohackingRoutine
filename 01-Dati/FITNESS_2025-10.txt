@@ -124,9 +124,9 @@
 - Estensione OH tricipiti con elastico 50lbs 3x12 (a due mani, tensione da verificare)
 - Curl bicipiti con elastico 50lbs; 3x12 (ok, tensione e lunghezza ottimali)
 - Crunch a bicicletta 3x15 (Ok)
-25R - Sabato (Riposo)
-26R - Domenica (Riposo)
-27R - Lunedì ufficio (Riposo)
+25R - Sabato riposo (RSC)
+26R - Domenica riposo (Casa)
+27R - Lunedì riposo (Ufficio)
 28R - Martedì casa (Riposo forzato da forza maggiore)
 29B - Mercoledì casa:
 - Squat con elastico: 4x12 (0k: ho usato elastico nero "X-Heavy 30-40lbs" da "Mini loop band kit")
@@ -135,5 +135,11 @@
 - Ponte per glutei monopodalico: 3x10 per lato (al limite, sempre con elastico nero)
 - Sollevamento gambe: 3x12 (Ok)
 - Plank laterale: 2x60sec. per lato (Ok)
-
-
+30R - Giovedì riposo (Ufficio)
+31C - Venerdì (Casa):
+- Push-up: 4x10 (al limite)
+- Push-up presa larga: 3x12 (al limite)
+- Shoulder Press: 3x12 per lato (Ok, con elastico rosso 50 lbs tirato al limite)
+- Estensione tricipiti OH: 3x12 (Ok, sempre con elastico rosso max estensione, ma a due mani)
+- Hammer curl bicipiti: 3x12 (Ok, sempre elastico rosso a max estensione, ma a due mani)
+- Crunch a bicicletta: 3x15 (Ok)
