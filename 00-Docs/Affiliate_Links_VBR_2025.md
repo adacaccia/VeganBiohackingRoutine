@@ -31,6 +31,7 @@ Ogni prodotto viene inserito nelle descrizioni dei video solo se pertinente al c
 | 21  | Cura personale   | [Altrapelle – Gel multifunzionale micosi piede 30 ml](http://www.amazon.it/dp/B0BDZL47GC/ref=nosim?tag=veganbiohacki-21)                                                                                     | EP10 - Fitness                    |
 | 22  | Strumenti cucina | [KYG Macinacaffè Elettrico 200W 50g con Lame in Acciaio Inox Macinino Inossidabile](http://www.amazon.it/dp/B0D8T1T3ZT/ref=nosim?tag=veganbiohacki-21))                                                      | EP02-Trito                        |
 | 23  | Cura personale   | [lavera Crema deodorante a base sensitiva, naturale e sensibile, non antitraspirante, protezione 48 ore, vegano, biologico (1 x 50 ml) ](http://www.amazon.it/dp/B09WJLCFTZ/ref=nosim?tag=veganbiohacki-21)) | EP10-Fitness                      |
+| 24  | Strumenti cucina | [DOQAUS Termometro da Cucina Digitale,3s Lettura Istantanea, Display LCD Retroilluminato, per Alimenti(Rosso)](http://www.amazon.it/dp/B07WKKS4HB/ref=nosim?tag=veganbiohacki-21))                                                      | EPnn - Te bianco                        |
 
 ---
 
