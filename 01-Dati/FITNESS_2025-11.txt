@@ -3,6 +3,15 @@
 # Tag speciali: R-NEAT (attività domestica) · CHIUSO (impianto non disponibile)
 # Biometria sett.: mer ore 06:32 (Europe/Rome)
 
+# 📏 Protocollo pesate biometriche (validità Cronometer / Atlas)
+# - Le pesate si effettuano **solo a vuoto**, al mattino presto, prima di tè o colazione.
+# - Condizioni valide: risveglio + eventuale evacuazione completa (bowel movement).
+# - Frequenza: non fissa ma garantita **≥ 1×/settimana**.
+#   → Se entro venerdì non avviene una pesata “a vuoto”, effettuarla sabato mattina (backup).
+# - Orario di riferimento: 06:45 ±15 min (Europe/Rome).
+# - Parametri da registrare (se disponibili): peso, % grasso, % muscolo scheletrico, % acqua, % grasso viscerale, età metabolica.
+# - Note: la pesata "a vuoto" prevale sempre su quella di backup; in caso di doppia, tenere la più recente "a vuoto".
+
 01R - Sabato (R-NEAT)
 - Stiratura + stesura panni: 85' tot
 - Note: HRV ok, sonno 7h10
