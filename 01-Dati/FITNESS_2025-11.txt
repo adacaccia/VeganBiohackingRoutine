@@ -7,7 +7,7 @@
 # - Le pesate si effettuano **solo a vuoto**, al mattino presto, prima di tè o colazione.
 # - Condizioni valide: risveglio + eventuale evacuazione completa (bowel movement).
 # - Frequenza: non fissa ma garantita **≥ 1×/settimana**.
-#   → Se entro venerdì non avviene una pesata “a vuoto”, effettuarla sabato mattina (backup).
+#   → Se entro giovedì non avviene una pesata “a vuoto”, effettuarla venerdi mattina (backup).
 # - Orario di riferimento: 06:45 ±15 min (Europe/Rome).
 # - Parametri da registrare (se disponibili): peso, % grasso, % muscolo scheletrico, % acqua, % grasso viscerale, età metabolica.
 # - Note: la pesata "a vuoto" prevale sempre su quella di backup; in caso di doppia, tenere la più recente "a vuoto".
@@ -20,10 +20,12 @@
 - Note: passeggiata 40'
 
 03B - Lunedì (Ufficio, Pausa breve) — R-NEAT
-- Note: spesa spinaci (IN’s), preparazione batch
+- Note: spesa spinaci (IN’s a Roma Spinaceto), preparazione batch
 
 04A - Martedì (Casa)
-- Trazioni assistite … 
-- Rematore elastico …
-- Plank …
-- Note: …
+- Trazioni assistite: 3x10 con elastico rosso (al limite)
+- Rematore elastico: 3x10 con elatico rosso a due mani (ok)
+- Curl bicipiti: 3x12 con elastico rosso a due mani (ok)
+- Plank: 3x60" (ok)
+- AB Wheel: 3x12 (ok)
+- Mountain Climber: 3x30" 3x13 per lato (ok)
