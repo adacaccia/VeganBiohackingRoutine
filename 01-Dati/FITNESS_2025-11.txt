@@ -4,10 +4,9 @@
 # Biometria sett.: mer ore 06:32 (Europe/Rome)
 
 # 📏 Protocollo pesate biometriche (validità Cronometer / Atlas)
-# - Le pesate si effettuano **solo a vuoto**, al mattino presto, prima di tè o colazione.
-# - Condizioni valide: risveglio + eventuale evacuazione completa (bowel movement).
-# - Frequenza: non fissa ma garantita **≥ 1×/settimana**.
-#   → Se entro giovedì non avviene una pesata “a vuoto”, effettuarla venerdi mattina (backup).
+# Aggiornamento procedura pesata settimanale (VBR - novembre 2025)
+# Pesata settimanale:** ogni **domenica mattina a digiuno**, prima della colazione, *eventualmente dopo il bagno*
+# (Motivazione: maggiore praticità, nessun disturbo domestico e routine più rilassata.)
 # - Orario di riferimento: 06:45 ±15 min (Europe/Rome).
 # - Parametri da registrare (se disponibili): peso, % grasso, % muscolo scheletrico, % acqua, % grasso viscerale, età metabolica.
 # - Note: la pesata "a vuoto" prevale sempre su quella di backup; in caso di doppia, tenere la più recente "a vuoto".
@@ -38,3 +37,7 @@
 - Sollevamento gambe: 3x12 (ok)
 - Plank laterale: 3x60"/lato (ok)
 - Note: sensazione di piena attivazione, nessuna fatica eccessiva; pronto per +1 serie su ponte monopodalico alla prossima seduta.
+
+06R - Giovedì (Ufficio)
+- Pausa breve: 12:50 - 13:20
+- Note: spesa legumi (LIDL) + spesa spinaci (LIDL!)
