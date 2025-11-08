@@ -42,7 +42,7 @@ Circuito: 3–4 giri · Recupero 30–60″ tra i giri
 1. Corda per saltare      – 1′ ritmo costante  
 2. Jump Squat             – 15 rep, ammortizza la discesa  
 3. Push-up                – max reps, corpo rigido  
-4. Elastico Row           – 🔵 (+🟢) ≈ 8–12 kg · tirata verso ombelico  
+4. Elastico Row           – 🔴 + ⚫ ≈ 20 kg · tirata verso ombelico  
 5. Plank dinamico         – 30″ mani alternate, bacino fermo  
 6. ABS Wheel Roll-out     – 10 rep, movimento controllato  
 
