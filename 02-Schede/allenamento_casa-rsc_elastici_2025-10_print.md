@@ -7,31 +7,31 @@ Assunzione B: rating pieno a 100% di allungamento (L = 250 cm)
 ──────────────────────────────────────────────────────────────────────────────
 🔹 GIORNO A — TRAZIONI + CORE
 ──────────────────────────────────────────────────────────────────────────────
-Trazioni alla barra (assistite)   | 🔴 + ⚫ ≈ 18–22 kg · piede nel loop, aiuto progressivo
-Rematore con elastico lungo       | 🔵 + 🟢 ≈ 12–15 kg · tirata verso ombelico, scapole addotte
-Curl bicipiti (elastico corto)    | ⚫ o 🔴 ≈ 9–12 kg · un braccio, corsa completa
+Trazioni alla barra (assistite)   | 🔴 ≈ 15 kg · piede nel loop, aiuto progressivo
+Rematore con elastico lungo       | 🔴 + ⚫ ≈ 20 Kg · tirata verso ombelico, scapole addotte
+Curl bicipiti (elastico corto)    | 🔴 + ⚫ ≈ 20 Kg · due braccia, corsa completa
 Plank frontale                    | Corpo rigido, 3×60″
-ABS Wheel Roll-out                | 3×10–12, controlla il tratto lombare
+ABS Wheel Roll-out                | 3×15, controlla il tratto lombare
 Mountain Climber                  | 3×30″ ritmo costante
 
 ──────────────────────────────────────────────────────────────────────────────
 🔹 GIORNO B — GAMBE + ADDOME
 ──────────────────────────────────────────────────────────────────────────────
-Squat corpo libero + mini loop    | 🔵 loop moderato ≈ 6–8 kg · sopra le ginocchia, attivazione glutei
+Squat corpo libero + mini loop    | ⚫ loop extreme ≈ 16–18 kg · sopra le ginocchia, attivazione glutei
 Affondi alternati                 | 3×10/gamba
-Hip Thrust da terra               | 🔵 loop moderato ≈ 8–10 kg · sopra le ginocchia, spinta verticale
-Ponte monopodalico                | 🟢 ≈ 5 kg · banda sopra ginocchio, focus gluteo medio
+Hip Thrust da terra               | ⚫ loop extreme ≈ 18–20 kg · sopra le ginocchia, spinta verticale
+Ponte monopodalico                | 🔴 loop hard ≈ 15 kg · banda sopra ginocchio, focus gluteo medio
 Sollevamento gambe tese           | 3×12, controllo addominale
-Side Plank                        | 2×40–60″/lato
+Side Plank                        | 3×60″/lato
 
 ──────────────────────────────────────────────────────────────────────────────
 🔹 GIORNO C — SPINTE + BRACCIA
 ──────────────────────────────────────────────────────────────────────────────
 Push-up con maniglie              | 4×max (8–15)
 Push-up maniglie larghe           | 3×12
-Shoulder Press                    | 🔴 50 lbs ≈ 10–12 kg · 1 braccio, avvolgi 1× sotto piede
-Estensioni tricipiti sopra testa  | ⚫ 40 lbs ≈ 9 kg · 1 braccio o doppio ancoraggio
-Curl Hammer                       | 🔵 + 🟢 ≈ 12 kg · presa neutra, controllo discesa
+Shoulder Press                    | 🔴 + ⚫ ≈ 20 Kg · 1 braccio, avvolgi 1× sotto piede
+Estensioni tricipiti sopra testa  | 🔴 + ⚫ ≈ 20 kg · 1 braccio o doppio ancoraggio
+Curl Hammer                       | 🔴 + ⚫ ≈ 20 kg · presa neutra, controllo discesa
 Crunch a bicicletta               | 3×15/lato
 
 ──────────────────────────────────────────────────────────────────────────────
@@ -39,12 +39,12 @@ Crunch a bicicletta               | 3×15/lato
 ──────────────────────────────────────────────────────────────────────────────
 Circuito: 3–4 giri · Recupero 30–60″ tra i giri
 
-1. Corda per saltare      – 1′ ritmo costante  
-2. Jump Squat             – 15 rep, ammortizza la discesa  
-3. Push-up                – max reps, corpo rigido  
-4. Elastico Row           – 🔴 + ⚫ ≈ 20 kg · tirata verso ombelico  
-5. Plank dinamico         – 30″ mani alternate, bacino fermo  
-6. ABS Wheel Roll-out     – 10 rep, movimento controllato  
+1. Corda per saltare             | 1′ ritmo costante  
+2. Jump Squat                    | 15 rep, ammortizza la discesa  
+3. Push-up                       | max reps, corpo rigido  
+4. Rematore con elastico         | 🔴 + ⚫ ≈ 20 kg · 15 rep. tirata verso ombelico  
+5. Plank dinamico                | 30″ mani alternate, bacino fermo  
+6. ABS Wheel Roll-out            | 15 rep, movimento controllato  
 
 Livelli: Base → 3 giri (60″) | Intermedio → 4 giri (45″) | Avanzato → 4–5 giri (30″)
 
