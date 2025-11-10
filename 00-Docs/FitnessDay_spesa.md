@@ -7,8 +7,8 @@
 
 ## 2️⃣ IN’s
 
-- 🍋 **fit&pro Vegan Protein Bar low sugar Lemon** – **48 barrette totali (≈4 per FitnessDay)
-- Quando: **Venerdì 7 novembre 2025 di mattina (dopo fitness, quando no riunioni)**
+- 🍋 **fit&pro Vegan Protein Bar low sugar Lemon** – **24/30 barrette totali (≈4 per FitnessDay)
+- Quando: **Venerdì 7 novembre 2025 ore 13:00 (poausa pranzo)**
 
 ## 3️⃣ Conad
 
