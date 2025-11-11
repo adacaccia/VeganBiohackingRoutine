@@ -45,3 +45,14 @@ Il piano *Vegan Biohacking Routine* si dimostra pienamente efficace e sostenibil
 - **Rendimenti allenanti elevati** (split A/B/C/D con elastici + RSC): evidenza di adattamento muscolare e resistenza sistemica.  
 
 ⭐ **Valutazione complessiva:** eccellente progressione di ricomposizione corporea e stabilità metabolica.
+
+---
+
+## ⚙️ Aggiornamento Allenamento e NEAT — Novembre 2025 (settimana 3)
+- Doppio elastico 🔴+⚫ pienamente operativo in rematore e curl.
+- Volume stabile in gambe, incrementabile al ponte monopodalico.
+- Deficit medio −34 kcal/die (Cronometer).
+- NEAT medio: 11 000 passi/die (Garmin).
+- Nessun segno di affaticamento: HRV e sonno adeguati.
+- Prossimo target: consolidamento coordinazione corda (RSC) e +1 serie su ponte monopodalico.
+
