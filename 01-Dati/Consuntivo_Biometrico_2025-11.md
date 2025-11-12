@@ -56,3 +56,9 @@ Il piano *Vegan Biohacking Routine* si dimostra pienamente efficace e sostenibil
 - Nessun segno di affaticamento: HRV e sonno adeguati.
 - Prossimo target: consolidamento coordinazione corda (RSC) e +1 serie su ponte monopodalico.
 
+---
+### ⚙️ Bilancio Energetico-Proteico — Settimana 3
+- Apporto medio proteico: **133 g/die (2.08 g/kg)**
+- Delta calorico medio: **−222 kcal/die**
+- Stato metabolico: **ricomposizione attiva (grasso → muscolo)**
+- Raccomandazione: mantenere proteine > 120 g, deficit < 250 kcal
