@@ -2,12 +2,14 @@
 
 Questa scheda è calibrata sul tuo livello attuale (fine novembre 2025).
 Ogni giorno contiene:
+
 - esercizi principali
 - volumi realistici
 - progressioni integrate
 - note tecniche sui punti critici
 
 L’obiettivo:
+
 - aumentare la forza funzionale
 - migliorare controllo del core
 - completare il percorso verso i 15 push-up “master”
@@ -16,9 +18,10 @@ L’obiettivo:
 
 ---
 
-# 🟦 GIORNO A — Spinta + Core (Focus: Push-up)
+# 🟦 GIORNO A — Spinta + Core
 
 ## 1) Push-up (progressione verso 15 unbroken)
+
 **4×8–12**  
 → *tutte pulite, niente corpo appoggiato a terra*  
 **+ 1 serie finale AMRAP** (massimo delle ripetizioni tecnicamente perfette)
@@ -31,6 +34,7 @@ L’obiettivo:
 ---
 
 ## 2) Military Press con elastico
+
 **4×12**
 
 > Usa elastico rosso.  
@@ -39,48 +43,57 @@ L’obiettivo:
 ---
 
 ## 3) Chest Press con elastico (da porta)
+
 **3×15**
 
 ---
 
 ## 4) Triceps Band Extension
+
 **3×12–15**  
 Elastico dietro la testa, gomiti fermi.
 
 ---
 
 ## 5) Dead Bug avanzato
+
 **3×12 per lato**  
 Bacino in retroversione, lombari in contatto.
 
 ---
 
 ## 6) Side Plank
+
 **3×45–60" per lato**
 
 ---
 
-# 🟦 GIORNO B — Lower Body (Glutei avanzati)
+# 🟦 GIORNO B — Lower Body
 
 ## 1) Air Squat con banda nera
+
 **4×15**
 
 ---
 
 ## 2) Affondi
+
 **3×12 per lato**
 
 ---
 
 ## 3) HIP THRUST – Livello 2 (scegline una a seduta)
+
 **3×10–12**
 
 Varianti (rotazione settimanale consigliata):
+
 - A) doppio elastico (nero + rosso)  
 - B) hip thrust elevato (spalle su sedia/letto)  
 - C) single-leg hip thrust
 
 > Ogni ripetizione:  
+> 
 > - salita *veloce*  
 > - 2" isometria in alto  
 > - discesa *lenta*
@@ -88,7 +101,9 @@ Varianti (rotazione settimanale consigliata):
 ---
 
 ## 4) Ponte monopodalico avanzato
+
 **4×12 per lato**  
+
 + banda NERA  
 + **2" isometria in alto**  
 + piede d’appoggio **rialzato** (gradino/blocco)
@@ -96,6 +111,7 @@ Varianti (rotazione settimanale consigliata):
 ---
 
 ## 5) Leg Raises
+
 **3×12**
 
 ---
@@ -103,6 +119,7 @@ Varianti (rotazione settimanale consigliata):
 # 🟦 GIORNO C — Trazione + Bicipiti
 
 ## 1) Rematore elastici doppio (nero+rosso)
+
 **3×15**  
 **+ 2” pausa in massima trazione**  
 **+ 3” discesa lenta**
@@ -112,6 +129,7 @@ Varianti (rotazione settimanale consigliata):
 ---
 
 ## 2) Face Pull elastico
+
 **3×20**
 
 > Antidoto agli errori di postura nei push-up.  
@@ -120,23 +138,27 @@ Varianti (rotazione settimanale consigliata):
 ---
 
 ## 3) Curl con elastico
+
 **3×12–15**
 
 ---
 
 ## 4) Hammer Curl
+
 **3×10**
 
 ---
 
 ## 5) Reverse Crunch
+
 **3×15**
 
 ---
 
-# 🟦 GIORNO D — Lower + Core + Stabilità (aggiornato sui tuoi dati di stamattina)
+# 🟦 GIORNO D — Lower + Core + Stabilità
 
 ## 1) Corda (SKILL)
+
 **5×1’ pratica**  
 → sequenze da 1–3 salti  
 → pausa 1’
@@ -146,6 +168,7 @@ Varianti (rotazione settimanale consigliata):
 ---
 
 ## 2) Jump Squat
+
 **3×6–8**  
 (qualità, non quantità)
 
@@ -155,12 +178,14 @@ Varianti (rotazione settimanale consigliata):
 ---
 
 ## 3) Rematore elastici (doppio)
+
 **3×15**  
 (stesso schema del Giorno C)
 
 ---
 
 ## 4) Plank Shoulder Tap (versione avanzata)
+
 **3× (5 tap/lato + 5–10" plank perfetto tra un tap e l’altro)**
 
 > Bacino **fermo**.  
@@ -170,6 +195,7 @@ Varianti (rotazione settimanale consigliata):
 ---
 
 ## 5) AB Wheel (forma perfetta)
+
 **3×10–12**
 
 > Con retroversione del bacino:  
@@ -191,14 +217,14 @@ Varianti (rotazione settimanale consigliata):
 
 # 🏆 OBIETTIVI DEL CICLO 2.0 (4–6 settimane)
 
-### ✔ 15 push-up **unbroken**  
-### ✔ hip thrust avanzato stabile  
-### ✔ linee laterali (obliqui) visibili **sempre**, non solo al mattino  
-### ✔ AB wheel 3×12 perfette  
-### ✔ salto alla corda: 10 salti consecutivi  
-### ✔ ponte monopodalico avanzato “facile”
+✔ 15 push-up **unbroken**
 
----
+✔ hip thrust avanzato stabile
 
-# 🔚 Fine scheda 2.0
-Pronta per essere aggiunta a FITNESS_2025-11.
+✔ linee laterali (obliqui) visibili **sempre**, non solo al mattino
+
+✔ AB wheel 3×12 perfette
+
+✔ salto alla corda: 10 salti consecutivi
+
+✔ ponte monopodalico avanzato “facile”
