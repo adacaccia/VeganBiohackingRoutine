@@ -4,7 +4,7 @@ import csv
 from datetime import date
 from pathlib import Path
 
-# Percorsi usando pathlib (robusto su tutti i sistemi)
+# Percorsi
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 DB_PATH = PROJECT_ROOT / "01-Dati" / "FDC.db"
@@ -12,32 +12,37 @@ QUERY_FILE = SCRIPT_DIR / "nutrient_query.sql"
 CSV_OUTPUT = PROJECT_ROOT / "04-Report" / f"nutrient_report_{date.today()}.csv"
 
 def main():
-    # Verifica che il DB esista
     if not DB_PATH.exists():
         raise FileNotFoundError(f"Database non trovato: {DB_PATH}")
-
-    # Leggi la query
+    
     with open(QUERY_FILE, "r", encoding="utf-8") as f:
         query = f.read()
 
-    # Esegui
-    conn = sqlite3.connect(str(DB_PATH))  # sqlite3 accetta solo stringhe
+    conn = sqlite3.connect(str(DB_PATH))
     cursor = conn.cursor()
     cursor.execute(query)
     results = cursor.fetchall()
+    column_names = [description[0] for description in cursor.description]
     conn.close()
 
-    # Stampa
-    print(f"\n{'Nutriente':<30} {'Unità':<8} {'Totale'}")
-    print("-" * 50)
+    # Stampa a schermo (tutte le colonne)
+    print("\n" + "="*100)
+    print(f"{'Nutriente':<25} {'Unità':<6} {'Totale':<8} {'% DRI':<8} {'% Opt':<8} {'Obiettivo':<10}")
+    print("-"*100)
     for row in results:
-        print(f"{row[0]:<30} {row[1]:<8} {row[2]}")
+        nutrient      = row[0] or ""
+        unit          = row[1] or ""
+        total         = f"{row[2]:.1f}" if row[2] is not None else ""
+        pct_dri       = f"{row[3]:.1f}%" if row[3] is not None else ""
+        pct_optimal   = f"{row[4]:.1f}%" if row[4] is not None else ""
+        optimal_target= f"{row[5]:.1f}" if row[5] is not None else ""
+        print(f"{nutrient:<25} {unit:<6} {total:<8} {pct_dri:<8} {pct_optimal:<8} {optimal_target:<10}")
 
-    # Salva CSV
-    CSV_OUTPUT.parent.mkdir(exist_ok=True)  # crea 04-Report se non esiste
+    # Salva CSV con tutte le colonne
+    CSV_OUTPUT.parent.mkdir(exist_ok=True)
     with open(CSV_OUTPUT, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(["Nutriente", "Unità", "Totale_giornaliero"])
+        writer.writerow(column_names)  # intestazioni dinamiche
         writer.writerows(results)
 
     print(f"\n✅ Report salvato in: {CSV_OUTPUT}")
