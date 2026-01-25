@@ -1,13 +1,13 @@
 WITH nutrient_report AS (
     SELECT
         nutrient,
-        unit,
+        unit_name AS unit,
         SUM(total_daily) AS total_daily
     FROM (
-        -- Parte DB (senza energia!)
+        -- PARTE DB USDA: ESCLUDI COMPLETAMENTE L'ENERGIA
         SELECT
             n.name AS nutrient,
-            n.unit_name AS unit,
+            n.unit_name,
             fn.amount * md.grams_per_day / 100.0 AS total_daily
         FROM my_diet md
         JOIN food f ON md.fdc_id = f.fdc_id
@@ -17,15 +17,15 @@ WITH nutrient_report AS (
             'Protein','Total lipid (fat)','Carbohydrate, by difference',
             'Calcium, Ca','Sodium, Na','Niacin','Biotin','Choline, total',
             'Vitamin D (D2 + D3)','Vitamin B-12','Iodine','Tryptophan'
-            -- NOTA: 'Energy' RIMOSSO da qui!
+            -- NOTA: 'Energy' RIMOSSO DA QUI!
         )
         
         UNION ALL
         
-        -- Parte manuale (inclusa energia)
+        -- PARTE MANUALE: INCLUDI L'ENERGIA
         SELECT
             mn.nutrient_name AS nutrient,
-            mn.unit_name AS unit,
+            mn.unit_name,
             mn.amount_per_100g * md.grams_per_day / 100.0 AS total_daily
         FROM my_diet md
         JOIN my_diet_nutrients mn ON md.fdc_id = mn.fdc_id
@@ -35,41 +35,40 @@ WITH nutrient_report AS (
             'Vitamin D (D2 + D3)','Vitamin B-12','Iodine','Tryptophan'
         )
     )
-    GROUP BY nutrient, unit
+    GROUP BY nutrient, unit_name
 ),
--- ... resto della query (DRI) identico
+
 dri_comparison AS (
     SELECT 
         nr.nutrient,
         nr.unit,
         nr.total_daily,
-        dv.rda,
-        dv.ai,
-        dv.ul,
-        dv.optimal_target,
+        -- CORRETTO: percentuale vs RDA/AI
         CASE
-            WHEN dv.rda IS NOT NULL THEN ROUND(nr.total_daily / dv.rda * 100, 1)
-            WHEN dv.ai IS NOT NULL THEN ROUND(nr.total_daily / dv.ai * 100, 1)
+            WHEN dv.rda IS NOT NULL THEN ROUND(nr.total_daily / NULLIF(dv.rda, 0) * 100, 1)
+            WHEN dv.ai IS NOT NULL THEN ROUND(nr.total_daily / NULLIF(dv.ai, 0) * 100, 1)
             ELSE NULL
         END AS percent_dri,
+        -- CORRETTO: percentuale vs Obiettivo Ottimale
         CASE
-            WHEN dv.optimal_target IS NOT NULL THEN ROUND(nr.total_daily / dv.optimal_target * 100, 1)
+            WHEN dv.optimal_target IS NOT NULL THEN ROUND(nr.total_daily / NULLIF(dv.optimal_target, 0) * 100, 1)
             ELSE NULL
-        END AS percent_optimal
+        END AS percent_optimal,
+        -- CORRETTO: mostra SOLO l'obiettivo ottimale (non l'UL!)
+        dv.optimal_target
     FROM nutrient_report nr
     LEFT JOIN dri_values dv ON nr.nutrient = dv.nutrient_name
-    WHERE nr.nutrient != 'Energy'  -- Escludi energia dai DRI (non ha RDA)
+    WHERE nr.nutrient != 'Energy'  -- Escludi energia dai DRI
     
-    UNION ALL   
-    -- Aggiungi energia come riga separata SENZA DRI
+    UNION ALL
+    
+    -- Energia: nessun DRI
     SELECT 
         nutrient,
         unit,
         total_daily,
-        NULL, NULL, NULL, NULL,
-        NULL,
-        NULL
+        NULL, NULL, NULL
     FROM nutrient_report
     WHERE nutrient = 'Energy'
 )
-SELECT * FROM dri_comparison ORDER BY nutrient
+SELECT * FROM dri_comparison ORDER BY nutrient;
