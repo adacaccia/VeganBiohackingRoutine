@@ -13,10 +13,10 @@ INSERT INTO my_diet VALUES('2346394',18.0);
 INSERT INTO my_diet VALUES('2346396',180.0);
 INSERT INTO my_diet VALUES('calcium_supplement',1.0);
 INSERT INTO my_diet VALUES('b12_supplement',1.0);
-INSERT INTO my_diet VALUES('d3_supplement',1.0);
 INSERT INTO my_diet VALUES('iodine_supplement',1.0);
 INSERT INTO my_diet VALUES('tap_water',2170.0);
 INSERT INTO my_diet VALUES('my_green_tea',500.0);
+INSERT INTO my_diet VALUES('d3k2_combo',1.0);
 COMMIT;
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
@@ -44,7 +44,7 @@ INSERT INTO my_nutrient_targets VALUES('vitamin_c',1163,'Vitamin C, total ascorb
 INSERT INTO my_nutrient_targets VALUES('vitamin_d',1175,'Vitamin D (D2 + D3)','UG',15.0,50.0,'Greger: 2000 IU (50 µg) daily for most adults','supplement_required','You use 50 µg; minimal sun exposure assumed','vitamins',10);
 INSERT INTO my_nutrient_targets VALUES('vitamin_e',1109,'Vitamin E (alpha-tocopherol)','MG',15.0,15.0,'NIH RDA; no strong evidence for higher doses','high','Sunflower seeds, almonds, spinach','vitamins',10);
 INSERT INTO my_nutrient_targets VALUES('vitamin_k1',1177,'Vitamin K (phylloquinone)','UG',120.0,120.0,'NIH AI','high','Kale, spinach, broccoli (you eat 500g spinach)','vitamins',10);
-INSERT INTO my_nutrient_targets VALUES('vitamin_k2_mk7',NULL,'Vitamin K2 (Menaquinone-7)','UG',NULL,45.0,'Schurgers et al. 2007; supports arterial health','low','Only natto is rich source; consider supplement if not eaten','vitamins',10);
+INSERT INTO my_nutrient_targets VALUES('vitamin_k2_mk7',NULL,'Vitamin K2 (Menaquinone-7)','UG',NULL,100.0,'Schurgers et al. 2007; supports arterial health','low','100 µg MK-7 ensures full activation of MGP (arterial health) and osteocalcina (bone health). Taken with D3 for synergy.','vitamins',10);
 INSERT INTO my_nutrient_targets VALUES('calcium',1087,'Calcium, Ca','MG',1000.0,1200.0,'Greger: 600–1200 mg from food + supplement if needed','medium','You get 123.6%; sources: fortified plant milk, kale, tahini','minerals',20);
 INSERT INTO my_nutrient_targets VALUES('chromium',1090,'Chromium, Cr','UG',30.0,35.0,'NIH AI','high','Broccoli, whole grains, nuts','minerals',20);
 INSERT INTO my_nutrient_targets VALUES('copper',1091,'Copper, Cu','MG',0.9000000000000000222,0.9000000000000000222,'NIH RDA','high','Cashews, sesame seeds, lentils','minerals',20);
@@ -131,4 +131,6 @@ INSERT INTO my_diet_nutrients VALUES('my_green_tea','Vitamin C, total ascorbic a
 INSERT INTO my_diet_nutrients VALUES('my_green_tea','Potassium, K','MG',1.379999999999999894);
 INSERT INTO my_diet_nutrients VALUES('my_green_tea','Epigallocatechin gallate (EGCG)','MG',68.0);
 INSERT INTO my_diet_nutrients VALUES('my_green_tea','Caffeine','MG',6.0);
+INSERT INTO my_diet_nutrients VALUES('d3k2_combo','Vitamin D (D2 + D3)','UG',5000.0);
+INSERT INTO my_diet_nutrients VALUES('d3k2_combo','Vitamin K2 (Menaquinone-7)','UG',10000.0);
 COMMIT;
