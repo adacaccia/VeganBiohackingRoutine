@@ -1,2 +1,4 @@
-# Dati grandi, generati, o locali
-01-Dati/FDC.db
+# Database USDA (grande, statico, non cambia)
+01-Dati/FDC.sqlite
+
+# Report temporanei (opzionale)

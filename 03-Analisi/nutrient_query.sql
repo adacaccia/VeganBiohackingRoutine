@@ -1,74 +1,62 @@
-WITH nutrient_report AS (
-    SELECT
-        nutrient,
-        unit_name AS unit,
-        SUM(total_daily) AS total_daily
-    FROM (
-        -- PARTE DB USDA: ESCLUDI COMPLETAMENTE L'ENERGIA
-        SELECT
-            n.name AS nutrient,
-            n.unit_name,
-            fn.amount * md.grams_per_day / 100.0 AS total_daily
-        FROM my_diet md
-        JOIN food f ON md.fdc_id = f.fdc_id
-        JOIN food_nutrient fn ON f.fdc_id = fn.fdc_id
-        JOIN nutrient n ON fn.nutrient_id = n.id
-        WHERE n.name IN (
-            'Protein','Total lipid (fat)','Carbohydrate, by difference',
-            'Calcium, Ca','Sodium, Na','Niacin','Biotin','Choline, total',
-            'Vitamin D (D2 + D3)','Vitamin B-12','Iodine','Tryptophan'
-            -- NOTA: 'Energy' RIMOSSO DA QUI!
-        )
-        
-        UNION ALL
-        
-        -- PARTE MANUALE: INCLUDI L'ENERGIA
-        SELECT
-            mn.nutrient_name AS nutrient,
-            mn.unit_name,
-            mn.amount_per_100g * md.grams_per_day / 100.0 AS total_daily
-        FROM my_diet md
-        JOIN my_diet_nutrients mn ON md.fdc_id = mn.fdc_id
-        WHERE mn.nutrient_name IN (
-            'Protein','Total lipid (fat)','Carbohydrate, by difference','Energy', -- ✅ ENERGY QUI
-            'Calcium, Ca','Sodium, Na','Niacin','Biotin','Choline, total',
-            'Vitamin D (D2 + D3)','Vitamin B-12','Iodine','Tryptophan'
-        )
-    )
-    GROUP BY nutrient, unit_name
-),
-
-dri_comparison AS (
-    SELECT 
-        nr.nutrient,
-        nr.unit,
-        nr.total_daily,
-        -- CORRETTO: percentuale vs RDA/AI
-        CASE
-            WHEN dv.rda IS NOT NULL THEN ROUND(nr.total_daily / NULLIF(dv.rda, 0) * 100, 1)
-            WHEN dv.ai IS NOT NULL THEN ROUND(nr.total_daily / NULLIF(dv.ai, 0) * 100, 1)
-            ELSE NULL
-        END AS percent_dri,
-        -- CORRETTO: percentuale vs Obiettivo Ottimale
-        CASE
-            WHEN dv.optimal_target IS NOT NULL THEN ROUND(nr.total_daily / NULLIF(dv.optimal_target, 0) * 100, 1)
-            ELSE NULL
-        END AS percent_optimal,
-        -- CORRETTO: mostra SOLO l'obiettivo ottimale (non l'UL!)
-        dv.optimal_target
-    FROM nutrient_report nr
-    LEFT JOIN dri_values dv ON nr.nutrient = dv.nutrient_name
-    WHERE nr.nutrient != 'Energy'  -- Escludi energia dai DRI
-    
-    UNION ALL
-    
-    -- Energia: nessun DRI
-    SELECT 
-        nutrient,
-        unit,
-        total_daily,
-        NULL, NULL, NULL
-    FROM nutrient_report
-    WHERE nutrient = 'Energy'
+WITH usda_contrib AS (
+    SELECT n.name AS nutrient_name,
+           n.unit_name,
+           SUM(fn.amount * md.grams_per_day / 100.0) AS amount
+      FROM my_diet md
+           JOIN
+           food f ON CAST (md.fdc_id AS TEXT) = f.fdc_id
+           JOIN
+           food_nutrient fn ON f.fdc_id = fn.fdc_id
+           JOIN
+           nutrient n ON fn.nutrient_id = n.id
+     WHERE n.name = 'Energy' AND
+           n.unit_name = 'KCAL' OR
+           n.name != 'Energy'
+     GROUP BY n.name,
+              n.unit_name
+),-- 2. Contributi manuali
+manual_contrib AS (
+    SELECT mdn.nutrient_name,
+           mdn.unit_name,
+           SUM(mdn.amount_per_100g * md.grams_per_day / 100.0) AS amount
+      FROM my_diet md
+           JOIN
+           my_diet_nutrients mdn ON md.fdc_id = mdn.fdc_id
+     GROUP BY mdn.nutrient_name,
+              mdn.unit_name
+),-- 3. Totale per nutriente
+total_intake AS (
+    SELECT nutrient_name,
+           unit_name,
+           SUM(amount) AS total_amount
+      FROM (
+               SELECT *
+                 FROM usda_contrib
+               UNION ALL
+               SELECT *
+                 FROM manual_contrib
+           )
+     GROUP BY nutrient_name,
+              unit_name
+),-- 4. Report finale
+final_report AS (
+    SELECT mnt.nutrient_name,
+           mnt.unit_name,
+           COALESCE(ti.total_amount, 0) AS intake_amount,
+           mnt.dri_value,
+           mnt.optimal_value
+      FROM my_nutrient_targets mnt
+           LEFT JOIN
+           total_intake ti ON mnt.nutrient_name = ti.nutrient_name AND
+                              mnt.unit_name = ti.unit_name
 )
-SELECT * FROM dri_comparison ORDER BY nutrient;
+SELECT
+    nutrient_name AS Nutriente,
+    unit_name AS Unità,
+    ROUND(intake_amount, 1) AS Totale,
+    dri_value AS DRI,                     -- nuova colonna 3
+    CASE WHEN dri_value > 0 THEN 100 * intake_amount / dri_value END AS pct_dri,
+    optimal_value AS Opt,                 -- nuova colonna 5
+    CASE WHEN optimal_value > 0 THEN 100 * intake_amount / optimal_value END AS pct_opt
+FROM final_report
+ORDER BY nutrient_name;
