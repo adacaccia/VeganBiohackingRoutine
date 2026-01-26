@@ -67,20 +67,30 @@ def main():
         query = f.read()
 
     conn = sqlite3.connect(str(DB_PATH))
+    conn.row_factory = sqlite3.Row  # ← QUESTA È LA CHIAVE
     cursor = conn.cursor()
     cursor.execute(query)
+    columns = [desc[0] for desc in cursor.description]  # ← nomi delle colonne
     raw_rows = cursor.fetchall()
     conn.close()
 
     # Estrai dati (7 colonne attese: nutrient, unit, total, dri, opt, category, display_order)
-    rows = []
+    dict_rows = []
     for r in raw_rows:
-        nutrient = r[0] or ""
-        unit = r[1] or ""
-        total = float(r[2]) if r[2] is not None else 0.0
-        dri = float(r[3]) if r[3] is not None else None
-        opt = float(r[4]) if r[4] is not None else None
-        category = r[5] or "other"
+        row_dict = dict(zip(columns, r))
+        dict_rows.append(row_dict)
+
+    # Ora elabora SOLO i dizionari
+    rows = []  # questa sarà la nuova lista di tuple (output finale)
+    for row in dict_rows:
+        nutrient = row['nutrient_name']
+        total = float(row['total_amount']) if row['total_amount'] is not None else 0.0
+        unit = row['unit_name']
+        dri = row['dri_value']
+        opt = row['optimal_value']
+        category = row['category']
+        display_order = row['display_order']
+        
         rows.append((nutrient, unit, total, dri, opt, category))
 
     # Separa Energy e sezioni
