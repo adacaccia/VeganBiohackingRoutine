@@ -9,6 +9,7 @@ import sqlite3
 import csv
 from pathlib import Path
 from collections import defaultdict
+from datetime import datetime
 
 # === CONFIGURAZIONE PER VBR ===
 DB_PATH = Path("01-Dati/FDC.sqlite")
@@ -17,6 +18,23 @@ CSV_OUTPUT = Path("04-Report/Nutrizione/report_latest.csv")
 
 # Assicurati che la cartella di output esista
 CSV_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+
+# === MAIN ===
+def main():
+    # Verifica presenza file
+    if not DB_PATH.exists():
+        raise FileNotFoundError(f"❌ Database non trovato: {DB_PATH}")
+    if not QUERY_FILE.exists():
+        raise FileNotFoundError(f"❌ Query file non trovato: {QUERY_FILE}")
+
+    # Carica i dati dal DB
+    rows = load_nutrition_data(DB_PATH, QUERY_FILE)
+    
+    # Stampa testuale (sempre)
+    print_text_report(rows)
+    
+    # Genera HTML (sempre, o su richiesta)
+    print_html_report(rows)
 
 # === FUNZIONI DI FORMATTAZIONE ===
 def format_row(row):
@@ -54,14 +72,7 @@ def print_section(title, rows):
     for row in rows:
         print(format_row(row))
 
-# === MAIN ===
-def main():
-    # Verifica presenza file
-    if not DB_PATH.exists():
-        raise FileNotFoundError(f"❌ Database non trovato: {DB_PATH}")
-    if not QUERY_FILE.exists():
-        raise FileNotFoundError(f"❌ Query file non trovato: {QUERY_FILE}")
-
+def load_nutrition_data(DB_PATH, QUERY_FILE):
     # Leggi ed esegui la query
     with open(QUERY_FILE, "r", encoding="utf-8") as f:
         query = f.read()
@@ -90,9 +101,10 @@ def main():
         opt = row['optimal_value']
         category = row['category']
         display_order = row['display_order']
-        
         rows.append((nutrient, unit, total, dri, opt, category))
+    return rows
 
+def print_text_report(rows):
     # Separa Energy e sezioni
     energy_row = None
     water_row = None
@@ -150,6 +162,147 @@ def main():
                 writer.writerow([nutrient, unit, total, dri, pct_dri, opt, pct_opt])
 
     print(f"\n✅ Report salvato in: {CSV_OUTPUT.relative_to(Path('.'))}")
+
+def print_html_report(rows, output_file="my_diet_report.html"):
+    """Genera un report HTML dai dati già caricati."""
+    from datetime import datetime
+
+    # Raggruppa per categoria
+    categories = {}
+    for nutrient, unit, total, dri, opt, category in rows:
+        cat = category or "Altro"
+        if cat not in categories:
+            categories[cat] = []
+        categories[cat].append((nutrient, unit, total, dri, opt))
+
+    date_str = datetime.now().strftime("%d %B %Y")
+    
+    print("\n🔍 DEBUG CATEGORIE:")
+    for cat, items in categories.items():
+        print(f"  {cat}: {len(items)} nutrienti")
+        for item in items[:2]:  # primi 2
+            print(f"    → {item[0]}")
+
+
+    html = f"""<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Diet Report — {date_str}</title>
+  <style>
+    body {{
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #333;
+    }}
+    h1 {{ color: #2e7d32; }}
+    table {{
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+    }}
+    th, td {{
+      padding: 8px 12px;
+      text-align: right;
+      border-bottom: 1px solid #eee;
+    }}
+    th:first-child, td:first-child {{
+      text-align: left;
+    }}
+    tr.low {{ background-color: #fff8e1; }}       /* <80% DRI */
+    tr.critical {{ background-color: #ffebee; }}   /* <50% DRI */
+    tr.high {{ background-color: #e8f5e9; }}       /* >150% Opt */
+    th {{
+      background-color: #f5f5f5;
+      font-weight: bold;
+    }}
+    h2 {{
+      margin-top: 32px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #4caf50;
+      color: #2e7d32;
+    }}
+  </style>
+</head>
+<body>
+  <h1>📊 My Diet Report</h1>
+  <p><em>Generato il {date_str}</em></p>
+"""
+
+    category_order = [
+        "energy",
+        "hydration",
+        "vitamins",
+        "minerals",
+        "amino_acids",
+        "fats"
+    ]
+
+    CATEGORY_LABELS = {
+        "energy": "Energia & Idrobalance",
+        "hydration": "Energia & Idrobalance",
+        "vitamins": "VITAMINE & FITONUTRIENTI",
+        "minerals": "SALI MINERALI & OLIGOELEMENTI",
+        "amino_acids": "AMMINOACIDI ESSENZIALI",
+        "fats": "GRASSI ESSENZIALI",
+    }
+
+    for cat_key in category_order:
+        if cat_key == "Altro":
+            continue
+        if cat_key in categories:
+            title = CATEGORY_LABELS.get(cat_key, cat_key)
+            html += f'  <section>\n    <h2>{title}</h2>\n    <table>\n      <thead>\n        <tr>\n          <th>Nutriente</th><th>Unità</th><th>Totale</th><th>DRI</th><th>%DRI</th><th>Opt</th><th>%Opt</th>\n        </tr>\n      </thead>\n      <tbody>\n'
+            
+            for nutrient, unit, total, dri, opt in categories[cat]:
+                # --- Calcolo percentuali ---
+                pct_dri = ""
+                if dri is not None and dri > 0:
+                    pct_dri = f"{(total / dri * 100):.1f}%"
+                
+                pct_opt = ""
+                if opt is not None and opt > 0:
+                    pct_opt = f"{(total / opt * 100):.1f}%"
+
+                # --- Classe per evidenziazione ---
+                row_class = ""
+                if dri is not None and dri > 0:
+                    ratio = total / dri
+                    if ratio < 0.5:
+                        row_class = "critical"
+                    elif ratio < 0.8:
+                        row_class = "low"
+                if opt is not None and total > opt * 1.5:
+                    row_class = "high"
+
+                class_attr = f' class="{row_class}"' if row_class else ''
+
+                # --- Formattazione sicura (gestisce None) ---
+                total_fmt = f"{total:.1f}"
+                dri_fmt = f"{dri:.1f}" if dri is not None else ""
+                opt_fmt = f"{opt:.1f}" if opt is not None else ""
+
+                html += f'        <tr{class_attr}>\n'
+                html += f'          <td>{nutrient}</td>\n'
+                html += f'          <td>{unit}</td>\n'
+                html += f'          <td>{total_fmt}</td>\n'
+                html += f'          <td>{dri_fmt}</td>\n'
+                html += f'          <td>{pct_dri}</td>\n'
+                html += f'          <td>{opt_fmt}</td>\n'
+                html += f'          <td>{pct_opt}</td>\n'
+                html += f'        </tr>\n'
+
+            html += '      </tbody>\n    </table>\n  </section>\n'
+
+    html += "</body>\n</html>"
+
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"📄 HTML report salvato in: {output_file}")
 
 if __name__ == "__main__":
     main()
