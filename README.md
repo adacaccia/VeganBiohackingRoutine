@@ -110,6 +110,14 @@ Insieme rappresentano due facce dello stesso approccio:
 
 ---
 
+## 🔬 Sistema Nutrizionale Open-Source
+
+- **Database**: `01-Dati/FDC.sqlite` (USDA FoodData Central, full release)
+- **Dati personalizzati**: `01-Dati/my_tables.sql` (versionato su GitHub)
+- **Query**: `02-Schede/Nutrizione/nutrient_report.sql`
+- **Motore di report**: `report.py` (genera output testuale, CSV, futuro HTML)
+- **Output**: `04-Report/Nutrizione/`
+
 ---
 
 ## 🔁 Transizione verso *Functional Gourmet 2026*

@@ -69,6 +69,16 @@ fi
 
 echo ""
 
+# Verifica presenza DB
+if [ ! -f "01-Dati/FDC.sqlite" ]; then
+    echo "⚠️  FDC.sqlite mancante in 01-Dati/"
+fi
+
+# Verifica presenza my_tables.sql
+if [ ! -f "01-Dati/my_tables.sql" ]; then
+    echo "⚠️  my_tables.sql mancante — eseguire export_my_data.sh"
+fi
+
 # --- Report finale ---
 echo -e "📋 ${YELLOW}Verifica completata.${RESET}"
 echo -e "Se vedi solo simboli ✅ e ⚙️, la struttura è coerente.\n"
