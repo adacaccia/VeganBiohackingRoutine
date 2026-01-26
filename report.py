@@ -85,12 +85,15 @@ def main():
 
     # Separa Energy e sezioni
     energy_row = None
+    water_row = None
     sections = defaultdict(list)
 
     for row in rows:
         nutrient, unit, total, dri, opt, category = row
         if category == "energy":
             energy_row = (nutrient, unit, total, dri, opt)
+        elif category == "hydration":
+            water_row = (nutrient, unit, total, dri, opt)
         else:
             sections[category].append((nutrient, unit, total, dri, opt))
 
@@ -102,6 +105,9 @@ def main():
 
     if energy_row:
         print(format_row(energy_row))
+    if water_row:
+        print(format_row(water_row))
+    if energy_row or water_row:
         print("-" * 100)
 
     # Ordine delle sezioni
