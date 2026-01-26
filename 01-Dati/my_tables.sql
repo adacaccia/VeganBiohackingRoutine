@@ -45,14 +45,14 @@ INSERT INTO my_nutrient_targets VALUES('ala',NULL,'ALA','G',1.600000000000000088
 INSERT INTO my_nutrient_targets VALUES('la',NULL,'LA','G',17.0,17.0,NULL,'high',NULL);
 INSERT INTO my_nutrient_targets VALUES('lycopene',NULL,'Lycopene','UG',NULL,10000.0,NULL,'high',NULL);
 INSERT INTO my_nutrient_targets VALUES('lutein_zeaxanthin',NULL,'Lutein + zeaxanthin','UG',NULL,10000.0,NULL,'high',NULL);
-INSERT INTO my_nutrient_targets VALUES('tryptophan',NULL,'Tryptophan','MG',480.0,480.0,NULL,'high',NULL);
-INSERT INTO my_nutrient_targets VALUES('threonine',NULL,'Threonine','MG',2400.0,2400.0,NULL,'high',NULL);
-INSERT INTO my_nutrient_targets VALUES('isoleucine',NULL,'Isoleucine','MG',3120.0,3120.0,NULL,'high',NULL);
-INSERT INTO my_nutrient_targets VALUES('leucine',NULL,'Leucine','MG',4680.0,4680.0,NULL,'high',NULL);
-INSERT INTO my_nutrient_targets VALUES('lysine',NULL,'Lysine','MG',3600.0,3600.0,NULL,'high',NULL);
-INSERT INTO my_nutrient_targets VALUES('met_cys',NULL,'Cysteine and methionine(sulfer containig AA)','MG',1800.0,1800.0,NULL,'high',NULL);
-INSERT INTO my_nutrient_targets VALUES('phe_tyr',NULL,'Phenylalanine and tyrosine (aromatic  AA)','MG',3000.0,3000.0,NULL,'high',NULL);
-INSERT INTO my_nutrient_targets VALUES('valine',NULL,'Valine','MG',3120.0,3120.0,NULL,'high',NULL);
+INSERT INTO my_nutrient_targets VALUES('tryptophan',NULL,'Tryptophan','G',0.4799999999999999823,0.4799999999999999823,NULL,'high',NULL);
+INSERT INTO my_nutrient_targets VALUES('threonine',NULL,'Threonine','G',2.399999999999999912,2.399999999999999912,NULL,'high',NULL);
+INSERT INTO my_nutrient_targets VALUES('isoleucine',NULL,'Isoleucine','G',3.120000000000000106,3.120000000000000106,NULL,'high',NULL);
+INSERT INTO my_nutrient_targets VALUES('leucine',NULL,'Leucine','G',4.679999999999999716,4.679999999999999716,NULL,'high',NULL);
+INSERT INTO my_nutrient_targets VALUES('lysine',NULL,'Lysine','G',3.600000000000000088,3.600000000000000088,NULL,'high',NULL);
+INSERT INTO my_nutrient_targets VALUES('met_cys',NULL,'Cysteine and methionine(sulfer containig AA)','G',1.800000000000000044,1.800000000000000044,NULL,'high',NULL);
+INSERT INTO my_nutrient_targets VALUES('phe_tyr',NULL,'Phenylalanine and tyrosine (aromatic  AA)','G',3.0,3.0,NULL,'high',NULL);
+INSERT INTO my_nutrient_targets VALUES('valine',NULL,'Valine','G',3.120000000000000106,3.120000000000000106,NULL,'high',NULL);
 CREATE TABLE my_diet_nutrients (
     fdc_id INTEGER NOT NULL,          -- riferimento a my_diet.fdc_id
     nutrient_name TEXT NOT NULL,      -- es. 'Choline, total'
@@ -79,7 +79,6 @@ INSERT INTO my_diet_nutrients VALUES(10000004,'Vitamin D (D2 + D3)','UG',10000.0
 INSERT INTO my_diet_nutrients VALUES(10000004,'Energy','KCAL',0.0);
 INSERT INTO my_diet_nutrients VALUES(10000005,'Iodine','UG',45000.0);
 INSERT INTO my_diet_nutrients VALUES(10000005,'Energy','KCAL',0.0);
-INSERT INTO my_diet_nutrients VALUES(173757,'Tryptophan','G',0.2000000000000000111);
 INSERT INTO my_diet_nutrients VALUES(10000006,'Calcium, Ca','MG',3.0);
 INSERT INTO my_diet_nutrients VALUES(10000006,'Magnesium, Mg','MG',1.0);
 INSERT INTO my_diet_nutrients VALUES(10000006,'Sodium, Na','MG',2.0);
@@ -93,8 +92,16 @@ INSERT INTO my_diet_nutrients VALUES(2346394,'Chromium, Cr','UG',10.0);
 INSERT INTO my_diet_nutrients VALUES(169074,'Chromium, Cr','UG',0.5);
 INSERT INTO my_diet_nutrients VALUES(168462,'Chromium, Cr','UG',0.4000000000000000222);
 INSERT INTO my_diet_nutrients VALUES(173757,'Chromium, Cr','UG',1.800000000000000044);
-INSERT INTO my_diet_nutrients VALUES(174276,'Cysteine and methionine(sulfer containig AA)','MG',2176.0);
-INSERT INTO my_diet_nutrients VALUES(174276,'Phenylalanine and tyrosine (aromatic  AA)','MG',7815.0);
+INSERT INTO my_diet_nutrients VALUES(168462,'Cysteine and methionine(sulfer containig AA)','G',0.0879999999999999949);
+INSERT INTO my_diet_nutrients VALUES(169074,'Cysteine and methionine(sulfer containig AA)','G',0.02099999999999999783);
+INSERT INTO my_diet_nutrients VALUES(173757,'Cysteine and methionine(sulfer containig AA)','G',0.2349999999999999867);
+INSERT INTO my_diet_nutrients VALUES(174276,'Cysteine and methionine(sulfer containig AA)','G',2.176000000000000157);
+INSERT INTO my_diet_nutrients VALUES(2346394,'Cysteine and methionine(sulfer containig AA)','G',0.1900000000000000022);
+INSERT INTO my_diet_nutrients VALUES(168462,'Phenylalanine and tyrosine (aromatic  AA)','G',0.2369999999999999885);
+INSERT INTO my_diet_nutrients VALUES(169074,'Phenylalanine and tyrosine (aromatic  AA)','G',0.05399999999999999245);
+INSERT INTO my_diet_nutrients VALUES(173757,'Phenylalanine and tyrosine (aromatic  AA)','G',0.6949999999999999512);
+INSERT INTO my_diet_nutrients VALUES(174276,'Phenylalanine and tyrosine (aromatic  AA)','G',7.814999999999999503);
+INSERT INTO my_diet_nutrients VALUES(2346394,'Phenylalanine and tyrosine (aromatic  AA)','G',1.036699999999999955);
 CREATE TABLE IF NOT EXISTS "my_diet" (
     fdc_id TEXT NOT NULL,
     grams_per_day REAL NOT NULL
