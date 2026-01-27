@@ -9,15 +9,15 @@ INSERT INTO my_diet VALUES('169074',500.0,'tomato_puree_low_salt');
 INSERT INTO my_diet VALUES('173757',400.0,'boiled_chickpeas_vbr');
 INSERT INTO my_diet VALUES('174276',32.0,'soy_isolate_vbr');
 INSERT INTO my_diet VALUES('174262',50.0,'roasted_peanuts_vbr');
-INSERT INTO my_diet VALUES('2346394',18.0,'raw_walnuts_vbr');
+INSERT INTO my_diet VALUES('1000745',18.0,'raw_walnuts_vbr');
 INSERT INTO my_diet VALUES('169705',180.0,'rolled_oats_vbr');
-INSERT INTO my_diet VALUES('custom',1.0,'calcium_supplement');
-INSERT INTO my_diet VALUES('custom',1.0,'b12_supplement');
-INSERT INTO my_diet VALUES('custom',1.0,'iodine_supplement');
-INSERT INTO my_diet VALUES('custom',2170.0,'tap_water');
-INSERT INTO my_diet VALUES('custom',500.0,'my_green_tea');
-INSERT INTO my_diet VALUES('custom',1.0,'d3k2_combo');
-INSERT INTO my_diet VALUES('1056731',5.0,'brazil_nut_1pc');
+INSERT INTO my_diet VALUES('calcium_supplement',1.0,'calcium_supplement');
+INSERT INTO my_diet VALUES('b12_supplement',1.0,'b12_supplement');
+INSERT INTO my_diet VALUES('iodine_supplement',1.0,'iodine_supplement');
+INSERT INTO my_diet VALUES('tap_water',2170.0,'tap_water');
+INSERT INTO my_diet VALUES('my_green_tea',500.0,'my_green_tea');
+INSERT INTO my_diet VALUES('d3k2_combo',1.0,'d3k2_combo');
+INSERT INTO my_diet VALUES('1023303',5.0,'brazil_nut_1pc');
 COMMIT;
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
@@ -80,10 +80,11 @@ COMMIT;
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
 CREATE TABLE IF NOT EXISTS "my_diet_nutrients" (
-    my_fdc_id TEXT NOT NULL,          -- ← TEXT invece di INTEGER
+    my_fdc_id TEXT NOT NULL,
     nutrient_name TEXT NOT NULL,
     unit_name TEXT NOT NULL,
-    amount_per_100g REAL NOT NULL
+    amount_per_100g REAL NOT NULL,
+    PRIMARY KEY (my_fdc_id, nutrient_name)  -- ← Blocca duplicati KCAL/KJ, MG/G
 );
 INSERT INTO my_diet_nutrients VALUES('raw_spinach_vbr','Vitamin A, RAE','UG',469.0);
 INSERT INTO my_diet_nutrients VALUES('raw_spinach_vbr','Tocopherol, gamma','MG',0.1799999999999999934);
@@ -93,7 +94,6 @@ INSERT INTO my_diet_nutrients VALUES('raw_spinach_vbr','Glucose','G',0.110000000
 INSERT INTO my_diet_nutrients VALUES('raw_spinach_vbr','Galactose','G',0.1000000000000000055);
 INSERT INTO my_diet_nutrients VALUES('raw_spinach_vbr','Copper, Cu','MG',0.1300000000000000044);
 INSERT INTO my_diet_nutrients VALUES('raw_spinach_vbr','Zinc, Zn','MG',0.5300000000000000266);
-INSERT INTO my_diet_nutrients VALUES('raw_spinach_vbr','Energy','kJ',97.0);
 INSERT INTO my_diet_nutrients VALUES('raw_spinach_vbr','Total lipid (fat)','G',0.3900000000000000133);
 INSERT INTO my_diet_nutrients VALUES('raw_spinach_vbr','Riboflavin','MG',0.1890000000000000013);
 INSERT INTO my_diet_nutrients VALUES('raw_spinach_vbr','Cystine','G',0.03500000000000000334);
@@ -203,7 +203,6 @@ INSERT INTO my_diet_nutrients VALUES('tomato_puree_low_salt','Folic acid','UG',0
 INSERT INTO my_diet_nutrients VALUES('tomato_puree_low_salt','Vitamin K (Dihydrophylloquinone)','UG',0.0);
 INSERT INTO my_diet_nutrients VALUES('tomato_puree_low_salt','SFA 18:0','G',0.01099999999999999937);
 INSERT INTO my_diet_nutrients VALUES('tomato_puree_low_salt','PUFA 18:3','G',0.006000000000000000124);
-INSERT INTO my_diet_nutrients VALUES('tomato_puree_low_salt','Energy','kJ',102.0);
 INSERT INTO my_diet_nutrients VALUES('tomato_puree_low_salt','Cryptoxanthin, beta','UG',3.0);
 INSERT INTO my_diet_nutrients VALUES('tomato_puree_low_salt','Magnesium, Mg','MG',15.0);
 INSERT INTO my_diet_nutrients VALUES('tomato_puree_low_salt','Water','G',91.28000000000000113);
@@ -293,7 +292,6 @@ INSERT INTO my_diet_nutrients VALUES('tomato_puree_low_salt','Galactose','G',0.0
 INSERT INTO my_diet_nutrients VALUES('tomato_puree_low_salt','MUFA 18:1','G',0.04299999999999999655);
 INSERT INTO my_diet_nutrients VALUES('tomato_puree_low_salt','Iron, Fe','MG',0.959999999999999965);
 INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','SFA 12:0','G',0.02400000000000000049);
-INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Energy','KCAL',389.0);
 INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Vitamin B-12, added','UG',0.0);
 INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Copper, Cu','MG',0.6260000000000000008);
 INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','SFA 14:0','G',0.01499999999999999945);
@@ -348,7 +346,6 @@ INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','MUFA 16:1','G',0.0129999
 INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Cholesterol','MG',0.0);
 INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Retinol','UG',0.0);
 INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Glycine','G',0.8409999999999999699);
-INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Energy','kJ',1628.0);
 INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Vitamin D (D2 + D3)','UG',0.0);
 INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Zinc, Zn','MG',3.970000000000000195);
 INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Tryptophan','G',0.2340000000000000135);
@@ -418,7 +415,6 @@ INSERT INTO my_diet_nutrients VALUES('boiled_chickpeas_vbr','Vitamin K (phylloqu
 INSERT INTO my_diet_nutrients VALUES('boiled_chickpeas_vbr','SFA 12:0','G',0.0);
 INSERT INTO my_diet_nutrients VALUES('boiled_chickpeas_vbr','SFA 18:0','G',0.03699999999999999817);
 INSERT INTO my_diet_nutrients VALUES('boiled_chickpeas_vbr','Fiber, total dietary','G',7.599999999999999645);
-INSERT INTO my_diet_nutrients VALUES('boiled_chickpeas_vbr','Energy','kJ',686.0);
 INSERT INTO my_diet_nutrients VALUES('boiled_chickpeas_vbr','Fatty acids, total monounsaturated','G',0.5829999999999999627);
 INSERT INTO my_diet_nutrients VALUES('boiled_chickpeas_vbr','Isoleucine','G',0.3800000000000000044);
 INSERT INTO my_diet_nutrients VALUES('boiled_chickpeas_vbr','MUFA 22:1','G',0.0);
@@ -449,7 +445,6 @@ INSERT INTO my_diet_nutrients VALUES('boiled_chickpeas_vbr','Alcohol, ethyl','G'
 INSERT INTO my_diet_nutrients VALUES('boiled_chickpeas_vbr','Vitamin A, RAE','UG',1.0);
 INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','Selenium, Se','UG',9.30000000000000072);
 INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','Riboflavin','MG',0.1970000000000000084);
-INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','Energy','KCAL',587.0);
 INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','Serine','G',1.167000000000000037);
 INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','Glycine','G',1.427000000000000046);
 INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','TFA 16:1 t','G',0.0);
@@ -507,7 +502,6 @@ INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','Carotene, alpha','UG
 INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','Tocopherol, delta','MG',0.6099999999999999867);
 INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','Water','G',1.810000000000000053);
 INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','MUFA 22:1 c','G',0.05399999999999999939);
-INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','Energy','kJ',2455.0);
 INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','Tocotrienol, delta','MG',0.0);
 INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','Fatty acids, total saturated','G',7.722999999999999865);
 INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','MUFA 17:1','G',0.03200000000000000066);
@@ -605,7 +599,6 @@ INSERT INTO my_diet_nutrients VALUES('soy_isolate_vbr','Arginine','G',6.66999999
 INSERT INTO my_diet_nutrients VALUES('soy_isolate_vbr','Manganese, Mn','MG',1.493000000000000104);
 INSERT INTO my_diet_nutrients VALUES('soy_isolate_vbr','Leucine','G',6.783000000000000362);
 INSERT INTO my_diet_nutrients VALUES('soy_isolate_vbr','Sodium, Na','MG',1005.0);
-INSERT INTO my_diet_nutrients VALUES('soy_isolate_vbr','Energy','kJ',1401.0);
 INSERT INTO my_diet_nutrients VALUES('soy_isolate_vbr','Cholesterol','MG',0.0);
 INSERT INTO my_diet_nutrients VALUES('soy_isolate_vbr','Iron, Fe','MG',14.5);
 INSERT INTO my_diet_nutrients VALUES('soy_isolate_vbr','PUFA 18:2','G',1.453000000000000069);
@@ -676,7 +669,6 @@ INSERT INTO my_diet_nutrients VALUES('soy_isolate_vbr','Choline, total','MG',190
 INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Total lipid (fat)','G',64.29000000000000626);
 INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Magnesium, Mg','MG',386.0);
 INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Calcium, Ca','MG',143.0);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Energy','KCAL',643.0);
 INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Cholesterol','MG',0.0);
 INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Fiber, total dietary','G',7.099999999999999645);
 INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Carbohydrate, by difference','G',14.28999999999999915);
@@ -742,11 +734,12 @@ INSERT INTO my_diet_nutrients VALUES('calcium_supplement','Calcium, Ca','MG',268
 INSERT INTO my_diet_nutrients VALUES('my_green_tea','Caffeine','MG',20.0);
 INSERT INTO my_diet_nutrients VALUES('my_green_tea','Vitamin C, total ascorbic acid','MG',12.0);
 INSERT INTO my_diet_nutrients VALUES('my_green_tea','Potassium, K','MG',45.0);
-INSERT INTO my_diet_nutrients VALUES('my_green_tea','Epigallocatechin gallate (EGCG)','MG',45.0);
+INSERT INTO my_diet_nutrients VALUES('my_green_tea','EGCG','MG',45.0);
 INSERT INTO my_diet_nutrients VALUES('boiled_chickpeas_vbr','Biotin','UG',12.62250000000000049);
 INSERT INTO my_diet_nutrients VALUES('b12_supplement','Vitamin B-12','UG',50000.0);
 INSERT INTO my_diet_nutrients VALUES('d3k2_combo','Vitamin D (D2 + D3)','UG',5000.0);
 INSERT INTO my_diet_nutrients VALUES('d3k2_combo','Vitamin K2 (Menaquinone-7)','UG',10000.0);
+INSERT INTO my_diet_nutrients VALUES('my_green_tea','Epigallocatechin gallate (EGCG)','MG',45.0);
 INSERT INTO my_diet_nutrients VALUES('iodine_supplement','Iodine, I','UG',22500.0);
 INSERT INTO my_diet_nutrients VALUES('boiled_chickpeas_vbr','Molybdenum, Mo','UG',8.0);
 INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Molybdenum, Mo','UG',5.5);
@@ -767,4 +760,8 @@ INSERT INTO my_diet_nutrients VALUES('tomato_puree_low_salt','Cysteine and methi
 INSERT INTO my_diet_nutrients VALUES('boiled_chickpeas_vbr','Chromium, Cr','UG',3.5);
 INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Chromium, Cr','UG',4.5);
 INSERT INTO my_diet_nutrients VALUES('raw_spinach_vbr','Chromium, Cr','UG',0.6999999999999999556);
+INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Energy','KCAL',389.0);
+INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','Energy','KCAL',587.0);
+INSERT INTO my_diet_nutrients VALUES('raw_walnuts_vbr','Energy','KCAL',679.0);
+INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Energy','KCAL',643.0);
 COMMIT;
