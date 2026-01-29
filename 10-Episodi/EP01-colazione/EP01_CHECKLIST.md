@@ -54,3 +54,9 @@ It's simple.
 But every detail -- from sequence to temperature -- has a reason.
 
 And in this project, reason is the recipe.
+---
+## LUCE PER RIPRESE (6:30, buio)
+- [ ] 2 lampade LED bianco caldo (2700K)
+- [ ] Diffusione con carta da forno
+- [ ] Niente luce fredda in ambiente
+- [ ] Bilanciamento del bianco: 2800K (se possibile)
