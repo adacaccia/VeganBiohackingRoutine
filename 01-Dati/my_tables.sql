@@ -17,7 +17,7 @@ INSERT INTO my_diet VALUES('iodine_supplement',1.0,'iodine_supplement','Integraz
 INSERT INTO my_diet VALUES('tap_water',300.0,'tap_water','Pranzo');
 INSERT INTO my_diet VALUES('my_green_tea',250.0,'my_green_tea','Sanck');
 INSERT INTO my_diet VALUES('d3k2_combo',1.0,'d3k2_combo','Integrazione');
-INSERT INTO my_diet VALUES('1023303',3.0,'brazil_nut_1pc','Integrazione');
+INSERT INTO my_diet VALUES('1023303',0.0,'brazil_nut_1pc','Integrazione');
 INSERT INTO my_diet VALUES('my_green_tea',250.0,'my_green_tea','Mattina');
 INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Colazione');
 INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Mattina');
@@ -770,4 +770,5 @@ INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','Energy','KCAL',587.0
 INSERT INTO my_diet_nutrients VALUES('raw_walnuts_vbr','Energy','KCAL',679.0);
 INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Energy','KCAL',643.0);
 INSERT INTO my_diet_nutrients VALUES('my_green_tea','Water','G',99.7000000000000028);
+INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Selenium, Se','UG',25.60000000000000142);
 COMMIT;
