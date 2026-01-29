@@ -17,7 +17,6 @@ INSERT INTO my_diet VALUES('iodine_supplement',1.0,'iodine_supplement','Integraz
 INSERT INTO my_diet VALUES('tap_water',300.0,'tap_water','Pranzo');
 INSERT INTO my_diet VALUES('my_green_tea',250.0,'my_green_tea','Sanck');
 INSERT INTO my_diet VALUES('d3k2_combo',1.0,'d3k2_combo','Integrazione');
-INSERT INTO my_diet VALUES('1023303',0.0,'brazil_nut_1pc','Integrazione');
 INSERT INTO my_diet VALUES('my_green_tea',250.0,'my_green_tea','Mattina');
 INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Colazione');
 INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Mattina');
@@ -671,21 +670,6 @@ INSERT INTO my_diet_nutrients VALUES('soy_isolate_vbr','MUFA 18:1','G',0.6370000
 INSERT INTO my_diet_nutrients VALUES('soy_isolate_vbr','Copper, Cu','MG',1.598999999999999977);
 INSERT INTO my_diet_nutrients VALUES('soy_isolate_vbr','Carbohydrate, by difference','G',0.0);
 INSERT INTO my_diet_nutrients VALUES('soy_isolate_vbr','Choline, total','MG',190.9000000000000056);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Total lipid (fat)','G',64.29000000000000626);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Magnesium, Mg','MG',386.0);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Calcium, Ca','MG',143.0);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Cholesterol','MG',0.0);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Fiber, total dietary','G',7.099999999999999645);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Carbohydrate, by difference','G',14.28999999999999915);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Total Sugars','G',3.569999999999999841);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Fatty acids, total saturated','G',14.28999999999999915);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Sodium, Na','MG',0.0);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Iron, Fe','MG',3.859999999999999876);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Fatty acids, total trans','G',0.0);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Vitamin A, IU','IU',0.0);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Vitamin C, total ascorbic acid','MG',0.0);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Selenium, Se','UG',1900.0);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Protein','G',14.28999999999999915);
 INSERT INTO my_diet_nutrients VALUES('raw_walnuts_vbr','Vitamin K (phylloquinone)','UG',1.699999999999999956);
 INSERT INTO my_diet_nutrients VALUES('raw_walnuts_vbr','Vitamin K (Dihydrophylloquinone)','UG',0.0);
 INSERT INTO my_diet_nutrients VALUES('raw_walnuts_vbr','Vitamin K (Menaquinone-4)','UG',0.0);
@@ -768,7 +752,6 @@ INSERT INTO my_diet_nutrients VALUES('raw_spinach_vbr','Chromium, Cr','UG',0.699
 INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Energy','KCAL',389.0);
 INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','Energy','KCAL',587.0);
 INSERT INTO my_diet_nutrients VALUES('raw_walnuts_vbr','Energy','KCAL',679.0);
-INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Energy','KCAL',643.0);
 INSERT INTO my_diet_nutrients VALUES('my_green_tea','Water','G',99.7000000000000028);
 INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Selenium, Se','UG',25.60000000000000142);
 INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','Chromium, Cr','UG',12.0);
