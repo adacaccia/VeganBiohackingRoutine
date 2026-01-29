@@ -120,3 +120,9 @@
 
 © 2025 Vegan Biohacking Routine — EP01 La colazione funzionale  
 Licenza CC-BY-NC 4.0
+---
+## Iterazione – Gennaio 2026
+
+- **Prima**: 370 ml acqua → colazione troppo densa con proteine aggiunte
+- **Dopo**: 500 ml acqua → consistenza ideale, digestione ottimale
+- **Regola fissa da oggi**: 500 ml totali per 180g avena + 32g proteine

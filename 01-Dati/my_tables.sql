@@ -771,4 +771,7 @@ INSERT INTO my_diet_nutrients VALUES('raw_walnuts_vbr','Energy','KCAL',679.0);
 INSERT INTO my_diet_nutrients VALUES('brazil_nut_1pc','Energy','KCAL',643.0);
 INSERT INTO my_diet_nutrients VALUES('my_green_tea','Water','G',99.7000000000000028);
 INSERT INTO my_diet_nutrients VALUES('rolled_oats_vbr','Selenium, Se','UG',25.60000000000000142);
+INSERT INTO my_diet_nutrients VALUES('roasted_peanuts_vbr','Chromium, Cr','UG',12.0);
+INSERT INTO my_diet_nutrients VALUES('raw_walnuts_vbr','Chromium, Cr','UG',7.0);
+INSERT INTO my_diet_nutrients VALUES('tomato_puree_low_salt','Chromium, Cr','UG',1.5);
 COMMIT;
