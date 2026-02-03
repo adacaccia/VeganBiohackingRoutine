@@ -20,6 +20,7 @@ INSERT INTO my_diet VALUES('my_green_tea',500.0,'my_green_tea','Colazione');
 INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Mattina');
 INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Mattina');
 INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Mattina');
+INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Mattina');
 COMMIT;
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
