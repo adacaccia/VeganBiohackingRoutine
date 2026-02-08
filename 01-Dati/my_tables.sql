@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS "my_diet" (
     usda_fdc_id TEXT NOT NULL,
     grams_per_day REAL NOT NULL
 , my_fdc_id TEXT, meal TEXT DEFAULT 'Snack');
-INSERT INTO my_diet VALUES('168462',500.0,'raw_spinach_vbr','Mattina');
+INSERT INTO my_diet VALUES('168462',400.0,'raw_spinach_vbr','Mattina');
 INSERT INTO my_diet VALUES('169074',500.0,'tomato_puree_low_salt','Mattina');
 INSERT INTO my_diet VALUES('173757',400.0,'boiled_chickpeas_vbr','Pranzo');
 INSERT INTO my_diet VALUES('174276',32.0,'soy_isolate_vbr','Colazione');
@@ -20,7 +20,7 @@ INSERT INTO my_diet VALUES('my_green_tea',500.0,'my_green_tea','Colazione');
 INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Mattina');
 INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Mattina');
 INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Mattina');
-INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Mattina');
+INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Colazione');
 COMMIT;
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
