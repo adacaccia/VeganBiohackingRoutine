@@ -21,6 +21,7 @@ INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Mattina');
 INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Mattina');
 INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Mattina');
 INSERT INTO my_diet VALUES('tap_water',500.0,'tap_water','Colazione');
+INSERT INTO my_diet VALUES('creatine_supplement',3.0,'creatine_supplement','Colazione');
 COMMIT;
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
