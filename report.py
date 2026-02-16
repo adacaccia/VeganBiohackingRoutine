@@ -12,7 +12,7 @@ from datetime import datetime
 # === CONFIGURAZIONE ===
 DB_PATH = Path("01-Dati/FDC.sqlite")
 QUERY_FILE = Path("02-Schede/Nutrizione/nutrient_report.sql")
-OUTPUT_FILE = "my_diet_report.html"
+OUTPUT_FILE = Path("docs/index.html") # GitHub Pages ama i file chiamati index.html
 
 def calculate_analysis(rows):
     """Calcola Macro e Ratio dai dati estratti usando i nomi delle colonne."""
@@ -99,7 +99,6 @@ def print_html_report(rows):
         .carb::before {{ background-color: #ffeb3b; }}
         .fat::before {{ background-color: #f44336; }}
 
-        table {{ width: 100%; border-collapse: collapse; margin-bottom: 30px; background: white; }}
         th, td {{ padding: 12px; text-align: right; border-bottom: 1px solid #eee; }}
         th:first-child, td:first-child {{ text-align: left; }}
         th {{ background: #f1f8e9; color: #2e7d32; font-size: 0.85em; text-transform: uppercase; }}
@@ -110,7 +109,18 @@ def print_html_report(rows):
         tr.optimal {{ background-color: #e8f5e9 !important; }}  /* Verde: >100% Opt */
         
         .ratio-table {{ max-width: 500px; margin: 0 auto; border: 2px solid #2e7d32; border-radius: 8px; overflow: hidden; }}
+        table {{ 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-bottom: 30px; 
+            background: white; 
+            /* Direttive per il Mobile Responsive */
+            display: block; 
+            overflow-x: auto; 
+            white-space: nowrap; 
+        }}
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <h1>🌱 Vegan Biohacking Report</h1>

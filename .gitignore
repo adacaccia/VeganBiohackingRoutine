@@ -34,3 +34,6 @@ Icon?
 .idea/
 *.swp
 *.swo
+
+# ...TRANNE quello che serve per le GitHub Pages!
+!docs/index.html

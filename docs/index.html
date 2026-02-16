@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>VBR Report — 16 February 2026</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 20px; color: #333; }
+        h1, h2 { color: #2e7d32; text-align: center; border-bottom: 2px solid #4caf50; padding-bottom: 10px; }
+        
+        /* Donut Chart */
+        .pie-chart {
+            position: relative; width: 220px; height: 220px; border-radius: 50%; margin: 20px auto;
+            background: conic-gradient(#4caf50 0% 22.819084479654904%, #ffeb3b 22.819084479654904% 73.86626669343622%, #f44336 73.86626669343622% 100%);
+            display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .pie-chart::after {
+            content: "2214 kcal"; position: absolute; width: 160px; height: 160px;
+            background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 1.2em; color: #444;
+        }
+
+        .legend { display: flex; justify-content: center; gap: 20px; list-style: none; padding: 0; margin-bottom: 40px; }
+        .legend li { display: flex; align-items: center; gap: 8px; font-weight: bold; }
+        .legend li::before { content: ""; width: 14px; height: 14px; border-radius: 3px; }
+        .prot::before { background-color: #4caf50; }
+        .carb::before { background-color: #ffeb3b; }
+        .fat::before { background-color: #f44336; }
+
+        th, td { padding: 12px; text-align: right; border-bottom: 1px solid #eee; }
+        th:first-child, td:first-child { text-align: left; }
+        th { background: #f1f8e9; color: #2e7d32; font-size: 0.85em; text-transform: uppercase; }
+        
+        /* Colori Condizionali */
+        tr.critical { background-color: #ffebee !important; } /* Rosso: <50% DRI */
+        tr.low { background-color: #fff8e1 !important; }      /* Giallo: <80% DRI */
+        tr.optimal { background-color: #e8f5e9 !important; }  /* Verde: >100% Opt */
+        
+        .ratio-table { max-width: 500px; margin: 0 auto; border: 2px solid #2e7d32; border-radius: 8px; overflow: hidden; }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-bottom: 30px; 
+            background: white; 
+            /* Direttive per il Mobile Responsive */
+            display: block; 
+            overflow-x: auto; 
+            white-space: nowrap; 
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>🌱 Vegan Biohacking Report</h1>
+    <p style="text-align: center; color: #666;">Data Analisi: 16 February 2026</p>
+
+    <section>
+        <div class="pie-chart"></div>
+        <ul class="legend">
+            <li class="prot">Proteine: 22.8%</li>
+            <li class="carb">Carbo: 51.0%</li>
+            <li class="fat">Grassi: 26.1%</li>
+        </ul>
+    </section>
+<h2>ENERGY</h2><table><thead><tr><th>Nutriente</th><th>Totale</th><th>Unità</th><th>%DRI</th><th>%Opt</th></tr></thead><tbody><tr class='optimal'><td>Energy</td><td>2091.1</td><td>KCAL</td><td>-</td><td>104.6%</td></tr></tbody></table><h2>HYDRATION</h2><table><thead><tr><th>Nutriente</th><th>Totale</th><th>Unità</th><th>%DRI</th><th>%Opt</th></tr></thead><tbody><tr class='optimal'><td>Water</td><td>3876.9</td><td>G</td><td>104.8%</td><td>104.8%</td></tr></tbody></table><h2>VITAMINS</h2><table><thead><tr><th>Nutriente</th><th>Totale</th><th>Unità</th><th>%DRI</th><th>%Opt</th></tr></thead><tbody><tr class='optimal'><td>Epigallocatechin gallate (EGCG)</td><td>225.0</td><td>MG</td><td>-</td><td>112.5%</td></tr><tr><td>Caffeine</td><td>100.0</td><td>MG</td><td>-</td><td>50.0%</td></tr><tr class='optimal'><td>Biotin</td><td>53.6</td><td>UG</td><td>178.7%</td><td>178.7%</td></tr><tr class='optimal'><td>Choline, total</td><td>945.3</td><td>MG</td><td>171.9%</td><td>135.0%</td></tr><tr class='optimal'><td>Folate, DFE</td><td>1714.6</td><td>UG</td><td>428.7%</td><td>428.7%</td></tr><tr class='optimal'><td>Lutein + zeaxanthin</td><td>48912.0</td><td>UG</td><td>-</td><td>489.1%</td></tr><tr class='optimal'><td>Lycopene</td><td>69475.0</td><td>UG</td><td>-</td><td>694.8%</td></tr><tr class='optimal'><td>Niacin</td><td>19.5</td><td>MG</td><td>122.1%</td><td>122.1%</td></tr><tr class='optimal'><td>Pantothenic acid</td><td>5.9</td><td>MG</td><td>118.0%</td><td>118.0%</td></tr><tr class='optimal'><td>Riboflavin</td><td>1.7</td><td>MG</td><td>131.8%</td><td>131.8%</td></tr><tr class='optimal'><td>Thiamin</td><td>2.4</td><td>MG</td><td>203.6%</td><td>203.6%</td></tr><tr class='optimal'><td>Vitamin A, RAE</td><td>1990.0</td><td>UG</td><td>221.1%</td><td>221.1%</td></tr><tr class='optimal'><td>Vitamin B-12</td><td>500.0</td><td>UG</td><td>20833.3%</td><td>200.0%</td></tr><tr class='optimal'><td>Vitamin B-6</td><td>2.4</td><td>MG</td><td>142.6%</td><td>142.6%</td></tr><tr class='optimal'><td>Vitamin C, total ascorbic acid</td><td>212.6</td><td>MG</td><td>236.2%</td><td>106.3%</td></tr><tr class='optimal'><td>Vitamin D (D2 + D3)</td><td>50.0</td><td>UG</td><td>333.3%</td><td>100.0%</td></tr><tr class='optimal'><td>Vitamin E (alpha-tocopherol)</td><td>19.2</td><td>MG</td><td>127.9%</td><td>127.9%</td></tr><tr class='optimal'><td>Vitamin K (phylloquinone)</td><td>1961.9</td><td>UG</td><td>1634.9%</td><td>1634.9%</td></tr><tr class='optimal'><td>Vitamin K2 (Menaquinone-7)</td><td>100.0</td><td>UG</td><td>-</td><td>100.0%</td></tr></tbody></table><h2>MINERALS</h2><table><thead><tr><th>Nutriente</th><th>Totale</th><th>Unità</th><th>%DRI</th><th>%Opt</th></tr></thead><tbody><tr><td>Calcium, Ca</td><td>1129.8</td><td>MG</td><td>113.0%</td><td>94.2%</td></tr><tr class='optimal'><td>Chromium, Cr</td><td>39.7</td><td>UG</td><td>132.2%</td><td>113.3%</td></tr><tr class='optimal'><td>Copper, Cu</td><td>4.6</td><td>MG</td><td>508.1%</td><td>508.1%</td></tr><tr class='optimal'><td>Iron, Fe</td><td>41.5</td><td>MG</td><td>519.1%</td><td>296.6%</td></tr><tr class='optimal'><td>Magnesium, Mg</td><td>1028.7</td><td>MG</td><td>244.9%</td><td>244.9%</td></tr><tr class='optimal'><td>Manganese, Mn</td><td>19.0</td><td>MG</td><td>827.5%</td><td>827.5%</td></tr><tr class='optimal'><td>Molybdenum, Mo</td><td>45.7</td><td>UG</td><td>101.5%</td><td>101.5%</td></tr><tr class='optimal'><td>Phosphorus, P</td><td>2439.9</td><td>MG</td><td>348.6%</td><td>348.6%</td></tr><tr class='optimal'><td>Potassium, K</td><td>6297.4</td><td>MG</td><td>242.2%</td><td>134.0%</td></tr><tr class='optimal'><td>Selenium, Se</td><td>72.8</td><td>UG</td><td>132.3%</td><td>132.3%</td></tr><tr class='optimal'><td>Sodium, Na</td><td>2374.2</td><td>MG</td><td>158.3%</td><td>158.3%</td></tr><tr class='optimal'><td>Zinc, Zn</td><td>19.7</td><td>MG</td><td>178.7%</td><td>131.0%</td></tr></tbody></table><h2>AMINO ACIDS</h2><table><thead><tr><th>Nutriente</th><th>Totale</th><th>Unità</th><th>%DRI</th><th>%Opt</th></tr></thead><tbody><tr class='optimal'><td>Cysteine and methionine(sulfer containig AA)</td><td>3.7</td><td>G</td><td>206.7%</td><td>206.7%</td></tr><tr class='optimal'><td>Isoleucine</td><td>5.4</td><td>G</td><td>171.6%</td><td>171.6%</td></tr><tr class='optimal'><td>Leucine</td><td>9.0</td><td>G</td><td>192.6%</td><td>192.6%</td></tr><tr class='optimal'><td>Lysine</td><td>6.7</td><td>G</td><td>186.5%</td><td>186.5%</td></tr><tr class='optimal'><td>Phenylalanine and tyrosine (aromatic  AA)</td><td>10.4</td><td>G</td><td>347.4%</td><td>347.4%</td></tr><tr class='optimal'><td>Threonine</td><td>4.5</td><td>G</td><td>188.0%</td><td>188.0%</td></tr><tr class='optimal'><td>Tryptophan</td><td>1.5</td><td>G</td><td>303.6%</td><td>303.6%</td></tr><tr class='optimal'><td>Valine</td><td>5.9</td><td>G</td><td>187.8%</td><td>187.8%</td></tr></tbody></table><h2 style='margin-top:50px;'>🧠 BIOHACKING RATIOS</h2><div class='ratio-table'><table><thead><tr><th>Ratio</th><th>Valore</th><th>Target</th></tr></thead><tbody><tr><td>Ratio Zinco/Rame</td><td style='font-weight:bold;'>4.30</td><td style='color:#666;'>8:1 - 12:1</td></tr><tr><td>Ratio Potassio/Sodio</td><td style='font-weight:bold;'>2.65</td><td style='color:#666;'>> 2:1</td></tr></tbody></table></div></body></html>
