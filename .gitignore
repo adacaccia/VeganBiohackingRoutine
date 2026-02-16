@@ -1,4 +1,36 @@
-# Database USDA (grande, statico, non cambia)
+# --- Database & Dati Pesanti ---
+# Escludiamo il DB USDA e eventuali altri file SQLite pesanti
 01-Dati/FDC.sqlite
+*.sqlite
+*.db
 
-# Report temporanei (opzionale)
+# --- Report & Output Temporanei ---
+# Escludiamo i report generati automaticamente per non sporcare i commit
+my_diet_report.html
+04-Report/**/*.html
+04-Report/**/*.pdf
+
+# --- Python ---
+# File compilati e cache di Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+.env
+
+# --- Sistema Operativo (macOS) ---
+# Quei fastidiosi file invisibili di Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# --- Editor & IDE ---
+# Se usi VS Code o altri editor
+.vscode/
+.idea/
+*.swp
+*.swo
