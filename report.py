@@ -2,311 +2,197 @@
 # -*- coding: utf-8 -*-
 """
 Motore di report nutrizionale per VeganBiohackingRoutine (VBR)
-Genera output testuale e CSV basati su FDC.sqlite + my_tables personalizzate.
+Versione 2.1 - Con colori condizionali e sezione Altro rimossa.
 """
 
 import sqlite3
-import csv
 from pathlib import Path
-from collections import defaultdict
 from datetime import datetime
 
-# === CONFIGURAZIONE PER VBR ===
+# === CONFIGURAZIONE ===
 DB_PATH = Path("01-Dati/FDC.sqlite")
 QUERY_FILE = Path("02-Schede/Nutrizione/nutrient_report.sql")
-CSV_OUTPUT = Path("04-Report/Nutrizione/report_latest.csv")
+OUTPUT_FILE = "my_diet_report.html"
 
-# Assicurati che la cartella di output esista
-CSV_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-
-# === MAIN ===
-def main():
-    # Verifica presenza file
-    if not DB_PATH.exists():
-        raise FileNotFoundError(f"❌ Database non trovato: {DB_PATH}")
-    if not QUERY_FILE.exists():
-        raise FileNotFoundError(f"❌ Query file non trovato: {QUERY_FILE}")
-
-    # Carica i dati dal DB
-    rows = load_nutrition_data(DB_PATH, QUERY_FILE)
+def calculate_analysis(rows):
+    """Calcola Macro e Ratio dai dati estratti usando i nomi delle colonne."""
+    data = {r['nutrient_name']: r['total_amount'] for r in rows}
     
-    # Stampa testuale (sempre)
-    print_text_report(rows)
+    results = {
+        'macros': {'p': 0, 'c': 0, 'f': 0, 'total_cal': 0},
+        'ratios': []
+    }
     
-    # Genera HTML (sempre, o su richiesta)
-    print_html_report(rows)
-
-# === FUNZIONI DI FORMATTAZIONE ===
-def format_row(row):
-    nutrient, unit, total, dri, opt = row[:5]
-    total_str = f"{total:.1f}" if total is not None else "0.0"
+    # --- 1. MACRO (Nomi standard USDA) ---
+    prot = data.get('Protein', 0) or 0
+    carb = data.get('Carbohydrate, by difference', 0) or 0
+    fat = data.get('Total lipid (fat)', 0) or 0
     
-    # DRI e %DRI
-    if dri is not None and dri > 0:
-        pct_dri = 100 * total / dri
-        dri_str = f"{dri:.1f}"
-        pct_dri_str = f"{pct_dri:.1f}%"
-    else:
-        dri_str = ""
-        pct_dri_str = ""
+    p_cal, c_cal, f_cal = prot * 4, carb * 4, fat * 9
+    total = p_cal + c_cal + f_cal
     
-    # Opt e %Opt
-    if opt is not None and opt > 0:
-        pct_opt = 100 * total / opt
-        opt_str = f"{opt:.1f}"
-        pct_opt_str = f"{pct_opt:.1f}%"
-    else:
-        opt_str = ""
-        pct_opt_str = ""
-    
-    return (
-        f"{nutrient:<45} {unit:<6} {total_str:>8} "
-        f"{dri_str:>8} {pct_dri_str:>8} {opt_str:>8} {pct_opt_str:>8}"
-    )
+    if total > 0:
+        results['macros'] = {
+            'p': (p_cal / total) * 100,
+            'c': (c_cal / total) * 100,
+            'f': (f_cal / total) * 100,
+            'total_cal': total
+        }
 
-def print_section(title, rows):
-    if not rows:
-        return
-    print(f"\n{title}")
-    print("=" * len(title))
-    for row in rows:
-        print(format_row(row))
+    # --- 2. RATIO ---
+    la = data.get('18:2 n-6', 0) or 0
+    ala = data.get('18:3 n-3', 0) or 0
+    if ala > 0: results['ratios'].append(("Ratio Omega 6/3", la/ala, "1:1 - 4:1"))
 
-def load_nutrition_data(DB_PATH, QUERY_FILE):
-    # Leggi ed esegui la query
-    with open(QUERY_FILE, "r", encoding="utf-8") as f:
-        query = f.read()
-
-    conn = sqlite3.connect(str(DB_PATH))
-    conn.row_factory = sqlite3.Row  # ← QUESTA È LA CHIAVE
-    cursor = conn.cursor()
-    cursor.execute(query)
-    columns = [desc[0] for desc in cursor.description]  # ← nomi delle colonne
-    raw_rows = cursor.fetchall()
-    conn.close()
-
-    # Estrai dati (7 colonne attese: nutrient, unit, total, dri, opt, category, display_order)
-    dict_rows = []
-    for r in raw_rows:
-        row_dict = dict(zip(columns, r))
-        dict_rows.append(row_dict)
-
-    # Ora elabora SOLO i dizionari
-    rows = []  # questa sarà la nuova lista di tuple (output finale)
-    for row in dict_rows:
-        nutrient = row['nutrient_name']
-        total = float(row['total_amount']) if row['total_amount'] is not None else 0.0
-        unit = row['unit_name']
-        dri = row['dri_value']
-        opt = row['optimal_value']
-        category = row['category']
-        display_order = row['display_order']
-        rows.append((nutrient, unit, total, dri, opt, category))
-    return rows
-
-def print_text_report(rows):
-    # Separa Energy e sezioni
-    energy_row = None
-    water_row = None
-    sections = defaultdict(list)
-
-    for row in rows:
-        nutrient, unit, total, dri, opt, category = row
-        if category == "energy":
-            energy_row = (nutrient, unit, total, dri, opt)
-        elif category == "hydration":
-            water_row = (nutrient, unit, total, dri, opt)
-        else:
-            sections[category].append((nutrient, unit, total, dri, opt))
-
-    # === STAMPA A SCHERMO ===
-    print("\n" + "=" * 100)
-    header = f"{'Nutriente':<45} {'Unità':<6} {'Totale':>8} {'DRI':>8} {'%DRI':>8} {'Opt':>8} {'%Opt':>8}"
-    print(header)
-    print("-" * 100)
-
-    if energy_row:
-        print(format_row(energy_row))
-    if water_row:
-        print(format_row(water_row))
-    if energy_row or water_row:
-        print("-" * 100)
-
-    # Ordine delle sezioni
-    section_order = [
-        ("vitamins", "VITAMINE & FITONUTRIENTI"),
-        ("minerals", "SALI MINERALI & OLIGOELEMENTI"),
-        ("fats", "GRASSI ESSENZIALI"),
-        ("amino_acids", "AMMINOACIDI ESSENZIALI"),
-    ]
-
-    for key, title in section_order:
-        print_section(title, sections[key])
-
-    # === ESPORTAZIONE CSV ===
-    with open(CSV_OUTPUT, "w", newline="", encoding="utf-8") as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerow(["Nutriente", "Unità", "Totale", "DRI", "%DRI", "Opt", "%Opt"])
+    zn = data.get('Zinc, Zn', 0) or 0
+    cu = data.get('Copper, Cu', 0) or 0
+    if cu > 0: results['ratios'].append(("Ratio Zinco/Rame", zn/cu, "8:1 - 12:1"))
         
-        if energy_row:
-            nutrient, unit, total, dri, opt = energy_row
-            pct_dri = 100 * total / dri if dri else ""
-            pct_opt = 100 * total / opt if opt else ""
-            writer.writerow([nutrient, unit, total, dri, pct_dri, opt, pct_opt])
+    k = data.get('Potassium, K', 0) or 0
+    na = data.get('Sodium, Na', 0) or 0
+    if na > 0: results['ratios'].append(("Ratio Potassio/Sodio", k/na, "> 2:1"))
         
-        for key, _ in section_order:
-            for row in sections[key]:
-                nutrient, unit, total, dri, opt = row
-                pct_dri = 100 * total / dri if dri else ""
-                pct_opt = 100 * total / opt if opt else ""
-                writer.writerow([nutrient, unit, total, dri, pct_dri, opt, pct_opt])
+    return results
 
-    print(f"\n✅ Report salvato in: {CSV_OUTPUT.relative_to(Path('.'))}")
-
-def print_html_report(rows, output_file="my_diet_report.html"):
-    """Genera un report HTML dai dati già caricati."""
-    from datetime import datetime
+def print_html_report(rows):
+    """Genera il report HTML con colori condizionali."""
+    date_str = datetime.now().strftime("%d %B %Y")
+    analisi = calculate_analysis(rows)
+    m = analisi['macros']
     
-    # Raggruppa per categoria
+    # Raggruppiamo i nutrienti per categoria
     categories = {}
-    for nutrient, unit, total, dri, opt, category in rows:
-        cat = category or "Altro"
+    for r in rows:
+        cat = r['category']
+        if not cat: continue # Salta i nutrienti senza categoria (incluso Altro/None)
+        
         if cat not in categories:
             categories[cat] = []
-        categories[cat].append((nutrient, unit, total, dri, opt))
-    
-    date_str = datetime.now().strftime("%d %B %Y")
-    
+        categories[cat].append(r)
+
+    # Inizio HTML
     html = f"""<!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Diet Report — {date_str}</title>
-<style>
-body {{
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-line-height: 1.6;
-max-width: 900px;
-margin: 0 auto;
-padding: 20px;
-color: #333;
-}}
-h1 {{ color: #2e7d32; }}
-table {{
-width: 100%;
-border-collapse: collapse;
-margin: 16px 0;
-}}
-th, td {{
-padding: 8px 12px;
-text-align: right;
-border-bottom: 1px solid #eee;
-}}
-th:first-child, td:first-child {{
-text-align: left;
-}}
-tr.low {{ background-color: #fff8e1; }}       /* <80% DRI */
-tr.critical {{ background-color: #ffebee; }}   /* <50% DRI */
-tr.high {{ background-color: #e8f5e9; }}       /* >150% Opt */
-th {{
-background-color: #f5f5f5;
-font-weight: bold;
-}}
-h2 {{
-margin-top: 32px;
-padding-bottom: 8px;
-border-bottom: 2px solid #4caf50;
-color: #2e7d32;
-}}
-</style>
+    <meta charset="UTF-8">
+    <title>VBR Report — {date_str}</title>
+    <style>
+        body {{ font-family: -apple-system, sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 20px; color: #333; }}
+        h1, h2 {{ color: #2e7d32; text-align: center; border-bottom: 2px solid #4caf50; padding-bottom: 10px; }}
+        
+        /* Donut Chart */
+        .pie-chart {{
+            position: relative; width: 220px; height: 220px; border-radius: 50%; margin: 20px auto;
+            background: conic-gradient(#4caf50 0% {m['p']}%, #ffeb3b {m['p']}% {m['p']+m['c']}%, #f44336 {m['p']+m['c']}% 100%);
+            display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }}
+        .pie-chart::after {{
+            content: "{int(m['total_cal'])} kcal"; position: absolute; width: 160px; height: 160px;
+            background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 1.2em; color: #444;
+        }}
+
+        .legend {{ display: flex; justify-content: center; gap: 20px; list-style: none; padding: 0; margin-bottom: 40px; }}
+        .legend li {{ display: flex; align-items: center; gap: 8px; font-weight: bold; }}
+        .legend li::before {{ content: ""; width: 14px; height: 14px; border-radius: 3px; }}
+        .prot::before {{ background-color: #4caf50; }}
+        .carb::before {{ background-color: #ffeb3b; }}
+        .fat::before {{ background-color: #f44336; }}
+
+        table {{ width: 100%; border-collapse: collapse; margin-bottom: 30px; background: white; }}
+        th, td {{ padding: 12px; text-align: right; border-bottom: 1px solid #eee; }}
+        th:first-child, td:first-child {{ text-align: left; }}
+        th {{ background: #f1f8e9; color: #2e7d32; font-size: 0.85em; text-transform: uppercase; }}
+        
+        /* Colori Condizionali */
+        tr.critical {{ background-color: #ffebee !important; }} /* Rosso: <50% DRI */
+        tr.low {{ background-color: #fff8e1 !important; }}      /* Giallo: <80% DRI */
+        tr.optimal {{ background-color: #e8f5e9 !important; }}  /* Verde: >100% Opt */
+        
+        .ratio-table {{ max-width: 500px; margin: 0 auto; border: 2px solid #2e7d32; border-radius: 8px; overflow: hidden; }}
+    </style>
 </head>
 <body>
-<h1>📊 My Diet Report</h1>
-<p><em>Generato il {date_str}</em></p>
+    <h1>🌱 Vegan Biohacking Report</h1>
+    <p style="text-align: center; color: #666;">Data Analisi: {date_str}</p>
+
+    <section>
+        <div class="pie-chart"></div>
+        <ul class="legend">
+            <li class="prot">Proteine: {m['p']:.1f}%</li>
+            <li class="carb">Carbo: {m['c']:.1f}%</li>
+            <li class="fat">Grassi: {m['f']:.1f}%</li>
+        </ul>
+    </section>
 """
+
+    # Sezioni da visualizzare in ordine (senza Altro)
+    order = ["energy", "hydration", "vitamins", "minerals", "amino_acids", "fats"]
     
-    # Mappa categorie → titoli
-    CATEGORY_LABELS = {
-        "energy_hydration": "Energia & Idrobalance",  # ← unica sezione combinata
-        "vitamins": "VITAMINE & FITONUTRIENTI",
-        "minerals": "SALI MINERALI & OLIGOELEMENTI",
-        "amino_acids": "AMMINOACIDI ESSENZIALI",
-        "fats": "GRASSI ESSENZIALI",
-    }
-    
-    # Ordine delle sezioni (senza "hydration" separato)
-    category_order = [
-        "energy_hydration",
-        "vitamins",
-        "minerals",
-        "amino_acids",
-        "fats"
-    ]
-    
-    for cat_key in category_order:
-        # Logica speciale: unisci energy + hydration
-        if cat_key == "energy_hydration":
-            items = []
-            if "energy" in categories:
-                items.extend(categories["energy"])
-            if "hydration" in categories:
-                items.extend(categories["hydration"])
-            if not items:
-                continue
-            title = CATEGORY_LABELS[cat_key]
-        else:
-            if cat_key not in categories:
-                continue
-            items = categories[cat_key]
-            title = CATEGORY_LABELS.get(cat_key, cat_key)
+    for key in order:
+        if key not in categories: continue
         
-        html += f'  <section>\n<h2>{title}</h2>\n<table>\n<thead>\n<tr>\n'
-        html += '    <th>Nutriente</th><th>Unità</th><th>Totale</th><th>DRI</th><th>%DRI</th><th>Opt</th><th>%Opt</th>\n</tr>\n</thead>\n<tbody>\n'
+        html += f"<h2>{key.replace('_', ' ').upper()}</h2>"
+        html += "<table><thead><tr><th>Nutriente</th><th>Totale</th><th>Unità</th><th>%DRI</th><th>%Opt</th></tr></thead><tbody>"
         
-        for nutrient, unit, total, dri, opt in items:
-            # --- Calcolo percentuali ---
-            pct_dri = ""
-            if dri is not None and dri > 0:
-                pct_dri = f"{(total / dri * 100):.1f}%"
-            pct_opt = ""
-            if opt is not None and opt > 0:
-                pct_opt = f"{(total / opt * 100):.1f}%"
+        for r in categories[key]:
+            val = r['total_amount'] or 0
+            dri = r['dri_value']
+            opt = r['optimal_value']
             
-            # --- Classe per evidenziazione ---
+            p_dri_val = (val / dri * 100) if (dri and dri > 0) else None
+            p_opt_val = (val / opt * 100) if (opt and opt > 0) else None
+            
+            p_dri_str = f"{p_dri_val:.1f}%" if p_dri_val is not None else "-"
+            p_opt_str = f"{p_opt_val:.1f}%" if p_opt_val is not None else "-"
+            
+            # Determinazione classe colore
             row_class = ""
-            if dri is not None and dri > 0:
-                ratio = total / dri
-                if ratio < 0.5:
-                    row_class = "critical"
-                elif ratio < 0.8:
-                    row_class = "low"
-            if opt is not None and total > opt * 1.5:
-                row_class = "high"
-            class_attr = f' class="{row_class}"' if row_class else ''
+            if p_dri_val is not None:
+                if p_dri_val < 50: row_class = "critical"
+                elif p_dri_val < 80: row_class = "low"
+            if p_opt_val is not None and p_opt_val >= 100 and not row_class:
+                row_class = "optimal"
             
-            # --- Formattazione sicura ---
-            total_fmt = f"{total:.1f}"
-            dri_fmt = f"{dri:.1f}" if dri is not None else ""
-            opt_fmt = f"{opt:.1f}" if opt is not None else ""
+            class_attr = f" class='{row_class}'" if row_class else ""
             
-            html += f'        <tr{class_attr}>\n'
-            html += f'          <td>{nutrient}</td>\n'
-            html += f'          <td>{unit}</td>\n'
-            html += f'          <td>{total_fmt}</td>\n'
-            html += f'          <td>{dri_fmt}</td>\n'
-            html += f'          <td>{pct_dri}</td>\n'
-            html += f'          <td>{opt_fmt}</td>\n'
-            html += f'          <td>{pct_opt}</td>\n'
-            html += f'        </tr>\n'
+            html += f"<tr{class_attr}><td>{r['nutrient_name']}</td><td>{val:.1f}</td><td>{r['unit_name']}</td><td>{p_dri_str}</td><td>{p_opt_str}</td></tr>"
         
-        html += '      </tbody>\n</table>\n</section>\n'
+        html += "</tbody></table>"
+
+    # Ratio Finali
+    if analisi['ratios']:
+        html += "<h2 style='margin-top:50px;'>🧠 BIOHACKING RATIOS</h2>"
+        html += "<div class='ratio-table'><table><thead><tr><th>Ratio</th><th>Valore</th><th>Target</th></tr></thead><tbody>"
+        for name, val, target in analisi['ratios']:
+            html += f"<tr><td>{name}</td><td style='font-weight:bold;'>{val:.2f}</td><td style='color:#666;'>{target}</td></tr>"
+        html += "</tbody></table></div>"
+
+    html += "</body></html>"
     
-    html += "</body>\n</html>"
-    
-    with open(output_file, "w", encoding="utf-8") as f:
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(html)
-    print(f"📄 HTML report salvato in: {output_file}")
+    print(f"✅ Report creato con successo: {OUTPUT_FILE}")
+
+def load_data():
+    """Carica i dati usando sqlite3.Row."""
+    if not DB_PATH.exists(): raise FileNotFoundError(f"Database non trovato in: {DB_PATH}")
+    
+    conn = sqlite3.connect(str(DB_PATH))
+    conn.row_factory = sqlite3.Row
+    
+    with open(QUERY_FILE, "r") as f:
+        query = f.read()
+    
+    cursor = conn.cursor()
+    cursor.execute(query)
+    rows = cursor.fetchall()
+    conn.close()
+    return rows
 
 if __name__ == "__main__":
-    main()
+    try:
+        data = load_data()
+        print_html_report(data)
+    except Exception as e:
+        print(f"❌ Errore critico: {e}")
