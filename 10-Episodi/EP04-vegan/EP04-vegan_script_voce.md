@@ -1,4 +1,4 @@
-# Script Voce – EP06 “Perché sono diventato vegan”
+# Script Voce – EP04 “Perché sono diventato vegan”
 
 🎙️ **Tono:** calmo e assertivo, senza enfasi prescrittiva.  
 🎧 **Ambiente:** interno asciutto, microfono a 20–25 cm, pop‑filter.
@@ -52,4 +52,4 @@ Micro‑pausa dopo la prima frase. Chiusura con tono “calmo‑finale”.
 ### Specifiche tecniche
 - Target loudness: −14 LUFS integrato; True Peak ≤ −1 dBFS
 - Rumore di fondo < −50 dB
-- Export: WAV 48 kHz / 24 bit → `voice_EP06_vegan.wav`
+- Export: WAV 48 kHz / 24 bit → `voice_EP04_vegan.wav`

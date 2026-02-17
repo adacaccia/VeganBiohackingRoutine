@@ -1,4 +1,4 @@
-# Storyboard Breve – EP06 “Perché sono diventato vegan”
+# Storyboard Breve – EP04 “Perché sono diventato vegan”
 
 ## 🎬 Capitolo 1 – La scelta personale
 **Scena 1: Intro / contesto**

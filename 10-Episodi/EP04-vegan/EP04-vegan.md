@@ -1,4 +1,4 @@
-## EP06 – Perché sono diventato vegan
+## EP04 – Perché sono diventato vegan
 
 ### 🎬 Titolo  
 **“Perché sono diventato vegan: equilibrio metabolico e prove scientifiche”**
@@ -126,5 +126,5 @@ Non lo dico io: lo dice la letteratura.
 
 ---
 
-© 2025 Vegan Biohacking Routine — EP06 Perché sono diventato vegan  
+© 2025 Vegan Biohacking Routine — EP04 Perché sono diventato vegan  
 Licenza CC-BY-NC 4.0

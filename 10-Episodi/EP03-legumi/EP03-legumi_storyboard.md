@@ -1,4 +1,4 @@
-# 🗺️ Storyboard — EP05 · Legumi: il motore silenzioso  
+# 🗺️ Storyboard — EP03 · Legumi: il motore silenzioso  
 ### Vegan Biohacking Routine · Nutrizione post-allenamento funzionale
 
 ---
@@ -47,5 +47,5 @@
 
 ---
 
-© 2025 Vegan Biohacking Routine — EP05 Legumi: il motore silenzioso  
+© 2025 Vegan Biohacking Routine — EP03 Legumi: il motore silenzioso  
 Licenza CC-BY-NC 4.0

@@ -1,4 +1,4 @@
-# Checklist Pubblicazione – EP05 “Legumi: il motore silenzioso”
+# Checklist Pubblicazione – EP03 “Legumi: il motore silenzioso”
 
 ## 🧾 Metadati YouTube
 - [ ] Titolo: **Legumi: il motore silenzioso del metabolismo**

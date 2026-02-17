@@ -1,5 +1,5 @@
 
-# 🎞️ Checklist montaggio — EP04 · Passata
+# 🎞️ Checklist montaggio — EP02 · Passata
 ### Kdenlive / 1080p25fps
 
 ## Setup

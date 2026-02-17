@@ -1,4 +1,4 @@
-# Checklist Registrazione – EP06 “Perché sono diventato vegan”
+# Checklist Registrazione – EP04 “Perché sono diventato vegan”
 
 ## Prima della registrazione
 - [ ] Microfono cardioide + pop‑filter, gain 30–40 %

@@ -1,4 +1,4 @@
-# Checklist Montaggio – EP05 “Legumi: il motore silenzioso”
+# Checklist Montaggio – EP03 “Legumi: il motore silenzioso”
 
 ## 🎞️ Preparazione progetto Kdenlive
 - [ ] Crea progetto `EP05_legumi.kdenlive` in `10-Episodi/EP05-legumi-il-motore-silenzioso/`

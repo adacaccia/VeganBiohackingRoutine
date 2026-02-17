@@ -1,4 +1,4 @@
-# 🗺️ Storyboard — EP04 · Passata di pomodoro  
+# 🗺️ Storyboard — EP02 · Passata di pomodoro  
 ### Vegan Biohacking Routine · Energia lenta e licopene invernale
 
 ---
@@ -48,5 +48,5 @@
 
 ---
 
-© 2025 Vegan Biohacking Routine — EP04 Passata di pomodoro  
+© 2025 Vegan Biohacking Routine — EP02 Passata di pomodoro  
 Licenza CC-BY-NC 4.0

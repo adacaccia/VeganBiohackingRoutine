@@ -1,4 +1,4 @@
-# EP01 – Spinaci | Vegan Biohacking Routine
+# EP05 – Spinaci | Vegan Biohacking Routine
 
 ## Titolo (IT)
 Spinaci: il cibo più sottovalutato della nutrizione funzionale
@@ -12,7 +12,7 @@ Spinach: the most underrated food in functional nutrition
 Gli spinaci non sono un “contorno”.
 Sono uno degli alimenti più densi di nutrienti che puoi inserire ogni giorno.
 
-In questo primo episodio di Vegan Biohacking Routine spiego:
+In questo episodio di Vegan Biohacking Routine spiego:
 - perché ho scelto gli spinaci come base quotidiana,
 - quali micronutrienti li rendono unici,
 - come integrarli in modo semplice e sostenibile.
@@ -28,7 +28,7 @@ una serie basata su dati, semplicità e riduzione della complessità.
 Spinach is not a side dish.
 It’s one of the most nutrient-dense foods you can eat daily.
 
-In this first episode of Vegan Biohacking Routine I explain:
+In this episode of Vegan Biohacking Routine I explain:
 - why spinach became a daily staple,
 - which micronutrients make it unique,
 - how to integrate it simply and consistently.

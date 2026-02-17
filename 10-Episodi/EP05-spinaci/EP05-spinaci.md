@@ -1,4 +1,4 @@
-# 🎬 EP03 – Spinaci e densità nutritiva  
+# 🎬 EP05 – Spinaci e densità nutritiva  
 ### Vegan Biohacking Routine · La forza della semplicità
 
 ---
@@ -147,5 +147,5 @@
 
 ---
 
-© 2025 Vegan Biohacking Routine — EP03 Spinaci e densità nutritiva  
+© 2025 Vegan Biohacking Routine — EP05 Spinaci e densità nutritiva  
 Licenza CC-BY-NC 4.0

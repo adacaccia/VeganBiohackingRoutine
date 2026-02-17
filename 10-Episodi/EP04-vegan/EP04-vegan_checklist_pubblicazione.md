@@ -1,4 +1,4 @@
-# Checklist Pubblicazione – EP06 “Perché sono diventato vegan”
+# Checklist Pubblicazione – EP04 “Perché sono diventato vegan”
 
 ## Metadati YouTube
 - [ ] Titolo: **Perché sono diventato vegan: equilibrio metabolico e prove scientifiche**

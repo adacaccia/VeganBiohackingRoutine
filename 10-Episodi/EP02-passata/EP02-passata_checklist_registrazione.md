@@ -1,4 +1,4 @@
-# 🎬 Checklist registrazione — EP04 · Passata
+# 🎬 Checklist registrazione — EP02 · Passata
 ### Produzione autonoma (cucina / luce naturale)
 
 ## Audio

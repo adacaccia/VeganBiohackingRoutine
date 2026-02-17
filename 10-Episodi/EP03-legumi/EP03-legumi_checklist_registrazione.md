@@ -1,4 +1,4 @@
-# Checklist Registrazione – EP05 “Legumi: il motore silenzioso”
+# Checklist Registrazione – EP03 “Legumi: il motore silenzioso”
 
 ## 🎙️ Prima della registrazione
 - [ ] Microfono cardioide a condensatore collegato (gain 30–40 %)  

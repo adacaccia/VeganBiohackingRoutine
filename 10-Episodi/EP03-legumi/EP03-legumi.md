@@ -1,4 +1,4 @@
-## EP05 – Legumi: il motore silenzioso
+## EP03 – Legumi: il motore silenzioso
 
 ### 🎬 Titolo  
 **“Legumi: il motore silenzioso del metabolismo”**

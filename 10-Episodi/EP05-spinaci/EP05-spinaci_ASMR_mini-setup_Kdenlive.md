@@ -1,5 +1,5 @@
 # 🎧 Mini-Setup Kdenlive – Sezione ASMR (“Crunch come chips”)
-### Vegan Biohacking Routine · EP03 – Spinaci e densità nutritiva
+### Vegan Biohacking Routine · EP05 – Spinaci e densità nutritiva
 
 ---
 
@@ -60,5 +60,5 @@ Duplica la clip *crunch.wav* su A4, spostala di 2–3 frame e abbassa di 6 dB: o
 
 ---
 
-© 2025 Vegan Biohacking Routine — EP03 Spinaci  
+© 2025 Vegan Biohacking Routine — EP05 Spinaci  
 Licenza CC-BY-NC 4.0

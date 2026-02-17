@@ -1,4 +1,4 @@
-# Script Voce – EP05 “Legumi: il motore silenzioso”
+# Script Voce – EP03 “Legumi: il motore silenzioso”
 
 🎙️ **Tono:** calmo, neutro, con lieve ritmo discendente nelle pause.  
 🎧 **Ambiente:** interno silenzioso, senza riverbero, microfono a 20–25 cm.

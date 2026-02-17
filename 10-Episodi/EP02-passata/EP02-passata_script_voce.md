@@ -1,4 +1,4 @@
-# 🎙️ Script parlato — EP04 · Passata di pomodoro
+# 🎙️ Script parlato — EP02 · Passata di pomodoro
 ### Vegan Biohacking Routine
 
 Ciao. All’inizio del percorso, a febbraio 2025, Cronometer mi stimava circa due chili di pomodori freschi al giorno per coprire il licopene.  

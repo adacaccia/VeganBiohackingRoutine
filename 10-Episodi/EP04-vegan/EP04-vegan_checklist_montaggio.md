@@ -1,4 +1,4 @@
-# Checklist Montaggio – EP06 “Perché sono diventato vegan”
+# Checklist Montaggio – EP04 “Perché sono diventato vegan”
 
 ## Preparazione progetto (Kdenlive)
 - [ ] Progetto: `EP06_vegan.kdenlive` (1080p, 25 fps)

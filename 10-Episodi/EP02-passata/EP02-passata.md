@@ -82,11 +82,11 @@
 ## 🎧 Indicazioni tecniche
 - **Durata:** 5′ ± 15″ · **Tono:** pratico, sobrio  
 - **Musica:** leggera, –8 dB · **Video:** 1080p25fps  
-- **Output:** `EP04-passata_final.mp4`
+- **Output:** `EP02-passata_final.mp4`
 
 ---
 
 ## 🧩 Messaggio chiave
 > “Semplificare non è accontentarsi: è **rendere sostenibile** la coerenza.”
 
-© 2025 Vegan Biohacking Routine — EP04 Passata
+© 2025 Vegan Biohacking Routine — EP02 Passata

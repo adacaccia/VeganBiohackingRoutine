@@ -1,8 +1,8 @@
-# 📤 Checklist pubblicazione — EP04 · Passata
+# 📤 Checklist pubblicazione — EP02· Passata
 ### YouTube Studio
 
 ## Dati base
-- ⬜ File: `EP04-passata_final.mp4` (1080p25)
+- ⬜ File: `EP02-passata_final.mp4` (1080p25)
 - ⬜ Playlist: Vegan Biohacking Routine
 - ⬜ Categoria: Scienza/Salute
 
@@ -10,7 +10,7 @@
 **Passata di pomodoro | licopene e semplicità invernale**
 
 ## Descrizione (base)
-🎬 Episodio EP04 – Passata di pomodoro
+🎬 Episodio EP02 – Passata di pomodoro
 Parte della serie “Vegan Biohacking Routine”
 
 📋 In questo video:
