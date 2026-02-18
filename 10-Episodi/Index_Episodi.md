@@ -1,31 +1,17 @@
-# 🎬 Index Episodi — Vegan Biohacking Routine
+# Index Episodi - Vegan Biohacking Routine
 
-### Stato avanzamento produzione (auto-aggiornato)
+| Codice | Titolo | Stato | Script | Audio | Video | Pubblicato |
+| ------:|:------ |:-----:|:------:|:-----:|:-----:|:----------:|
+| EP01 | colazione | 🟡 | ✅ | ✅ | ⬜ | ⬜ |
+| EP02 | spinaci | 🟡 | ✅ | ⬜ | ⬜ | ⬜ |
+| EP03 | passata | 🟡 | ✅ | ⬜ | ⬜ | ⬜ |
+| EP04 | legumi | 🟡 | ✅ | ⬜ | ⬜ | ⬜ |
+| EP05 | vegan | 🟡 | ✅ | ⬜ | ⬜ | ⬜ |
+| EP06 | denti | 🟡 | ✅ | ⬜ | ⬜ | ⬜ |
+| EP07 | fitness | 🟡 | ✅ | ✅ | ⬜ | ⬜ |
+| EP08 | report | 🟡 | ✅ | ✅ | ⬜ | ⬜ |
+| EP09 | fine | 🟡 | ✅ | ✅ | ⬜ | ⬜ |
 
-| Codice | Titolo (slug) | Stato | Script | Audio | Video | Montaggio | Storyboard | Checklists | Pubblicato |
-| ------:|:------------- |:-----:|:------:|:-----:|:-----:|:---------:|:----------:|:----------:|:---------- |
-| EP01   | spinaci       | 🟡    | ✅      | ⬜     | ⬜     | ⬜         | ✅          | ✅          | ⬜          |
-| EP02   | passata       | 🟡    | ✅      | ⬜     | ⬜     | ⬜         | ✅          | ✅          | ⬜          |
-| EP03   | legumi        | 🟡    | ✅      | ⬜     | ⬜     | ⬜         | ✅          | ✅          | ⬜          |
-| EP04   | vegan         | 🟡    | ✅      | ⬜     | ⬜     | ⬜         | ✅          | ✅          | ⬜          |
-| EP05   | denti         | 🟡    | ✅      | ⬜     | ⬜     | ⬜         | ✅          | ✅          | ⬜          |
-| EP06   | fitness       | 🟡    | ✅      | ⬜     | ⬜     | ⬜         | ✅          | ✅          | ⬜          |
-| EP07   | report        | 🟡    | ✅      | ⬜     | ⬜     | ✅         | ✅          | ✅          | ⬜          |
-| EP08   | colazione     | 🟡    | ✅      | ⬜     | ✅     | ⬜         | ✅          | ✅          | ⬜          |
-| EP09   | fine          | 🟡    | ✅      | ⬜     | ⬜     | ⬜         | ✅          | ✅          | ⬜          |
-
----
-
-## Note operative
-
-- **Script**: `EPxx-slug/EPxx-slug.md`
-- **Audio/Video**: metti sorgenti in `assets/` (o nella cartella episodio).
-- **Montaggio**: riconosciuto se esiste un progetto (`.prproj`, `.drp`, `.kdenlive`, `.mlt`, `.veg`, `.edl`, `.aup/.aup3`)
-  **oppure** un export finale (video con "final/export/master" nel nome).
-- **Pubblicato**: crea un file `PUBLISHED` con la URL YouTube nella **prima riga**.
-
-Aggiorna l’indice:
-
-```bash
-./Build_Episode_Index.sh
-```
+## Comandi
+Aggiorna ordine: ./episode_manager.sh set 1 colazione
+Rigenera index: ./episode_manager.sh build-index
