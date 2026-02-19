@@ -9,6 +9,7 @@
 my_diet_report.html
 04-Report/**/*.html
 04-Report/**/*.pdf
+*.csv
 
 # --- Python ---
 # File compilati e cache di Python
