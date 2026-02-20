@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance Planner 2026 - Adaptive Dashboard</title>
+    <title>Finance Planner 2026 - Vista Reale</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background: #0f172a; color: #e2e8f0; }
         .mono { font-family: 'Space Mono', monospace; }
         .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
         .gradient-text { background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .chart-container { position: relative; height: 250px; width: 100%; }
-        .positive { color: #34d399; }
-        .negative { color: #f87171; }
-        .warning { color: #fbbf24; }
-        .mode-year { border-left: 4px solid #60a5fa; }
-        .mode-month { border-left: 4px solid #f59e0b; }
         .drop-zone { border: 2px dashed #475569; transition: all 0.3s; }
         .drop-zone.dragover { border-color: #60a5fa; background: rgba(96, 165, 250, 0.1); }
-        .pulse-unpaid { animation: pulse-red 2s infinite; }
-        @keyframes pulse-red { 0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); } 50% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); } }
+        .file-chip { animation: slideIn 0.3s ease; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .status-pagato { color: #10b981; }
+        .status-da-pagare { color: #ef4444; font-weight: bold; }
+        .status-futuro { color: #64748b; }
+        .bg-scaduto { background: rgba(239, 68, 68, 0.1); }
+        .bg-futuro { background: rgba(100, 116, 139, 0.05); opacity: 0.6; }
         ::-webkit-scrollbar { width: 8px; height: 8px; }
         ::-webkit-scrollbar-track { background: #1e293b; }
         ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
@@ -29,206 +27,85 @@
 </head>
 <body class="min-h-screen p-4 md:p-8">
 
-    <!-- Header -->
     <header class="max-w-7xl mx-auto mb-6">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div class="flex justify-between items-center">
             <div>
-                <h1 class="text-3xl md:text-4xl font-bold gradient-text mb-2">Finance Planner 2026</h1>
-                <p class="text-slate-400 text-sm" id="subtitle">Compatibile con Excel e LibreOffice (CSV ;)</p>
+                <h1 class="text-3xl font-bold gradient-text">Finance Planner 2026</h1>
+                <p class="text-slate-400 text-sm">Solo numeri, niente fronzoli</p>
             </div>
-            <div class="flex gap-2">
-                <button onclick="document.getElementById('csvInput').click()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 rounded-lg font-semibold transition-colors text-sm flex items-center gap-2">
-                    📁 Carica CSV
-                </button>
-                <input type="file" id="csvInput" accept=".csv" class="hidden" onchange="handleFileSelect(event)">
-                <button onclick="downloadTemplate()" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg font-semibold transition-colors text-sm">
-                    📋 Template
-                </button>
-            </div>
+            <button onclick="resetAll()" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-sm hidden" id="resetBtn">
+                🔄 Reset
+            </button>
         </div>
     </header>
 
-    <!-- Format Info -->
-    <div class="max-w-7xl mx-auto mb-4">
-        <div class="glass rounded-lg p-2 flex items-center gap-2 text-xs text-slate-400">
-            <span>ℹ️</span>
-            <span>Supporta: <strong>virgola</strong> o <strong>punto e virgola</strong> come separatore • <strong>virgola</strong> per decimali (€12,50)</span>
+    <!-- Upload -->
+    <div class="max-w-7xl mx-auto mb-6" id="uploadSection">
+        <div id="dropZone" class="drop-zone rounded-xl p-8 text-center cursor-pointer mb-4" 
+             onclick="document.getElementById('csvInput').click()"
+             ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
+            <div class="text-4xl mb-3">📂</div>
+            <h3 class="text-lg font-bold mb-2">Carica CSV</h3>
+            <p class="text-sm text-slate-400">Febbraio o qualsiasi mese</p>
         </div>
+        <input type="file" id="csvInput" accept=".csv" class="hidden" onchange="handleFileSelect(event)">
+        <div id="fileList" class="flex flex-wrap gap-2 mb-4 hidden"></div>
+        <button id="processBtn" onclick="processFile()" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 rounded-lg font-bold hidden">
+            Analizza
+        </button>
     </div>
 
-    <!-- Mode Indicator -->
-    <div id="modeIndicator" class="max-w-7xl mx-auto mb-4 hidden">
-        <div class="glass rounded-lg p-3 flex items-center justify-between mode-year" id="modeBanner">
-            <div class="flex items-center gap-3">
-                <span class="text-2xl" id="modeIcon">📊</span>
-                <div>
-                    <h3 class="font-bold text-sm" id="modeTitle">Modalità Annuale</h3>
-                    <p class="text-xs text-slate-400" id="modeDesc">Visione completa 2026 con proiezioni</p>
-                </div>
-            </div>
-            <span class="text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full font-mono" id="modeBadge">YEAR VIEW</span>
-        </div>
-    </div>
-
-    <!-- Drop Zone -->
-    <div id="dropZone" class="max-w-7xl mx-auto mb-6 drop-zone rounded-xl p-8 text-center cursor-pointer" 
-         onclick="document.getElementById('csvInput').click()"
-         ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
-        <div class="text-4xl mb-3">📂</div>
-        <h3 class="text-lg font-bold mb-2">Trascina qui il tuo file CSV</h3>
-        <p class="text-sm text-slate-400 mb-3">Da Excel, LibreOffice, o qualsiasi foglio di calcolo</p>
-        <div class="flex justify-center gap-4 text-xs text-slate-500">
-            <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-blue-400"></span>Annuale: trend e proiezioni</span>
-            <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-orange-400"></span>Mensile: azioni immediate</span>
-        </div>
-        <p class="text-[10px] text-slate-600 mt-3 font-mono">Data;Categoria;Voce;Importo;Metodo;Pagato</p>
-    </div>
-
-    <!-- YEAR VIEW -->
-    <div id="yearView" class="max-w-7xl mx-auto hidden">
+    <!-- Dashboard -->
+    <div id="dashboard" class="max-w-7xl mx-auto hidden">
+        
+        <!-- KPI Essenziali -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
             <div class="glass rounded-xl p-4">
-                <div class="text-slate-400 text-xs mb-1">Saldo Iniziale</div>
-                <div class="text-xl font-bold mono" id="yearStartBalance">€534.94</div>
+                <div class="text-slate-400 text-xs mb-1">Entrate</div>
+                <div class="text-xl font-bold mono text-emerald-400" id="kpiIncome">€0</div>
             </div>
             <div class="glass rounded-xl p-4">
-                <div class="text-slate-400 text-xs mb-1">Proiezione Fine Anno</div>
-                <div class="text-xl font-bold mono positive" id="yearEndProjection">€0</div>
-                <div class="text-[10px] text-emerald-400" id="yearNetChange">€0</div>
+                <div class="text-slate-400 text-xs mb-1">Uscite</div>
+                <div class="text-xl font-bold mono text-red-400" id="kpiExpense">€0</div>
             </div>
             <div class="glass rounded-xl p-4">
-                <div class="text-slate-400 text-xs mb-1">Mese Peggiore</div>
-                <div class="text-lg font-bold mono critical" id="worstMonth">--</div>
-                <div class="text-[10px] text-red-400" id="worstMonthValue">--</div>
-            </div>
-            <div class="glass rounded-xl p-4">
-                <div class="text-slate-400 text-xs mb-1">Pagamenti Pendenti</div>
-                <div class="text-xl font-bold mono warning" id="yearPending">€0</div>
-                <div class="text-[10px] text-orange-400">su <span id="pendingCount">0</span> voci</div>
-            </div>
-        </div>
-
-        <div class="glass rounded-xl p-4 mb-6">
-            <h2 class="text-lg font-bold mb-3">Andamento Annuale</h2>
-            <div class="chart-container">
-                <canvas id="yearChart"></canvas>
-            </div>
-        </div>
-
-        <div class="glass rounded-xl overflow-hidden mb-8">
-            <div class="p-3 bg-slate-800 border-b border-slate-700">
-                <h3 class="font-bold text-sm">Riepilogo Mensile</h3>
-            </div>
-            <div class="overflow-x-auto max-h-[300px] overflow-y-auto">
-                <table class="w-full text-sm">
-                    <thead class="bg-slate-800 sticky top-0">
-                        <tr>
-                            <th class="text-left p-3">Mese</th>
-                            <th class="text-right p-3">Entrate</th>
-                            <th class="text-right p-3">Uscite</th>
-                            <th class="text-right p-3">Netto</th>
-                            <th class="text-right p-3">Cumulato</th>
-                            <th class="text-center p-3">Stato</th>
-                        </tr>
-                    </thead>
-                    <tbody id="yearTable" class="divide-y divide-slate-700"></tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- MONTH VIEW -->
-    <div id="monthView" class="max-w-7xl mx-auto hidden">
-        <div id="actionAlert" class="mb-4 hidden">
-            <div class="glass rounded-lg p-4 border-l-4 border-red-500 bg-red-500/10 pulse-unpaid">
-                <div class="flex items-start gap-3">
-                    <span class="text-3xl">🚨</span>
-                    <div class="flex-1">
-                        <h3 class="font-bold text-red-400 mb-1">Azione Richiesta: Stipendio Ricevuto!</h3>
-                        <p class="text-sm text-slate-300 mb-2">Hai <span id="actionCount" class="font-bold text-white">0</span> pagamenti in attesa per <span id="actionAmount" class="font-bold text-white mono">€0</span></p>
-                        <button onclick="scrollToUnpaid()" class="text-xs bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded transition-colors">
-                            Vedi lista pagamenti →
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-            <div class="glass rounded-xl p-4">
-                <div class="text-slate-400 text-xs mb-1">Budget Mese</div>
-                <div class="text-xl font-bold mono" id="monthBudget">€0</div>
+                <div class="text-slate-400 text-xs mb-1">Saldo Netto</div>
+                <div class="text-xl font-bold mono" id="kpiNet">€0</div>
             </div>
             <div class="glass rounded-xl p-4">
                 <div class="text-slate-400 text-xs mb-1">Già Pagato</div>
-                <div class="text-xl font-bold mono positive" id="monthPaid">€0</div>
-            </div>
-            <div class="glass rounded-xl p-4">
-                <div class="text-slate-400 text-xs mb-1">Da Pagare</div>
-                <div class="text-xl font-bold mono critical" id="monthToPay">€0</div>
-            </div>
-            <div class="glass rounded-xl p-4">
-                <div class="text-slate-400 text-xs mb-1">Prossima Scadenza</div>
-                <div class="text-lg font-bold mono warning" id="nextDueDate">--</div>
-                <div class="text-[10px] text-orange-400" id="nextDueItem">--</div>
+                <div class="text-xl font-bold mono text-emerald-600" id="kpiPaid">€0</div>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
-            <div class="glass rounded-xl p-4">
-                <h2 class="text-lg font-bold mb-3 flex items-center gap-2">
-                    <span>🎯</span> Coda Prioritaria
-                </h2>
-                <div class="space-y-2 max-h-[300px] overflow-y-auto" id="priorityQueue"></div>
+        <!-- La verità -->
+        <div class="glass rounded-xl p-4 mb-6 border-l-4 border-orange-500 bg-orange-500/5">
+            <div class="flex justify-between items-center mb-2">
+                <span class="text-orange-400 font-bold">Disponibilità reale dopo paghi il 27:</span>
+                <span class="text-2xl font-bold mono text-orange-400" id="realGap">€0</span>
             </div>
-
-            <div class="glass rounded-xl p-4">
-                <h2 class="text-lg font-bold mb-3">Sintesi Rapida</h2>
-                <div class="space-y-3">
-                    <div class="p-3 bg-slate-800/50 rounded-lg">
-                        <div class="flex justify-between text-sm mb-1">
-                            <span class="text-slate-400">Buffer 1° richiesto:</span>
-                            <span class="mono font-bold" id="buffer1">€800</span>
-                        </div>
-                        <div class="w-full bg-slate-700 rounded-full h-1.5">
-                            <div class="bg-blue-500 h-1.5 rounded-full" id="buffer1Bar" style="width: 0%"></div>
-                        </div>
-                    </div>
-                    <div class="p-3 bg-slate-800/50 rounded-lg">
-                        <div class="flex justify-between text-sm mb-1">
-                            <span class="text-slate-400">Buffer 15 richiesto:</span>
-                            <span class="mono font-bold" id="buffer15">€1.000</span>
-                        </div>
-                        <div class="w-full bg-slate-700 rounded-full h-1.5">
-                            <div class="bg-purple-500 h-1.5 rounded-full" id="buffer15Bar" style="width: 0%"></div>
-                        </div>
-                    </div>
-                    <div class="p-3 bg-slate-800/50 rounded-lg border border-orange-500/30" id="rottamazioneAlert" style="display: none;">
-                        <div class="flex items-center gap-2 text-orange-400 text-sm font-bold">
-                            <span>⚠️</span>
-                            <span>Zona Rottamazione 25→3</span>
-                        </div>
-                        <p class="text-xs text-slate-400 mt-1">Lascia almeno €250 sul conto</p>
-                    </div>
-                </div>
-            </div>
+            <p class="text-xs text-slate-400">Stipendio - (Rottamazione + TARI + Prestiti automatici) = quello che resta davvero</p>
         </div>
 
-        <div class="glass rounded-xl overflow-hidden mb-8" id="unpaidSection">
-            <div class="p-3 bg-slate-800 border-b border-slate-700 flex justify-between items-center">
-                <h3 class="font-bold text-sm">Dettaglio Operazioni</h3>
-                <span class="text-xs text-slate-400" id="monthName">--</span>
+        <!-- Coda Prioritaria -->
+        <div class="glass rounded-xl p-4 mb-6">
+            <h2 class="text-lg font-bold mb-3 text-slate-300">Coda 27 Febbraio</h2>
+            <div class="space-y-2" id="priorityQueue"></div>
+        </div>
+
+        <!-- Tabella Completa -->
+        <div class="glass rounded-xl overflow-hidden">
+            <div class="p-3 bg-slate-800 border-b border-slate-700">
+                <h3 class="font-bold text-sm">Tutte le operazioni</h3>
             </div>
             <div class="overflow-x-auto max-h-[400px] overflow-y-auto">
                 <table class="w-full text-sm">
                     <thead class="bg-slate-800 sticky top-0">
                         <tr>
-                            <th class="text-left p-3">Data</th>
-                            <th class="text-left p-3">Voce</th>
-                            <th class="text-right p-3">Importo</th>
-                            <th class="text-left p-3">Metodo</th>
-                            <th class="text-center p-3">Stato</th>
-                            <th class="text-center p-3">Azione</th>
+                            <th class="text-left p-3 text-xs">Data</th>
+                            <th class="text-left p-3 text-xs">Voce</th>
+                            <th class="text-right p-3 text-xs">Importo</th>
+                            <th class="text-center p-3 text-xs">Stato</th>
                         </tr>
                     </thead>
                     <tbody id="monthTable" class="divide-y divide-slate-700"></tbody>
@@ -238,28 +115,9 @@
     </div>
 
     <script>
-        let currentData = [];
-        let currentMode = null;
-        let chartInstance = null;
-
-        function downloadTemplate() {
-            // Template with semicolon for LibreOffice
-            const template = `Data;Categoria;Voce;Importo;Metodo;Pagato
-01/03/2026;Prestito;Santander auto;-742;SDD;No
-01/03/2026;Servizio;Subbyx;-38;SDD;No
-15/03/2026;Prestito;Fineco;-218;SDD;No
-27/03/2026;Entrate;Stipendio;2230;Accredito;No
-27/03/2026;Entrate;Assegno Unico;115;SDD;No`;
-            downloadBlob(template, 'template_libreoffice_2026.csv');
-        }
-
-        function downloadBlob(content, filename) {
-            const blob = new Blob([content], { type: 'text/csv;charset=utf-8;' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = filename;
-            link.click();
-        }
+        let currentFile = null;
+        let allData = [];
+        const TODAY = new Date('2026-02-20');
 
         function handleDragOver(e) {
             e.preventDefault();
@@ -273,352 +131,173 @@
         function handleDrop(e) {
             e.preventDefault();
             e.currentTarget.classList.remove('dragover');
-            if (e.dataTransfer.files.length) processFile(e.dataTransfer.files[0]);
+            if (e.dataTransfer.files.length) {
+                currentFile = e.dataTransfer.files[0];
+                showFile();
+            }
         }
 
         function handleFileSelect(e) {
-            if (e.target.files[0]) processFile(e.target.files[0]);
+            if (e.target.files[0]) {
+                currentFile = e.target.files[0];
+                showFile();
+            }
         }
 
-        function processFile(file) {
-            const reader = new FileReader();
-            reader.onload = (e) => parseCSV(e.target.result);
-            reader.readAsText(file);
+        function showFile() {
+            document.getElementById('fileList').classList.remove('hidden');
+            document.getElementById('processBtn').classList.remove('hidden');
+            document.getElementById('fileList').innerHTML = `
+                <div class="file-chip glass px-3 py-1.5 rounded-lg text-sm border border-slate-700">
+                    <span class="text-emerald-400">📄</span> ${currentFile.name}
+                </div>
+            `;
         }
 
-        // SMART CSV PARSER - handles both ; and , delimiters
+        async function processFile() {
+            if (!currentFile) return;
+            
+            const text = await currentFile.text();
+            parseCSV(text);
+            
+            document.getElementById('uploadSection').classList.add('hidden');
+            document.getElementById('dashboard').classList.remove('hidden');
+            document.getElementById('resetBtn').classList.remove('hidden');
+            
+            showData();
+        }
+
         function parseCSV(csvText) {
-            const lines = csvText.trim().split('\n');
-            if (lines.length < 2) return;
-
-            // Detect delimiter: check first line for ; vs ,
-            const firstLine = lines[0];
-            const semicolonCount = (firstLine.match(/;/g) || []).length;
-            const commaCount = (firstLine.match(/,/g) || []).length;
-            const delimiter = semicolonCount > commaCount ? ';' : ',';
+            const lines = csvText.split('\n');
+            allData = [];
             
-            console.log(`Detected delimiter: ${delimiter === ';' ? 'semicolon (LibreOffice)' : 'comma (Excel)'}`);
-
-            const headers = firstLine.split(delimiter).map(h => h.trim());
-            currentData = [];
-
-            for (let i = 1; i < lines.length; i++) {
-                const line = lines[i].trim();
+            for (let line of lines) {
+                line = line.trim();
                 if (!line) continue;
-
-                // Handle quoted values and split by delimiter
-                const values = parseLine(line, delimiter);
+                if (line.includes('FEBRUARY') || line.includes('Spese effettuate') || 
+                    line.includes('Saldo netto') || line.includes('Saldo cumulato') || 
+                    line.startsWith(';;')) continue;
                 
-                if (values.length >= 6) {
-                    // Parse amount: handle both 12.50 and 12,50
-                    let amountStr = values[3].replace('€', '').trim();
-                    // Normalize: if comma is used as decimal, convert to dot
-                    if (amountStr.includes(',') && !amountStr.includes('.')) {
-                        // Italian format: 12,50 -> 12.50
-                        amountStr = amountStr.replace(',', '.');
-                    } else if (amountStr.includes(',') && amountStr.includes('.')) {
-                        // Mixed: assume comma is thousands separator (rare)
-                        amountStr = amountStr.replace(/,/g, '');
-                    }
-                    
-                    currentData.push({
-                        data: values[0],
-                        categoria: values[1],
-                        voce: values[2],
-                        importo: parseFloat(amountStr) || 0,
-                        metodo: values[4],
-                        pagato: values[5].toLowerCase().trim() === 'sì' || values[5].toLowerCase().trim() === 'si' || values[5].toLowerCase().trim() === 'yes',
-                        giorno: parseInt(values[0].split(/[\/\-\.]/)[0]) || 1
-                    });
+                const delimiter = (line.match(/;/g) || []).length > (line.match(/,/g) || []).length ? ';' : ',';
+                const values = line.split(delimiter).map(v => v.trim());
+                
+                if (values.length < 6) continue;
+                
+                const data = values[0];
+                if (!data.match(/^\d{1,2}[\/\-\.]\d{1,2}/)) continue;
+                
+                const categoria = values[1];
+                const voce = values[2];
+                
+                let importoStr = values[3].replace('€', '').replace('(', '').replace(')', '');
+                if (importoStr.includes(',') && !importoStr.includes('.')) {
+                    importoStr = importoStr.replace(',', '.');
+                } else if (importoStr.includes(',') && importoStr.includes('.')) {
+                    importoStr = importoStr.replace(/\./g, '').replace(',', '.');
                 }
-            }
-
-            console.log(`Parsed ${currentData.length} rows`);
-            detectMode();
-        }
-
-        // Parse CSV line handling quotes
-        function parseLine(line, delimiter) {
-            const result = [];
-            let current = '';
-            let inQuotes = false;
-            
-            for (let i = 0; i < line.length; i++) {
-                const char = line[i];
+                const importo = parseFloat(importoStr) || 0;
                 
-                if (char === '"') {
-                    inQuotes = !inQuotes;
-                } else if (char === delimiter && !inQuotes) {
-                    result.push(current.trim());
-                    current = '';
+                const metodo = values[4];
+                const pagatoRaw = values[7] || values[8] || '';
+                
+                let status;
+                if (pagatoRaw.toLowerCase() === 'sì' || pagatoRaw.toLowerCase() === 'si') {
+                    status = 'pagato';
                 } else {
-                    current += char;
-                }
-            }
-            result.push(current.trim());
-            return result;
-        }
-
-        function detectMode() {
-            const dates = currentData.map(d => parseDate(d.data)).filter(d => !isNaN(d));
-            if (dates.length < 2) return;
-
-            const minDate = new Date(Math.min(...dates));
-            const maxDate = new Date(Math.max(...dates));
-            const diffDays = (maxDate - minDate) / (1000 * 60 * 60 * 24);
-
-            currentMode = diffDays > 60 ? 'year' : 'month';
-            
-            document.getElementById('dropZone').classList.add('hidden');
-            document.getElementById('modeIndicator').classList.remove('hidden');
-            
-            if (currentMode === 'year') {
-                setupYearView();
-            } else {
-                setupMonthView();
-            }
-        }
-
-        function parseDate(dateStr) {
-            const parts = dateStr.split(/[\/\-\.]/);
-            if (parts.length === 3) {
-                // Assume DD/MM/YYYY or DD-MM-YYYY
-                return new Date(parts[2], parts[1] - 1, parts[0]);
-            }
-            return new Date();
-        }
-
-        // YEAR VIEW
-        function setupYearView() {
-            document.getElementById('yearView').classList.remove('hidden');
-            document.getElementById('monthView').classList.add('hidden');
-            
-            document.getElementById('modeBanner').className = 'glass rounded-lg p-3 flex items-center justify-between mode-year';
-            document.getElementById('modeIcon').textContent = '📊';
-            document.getElementById('modeTitle').textContent = 'Modalità Annuale';
-            document.getElementById('modeDesc').textContent = 'Visione strategica completa 2026';
-            document.getElementById('modeBadge').textContent = 'YEAR VIEW';
-            document.getElementById('modeBadge').className = 'text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full font-mono';
-
-            const monthly = {};
-            const monthNames = ['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'];
-            
-            currentData.forEach(d => {
-                const date = parseDate(d.data);
-                const key = monthNames[date.getMonth()];
-                if (!monthly[key]) monthly[key] = { income: 0, expense: 0, paid: 0, unpaid: 0 };
-                
-                if (d.importo > 0) monthly[key].income += d.importo;
-                else {
-                    monthly[key].expense += Math.abs(d.importo);
-                    if (d.pagato) monthly[key].paid += Math.abs(d.importo);
-                    else monthly[key].unpaid += Math.abs(d.importo);
-                }
-            });
-
-            let runningBalance = 534.94;
-            const startProj = runningBalance;
-            let worstMonth = { name: '-', value: 999999 };
-            
-            const tableData = monthNames.map(m => {
-                const data = monthly[m] || { income: 0, expense: 0, paid: 0, unpaid: 0 };
-                const net = data.income - data.expense;
-                runningBalance += net;
-                
-                if (runningBalance < worstMonth.value) {
-                    worstMonth = { name: m, value: runningBalance };
+                    const day = parseInt(data.split(/[\/\-\.]/)[0]);
+                    status = day < 20 ? 'scaduto' : 'da-pagare'; // Semplificato
                 }
                 
-                return {
-                    month: m,
-                    income: data.income,
-                    expense: data.expense,
-                    net: net,
-                    balance: runningBalance,
-                    hasUnpaid: data.unpaid > 0
-                };
-            });
-
-            document.getElementById('yearStartBalance').textContent = `€${startProj.toFixed(2)}`;
-            document.getElementById('yearEndProjection').textContent = `€${runningBalance.toFixed(2)}`;
-            document.getElementById('yearNetChange').textContent = `${runningBalance >= startProj ? '+' : ''}€${(runningBalance - startProj).toFixed(2)}`;
-            document.getElementById('worstMonth').textContent = worstMonth.name;
-            document.getElementById('worstMonthValue').textContent = `€${worstMonth.value.toFixed(0)}`;
-            
-            const totalUnpaid = currentData.filter(d => !d.pagato && d.importo < 0).reduce((s, d) => s + Math.abs(d.importo), 0);
-            document.getElementById('yearPending').textContent = `€${totalUnpaid.toFixed(0)}`;
-            document.getElementById('pendingCount').textContent = currentData.filter(d => !d.pagato).length;
-
-            renderYearChart(tableData);
-            
-            document.getElementById('yearTable').innerHTML = tableData.map(row => `
-                <tr class="hover:bg-slate-800/50 ${row.balance < 0 ? 'bg-red-500/5' : ''}">
-                    <td class="p-3 font-medium">${row.month}</td>
-                    <td class="p-3 text-right text-emerald-400 mono">€${row.income.toFixed(0)}</td>
-                    <td class="p-3 text-right text-red-400 mono">€${row.expense.toFixed(0)}</td>
-                    <td class="p-3 text-right mono ${row.net >= 0 ? 'text-emerald-400' : 'text-red-400'}">
-                        ${row.net >= 0 ? '+' : ''}€${row.net.toFixed(0)}
-                    </td>
-                    <td class="p-3 text-right mono font-bold ${row.balance < 0 ? 'text-red-400' : 'text-blue-400'}">
-                        €${row.balance.toFixed(0)}
-                    </td>
-                    <td class="p-3 text-center">
-                        ${row.hasUnpaid ? '<span class="text-orange-400">○</span>' : '<span class="text-emerald-400">✓</span>'}
-                    </td>
-                </tr>
-            `).join('');
+                allData.push({
+                    data, categoria, voce, importo, metodo, status,
+                    giorno: parseInt(data.split(/[\/\-\.]/)[0]) || 1,
+                    isCritical: voce.toLowerCase().includes('rottamazione') || 
+                               voce.toLowerCase().includes('tari') ||
+                               categoria === 'Prestito'
+                });
+            }
         }
 
-        function renderYearChart(data) {
-            const ctx = document.getElementById('yearChart').getContext('2d');
-            if (chartInstance) chartInstance.destroy();
+        function showData() {
+            const income = allData.filter(d => d.importo > 0).reduce((s, d) => s + d.importo, 0);
+            const expenses = allData.filter(d => d.importo < 0);
+            const totalExpense = Math.abs(expenses.reduce((s, d) => s + d.importo, 0));
+            const paid = expenses.filter(d => d.status === 'pagato').reduce((s, d) => s + Math.abs(d.importo), 0);
+            const net = income - totalExpense;
 
-            chartInstance = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: data.map(d => d.month),
-                    datasets: [{
-                        label: 'Saldo Cumulato',
-                        data: data.map(d => d.balance),
-                        borderColor: '#60a5fa',
-                        backgroundColor: 'rgba(96, 165, 250, 0.1)',
-                        borderWidth: 2,
-                        fill: true,
-                        tension: 0.4,
-                        pointRadius: 4,
-                        pointBackgroundColor: data.map(d => d.balance < 0 ? '#ef4444' : '#10b981')
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    devicePixelRatio: 1,
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        y: {
-                            ticks: { callback: v => '€' + v, color: '#94a3b8', font: { size: 10 } },
-                            grid: { color: 'rgba(255,255,255,0.05)' }
-                        },
-                        x: {
-                            ticks: { color: '#94a3b8', font: { size: 10 } },
-                            grid: { display: false }
-                        }
-                    }
-                }
-            });
-        }
+            document.getElementById('kpiIncome').textContent = `€${income.toFixed(0)}`;
+            document.getElementById('kpiExpense').textContent = `€${totalExpense.toFixed(0)}`;
+            document.getElementById('kpiNet').textContent = `€${net.toFixed(0)}`;
+            document.getElementById('kpiNet').className = `text-xl font-bold mono ${net >= 0 ? 'text-emerald-400' : 'text-red-400'}`;
+            document.getElementById('kpiPaid').textContent = `€${paid.toFixed(0)}`;
 
-        // MONTH VIEW
-        function setupMonthView() {
-            document.getElementById('monthView').classList.remove('hidden');
-            document.getElementById('yearView').classList.add('hidden');
+            // Calcolo "disponibilità reale"
+            // Stipendio - (Rottamazione + TARI + Prestiti che addebitano automaticamente)
+            const stipendio = income;
+            const rottamazione = Math.abs(allData.find(d => d.voce.includes('Rottamazione'))?.importo || 0);
+            const tari = Math.abs(allData.find(d => d.voce.includes('TARI'))?.importo || 0);
+            const santander = Math.abs(allData.find(d => d.voce.includes('Santander'))?.importo || 0);
+            const compassAuto = Math.abs(allData.find(d => d.voce.includes('Compass prestito auto'))?.importo || 0);
             
-            document.getElementById('modeBanner').className = 'glass rounded-lg p-3 flex items-center justify-between mode-month';
-            document.getElementById('modeIcon').textContent = '🎯';
-            document.getElementById('modeTitle').textContent = 'Modalità Mensile';
-            document.getElementById('modeDesc').textContent = 'Azioni immediate e pagamenti';
-            document.getElementById('modeBadge').textContent = 'ACTION VIEW';
-            document.getElementById('modeBadge').className = 'text-xs bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full font-mono';
+            const bloccati = rottamazione + tari + santander + compassAuto; // Questi non si possono evitare
+            const residuo = stipendio - bloccati;
+            
+            document.getElementById('realGap').textContent = `€${residuo.toFixed(0)}`;
+            document.getElementById('realGap').className = `text-2xl font-bold mono ${residuo >= 0 ? 'text-emerald-400' : 'text-red-400'}`;
 
-            const firstDate = parseDate(currentData[0].data);
-            const monthName = firstDate.toLocaleString('it-IT', { month: 'long', year: 'numeric' });
-            document.getElementById('monthName').textContent = monthName;
-
-            const month = firstDate.getMonth();
-            const isRottamazione = [1, 4, 7, 10].includes(month);
-            document.getElementById('rottamazioneAlert').style.display = isRottamazione ? 'block' : 'none';
-
-            const income = currentData.filter(d => d.importo > 0).reduce((s, d) => s + d.importo, 0);
-            const expenses = currentData.filter(d => d.importo < 0);
-            const paid = expenses.filter(d => d.pagato).reduce((s, d) => s + Math.abs(d.importo), 0);
-            const toPay = expenses.filter(d => !d.pagato).reduce((s, d) => s + Math.abs(d.importo), 0);
-
-            document.getElementById('monthBudget').textContent = `€${income.toFixed(0)}`;
-            document.getElementById('monthPaid').textContent = `€${paid.toFixed(0)}`;
-            document.getElementById('monthToPay').textContent = `€${toPay.toFixed(0)}`;
-
-            if (toPay > 0) {
-                document.getElementById('actionAlert').classList.remove('hidden');
-                document.getElementById('actionCount').textContent = expenses.filter(d => !d.pagato).length;
-                document.getElementById('actionAmount').textContent = `€${toPay.toFixed(0)}`;
-            } else {
-                document.getElementById('actionAlert').classList.add('hidden');
-            }
-
-            const unpaid = expenses.filter(d => !d.pagato).sort((a, b) => a.giorno - b.giorno);
-            if (unpaid.length > 0) {
-                document.getElementById('nextDueDate').textContent = `${unpaid[0].giorno} ${monthName.split(' ')[0]}`;
-                document.getElementById('nextDueItem').textContent = `${unpaid[0].voce} (€${Math.abs(unpaid[0].importo).toFixed(0)})`;
-            } else {
-                document.getElementById('nextDueDate').textContent = '✓';
-                document.getElementById('nextDueDate').className = 'text-lg font-bold mono positive';
-                document.getElementById('nextDueItem').textContent = 'Tutto saldato';
-            }
-
-            const byDate = {};
-            unpaid.forEach(d => {
-                if (!byDate[d.giorno]) byDate[d.giorno] = [];
-                byDate[d.giorno].push(d);
-            });
-
-            document.getElementById('priorityQueue').innerHTML = Object.keys(byDate).sort((a,b) => a-b).map(day => {
-                const items = byDate[day];
-                const total = items.reduce((s, d) => s + Math.abs(d.importo), 0);
-                const isCritical = items.some(d => d.categoria === 'Prestito' || d.categoria === 'Fisco');
-                
+            // Coda prioritaria (solo non pagati, ordinati per giorno)
+            const daPagare = allData.filter(d => d.importo < 0 && d.status !== 'pagato').sort((a, b) => a.giorno - b.giorno);
+            
+            document.getElementById('priorityQueue').innerHTML = daPagare.map(d => {
+                const isCritical = d.isCritical;
                 return `
-                    <div class="p-3 bg-slate-800/50 rounded-lg border-l-2 ${isCritical ? 'border-red-500' : 'border-blue-500'}">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="font-bold text-sm">${day} ${monthName.split(' ')[0]}</span>
-                            <span class="mono text-sm ${isCritical ? 'text-red-400' : 'text-blue-400'}">€${total.toFixed(0)}</span>
+                    <div class="flex justify-between items-center p-2 ${isCritical ? 'bg-red-500/10 border-l-2 border-red-500' : 'bg-slate-800/30'} rounded">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs text-slate-500 font-mono">${d.data}</span>
+                            <span class="text-sm ${isCritical ? 'text-red-300 font-semibold' : 'text-slate-300'}">
+                                ${d.voce.substring(0, 30)}${d.voce.length > 30 ? '...' : ''}
+                            </span>
                         </div>
-                        <div class="space-y-1">
-                            ${items.map(item => `
-                                <div class="flex justify-between text-xs text-slate-400">
-                                    <span>${item.voce}</span>
-                                    <span class="mono">€${Math.abs(item.importo).toFixed(0)}</span>
-                                </div>
-                            `).join('')}
-                        </div>
+                        <span class="mono font-bold ${isCritical ? 'text-red-400' : 'text-slate-400'}">
+                            €${Math.abs(d.importo).toFixed(0)}
+                        </span>
                     </div>
                 `;
-            }).join('') || '<p class="text-emerald-400 text-center py-4">✓ Tutto pagato!</p>';
+            }).join('');
 
-            const buffer1 = Math.min(100, (income * 0.3) / 800 * 100);
-            const buffer15 = Math.min(100, (income * 0.4) / 1000 * 100);
-            document.getElementById('buffer1Bar').style.width = `${buffer1}%`;
-            document.getElementById('buffer15Bar').style.width = `${buffer15}%`;
-
-            const sorted = [...currentData].sort((a, b) => a.giorno - b.giorno);
+            // Tabella completa
+            const sorted = [...allData].sort((a, b) => a.giorno - b.giorno);
             document.getElementById('monthTable').innerHTML = sorted.map(d => {
-                const isUnpaid = d.importo < 0 && !d.pagato;
-                const rowClass = d.pagato ? 'opacity-50' : (isUnpaid ? 'bg-red-500/10' : '');
-                const status = d.pagato ? '<span class="text-emerald-400">✓</span>' : 
-                              (d.importo < 0 ? '<span class="text-red-400 font-bold">○</span>' : '<span class="text-blue-400">→</span>');
+                let rowClass = '';
+                if (d.status === 'pagato') rowClass = 'opacity-40';
+                else if (d.giorno <= 20) rowClass = 'bg-scaduto';
+                else rowClass = 'bg-futuro';
+                
+                const icon = d.status === 'pagato' ? '✓' : (d.giorno <= 20 ? '!' : '○');
+                const color = d.status === 'pagato' ? 'text-emerald-400' : (d.giorno <= 20 ? 'text-red-400' : 'text-slate-500');
                 
                 return `
-                    <tr class="${rowClass} hover:bg-slate-800/30">
-                        <td class="p-3 text-slate-300">${d.data}</td>
-                        <td class="p-3 font-medium ${d.importo < 0 ? 'text-red-300' : 'text-emerald-300'}">${d.voce}</td>
-                        <td class="p-3 text-right mono ${d.importo < 0 ? 'text-red-400' : 'text-emerald-400'}">
+                    <tr class="${rowClass}">
+                        <td class="p-3 text-xs font-mono text-slate-400">${d.data}</td>
+                        <td class="p-3 text-sm text-slate-300">${d.voce.substring(0, 40)}</td>
+                        <td class="p-3 text-right mono font-bold ${d.importo < 0 ? 'text-red-400' : 'text-emerald-400'}">
                             ${d.importo > 0 ? '+' : ''}€${Math.abs(d.importo).toFixed(2)}
                         </td>
-                        <td class="p-3 text-xs text-slate-400">${d.metodo}</td>
-                        <td class="p-3 text-center">${status}</td>
-                        <td class="p-3 text-center">
-                            ${isUnpaid ? `<button onclick="markPaid('${d.voce}')" class="text-xs bg-emerald-600 hover:bg-emerald-700 text-white px-2 py-1 rounded">Paga</button>` : '-'}
-                        </td>
+                        <td class="p-3 text-center ${color}">${icon}</td>
                     </tr>
                 `;
             }).join('');
         }
 
-        function markPaid(voce) {
-            alert(`✓ Segnato come pagato: ${voce}\n\nAggiorna il CSV in LibreOffice e ricarica per sincronizzare.`);
-        }
-
-        function scrollToUnpaid() {
-            document.getElementById('unpaidSection').scrollIntoView({ behavior: 'smooth' });
+        function resetAll() {
+            currentFile = null;
+            allData = [];
+            document.getElementById('uploadSection').classList.remove('hidden');
+            document.getElementById('fileList').classList.add('hidden');
+            document.getElementById('processBtn').classList.add('hidden');
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('resetBtn').classList.add('hidden');
+            document.getElementById('csvInput').value = '';
         }
 
         window.onload = () => {};
