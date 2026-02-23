@@ -11,7 +11,7 @@ FROM (
     SELECT 
         mnt.nutrient_name,
         mnt.unit_name,
-        SUM(mnt.amount_per_100g * md.grams_per_day / 100.0) AS total_amount
+        SUM(mnt.amount_per_100g * md.grams / 100.0) AS total_amount
     FROM my_diet md
     JOIN my_diet_nutrients mnt ON md.my_fdc_id = mnt.my_fdc_id
     GROUP BY mnt.nutrient_name, mnt.unit_name
