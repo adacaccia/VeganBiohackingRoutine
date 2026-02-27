@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mlt LC_NUMERIC="C" version="7.0.0" producer="main_bin">
+  <profile description="HD 1080p 25fps" frame_rate_num="25" frame_rate_den="1" width="1920" height="1080" display_aspect_num="16" display_aspect_den="9" colorspace="709"/>
+  <playlist id="main_bin"/>
+  <tractor id="tractor0">
+    <track producer="track_background"/>
+    <track producer="track_voice"/>
+    <track producer="track_music"/>
+    <track producer="track_text"/>
+    <transition id="trans1" a_track="0" b_track="1" mlt_service="mix" in="0" out="200" always_active="1">
+      <property name="mix">1</property>
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+    </transition>
+  </tractor>
+
+  <!-- BACKGROUND VIDEO OR IMAGE -->
+  <producer id="track_background">
+    <property name="resource">../Outro/VBR_EndScreen_1080p.mp4</property>
+    <property name="in">0</property>
+    <property name="out">200</property>
+  </producer>
+
+  <!-- VOICE OVER -->
+  <producer id="track_voice">
+    <property name="resource">../Outro/voice_outro.wav</property>
+    <property name="in">0</property>
+    <property name="out">200</property>
+  </producer>
+
+  <!-- MUSIC BED -->
+  <producer id="track_music">
+    <property name="resource">../Outro/music_outro.mp3</property>
+    <property name="in">0</property>
+    <property name="out">200</property>
+  </producer>
+
+  <!-- TEXT OVERLAY -->
+  <producer id="track_text" mlt_service="kdenlivetitle">
+    <property name="background_color">#f6f3e9ff</property>
+    <property name="font">Montserrat Medium</property>
+    <property name="font_size">72</property>
+    <property name="font_color">#333333ff</property>
+    <property name="alignment">center</property>
+    <property name="text">Continua il percorso\nUn episodio alla volta.</property>
+    <property name="fadein">10</property>
+    <property name="fadeout">10</property>
+  </producer>
+
+  <!-- PLAYLIST -->
+  <playlist id="main">
+    <entry producer="track_background"/>
+    <entry producer="track_voice"/>
+    <entry producer="track_music"/>
+    <entry producer="track_text"/>
+  </playlist>
+
+  <consumer mlt_service="avformat" target="VBR_Outro_1080p.mp4" vcodec="libx264" acodec="aac" ab="192k" progressive="1" aspect_ratio="16:9">
+    <property name="threads">4</property>
+  </consumer>
+</mlt>
