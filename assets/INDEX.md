@@ -29,7 +29,6 @@ assets
 │   ├── ep01
 │   ├── ep02
 │   ├── ep03
-│   │   └── ep03-thumb.png
 │   ├── ep04
 │   ├── ep05
 │   │   └── ep05-thumb.png
@@ -41,7 +40,7 @@ assets
     ├── intro
     └── outro
 
-34 directories, 3 files
+34 directories, 2 files
 ```
 
 ## Note
