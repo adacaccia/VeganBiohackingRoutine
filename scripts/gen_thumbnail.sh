@@ -108,5 +108,18 @@ $IM_CMD "$OUTFILE" \
   -annotate +40+40 "$EP_BADGE" \
   "$OUTFILE" || true
 
-echo "✅ Thumbnail generata: $OUTFILE"
 
+# ── Overlay automatico del logo VBR (se presente)
+LOGO_PATH="assets/graphics/icons/vbr-logo.png"
+
+if [[ -f "$LOGO_PATH" ]]; then
+  # Ridimensiona il logo a max 220px di larghezza (mantenendo trasparenza)
+  $IM_CMD "$OUTFILE" \( "$LOGO_PATH" -resize 220x220\> \) \
+    -gravity NorthEast -geometry +40+30 \
+    -compose over -composite "$OUTFILE"
+  echo "✓ Logo VBR applicato a $OUTFILE"
+else
+  echo "ℹ️ Logo VBR non trovato in $LOGO_PATH (thumbnail senza logo)"
+fi
+
+echo "✅ Thumbnail generata: $OUTFILE"
