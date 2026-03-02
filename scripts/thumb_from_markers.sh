@@ -2,7 +2,7 @@
 set -euo pipefail
 set -x
 
-MARKERS_DIR="S01_Intro/metadata"
+MARKERS_DIR="episodes/S01_Intro/metadata"
 MARKER_GLOB="${MARKERS_DIR}/ep??-thumb.txt"
 
 echo "▶ Cerco marker thumbnail in: ${MARKER_GLOB}"
