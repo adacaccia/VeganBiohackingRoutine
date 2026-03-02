@@ -3,20 +3,18 @@ name: VBR • Thumbnails from markers
 on:
   push:
     branches: [ main ]
-    # Se vuoi limitarla (facoltativo), sblocca e personalizza:
-    # paths:
-    #   - "S01_Intro/metadata/ep??-thumb.txt"
-    #   - "scripts/gen_thumbnail.sh"
-    #   - "scripts/thumb_from_markers.sh"
-    #   - "scripts/asset_sync.sh"
-    #   - ".github/workflows/thumb-from-markers.yml"
+    paths:
+      - "episodes/S01_Intro/metadata/ep??-thumb.txt"
+      - "scripts/thumb_from_markers.sh"
+      - "scripts/gen_thumbnail.sh"
+      - "scripts/asset_sync.sh"
   workflow_dispatch: {}
 
 permissions:
   contents: write
 
 jobs:
-  thumbs:
+  thumbs-and-commit:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,45 +24,48 @@ jobs:
           persist-credentials: true
           fetch-depth: 0
 
-      # Evita loop se l'ultimo commit è del bot
-      - name: Avoid commit loop
-        id: antibot
-        run: |
-          if git log -1 --pretty=%an | grep -qi "github-actions\[bot\]"; then
-            echo "from_bot=true" >> $GITHUB_OUTPUT
-          else
-            echo "from_bot=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Install deps (ImageMagick + fonts)
-        if: steps.antibot.outputs.from_bot == 'false'
+      - name: Install deps (ImageMagick + fonts + tree)
         run: |
           sudo apt-get update
           sudo apt-get install -y imagemagick fonts-dejavu-core tree
 
       - name: Ensure scripts are executable
-        if: steps.antibot.outputs.from_bot == 'false'
         run: |
           chmod +x scripts/gen_thumbnail.sh || true
           chmod +x scripts/thumb_from_markers.sh || true
           chmod +x scripts/asset_sync.sh || true
 
       - name: Generate thumbnails from markers
-        if: steps.antibot.outputs.from_bot == 'false'
         run: ./scripts/thumb_from_markers.sh
 
-      - name: Inspect repo state (debug)
-        if: steps.antibot.outputs.from_bot == 'false'
-        run: |
-          echo "---- ls thumbnails ----"
-          ls -lah assets/thumbnails || true
-          ls -lah assets/thumbnails/* || true
-          echo "---- git status (assets) ----"
-          git status --porcelain assets || true
-          echo "---- .gitignore ----"
-          sed -n '1,120p' .gitignore || true
-
       - name: Sync assets index
-        if: steps.antibot.outputs.from_bot == 'false'
         run: ./scripts/asset_sync.sh
 
+      - name: Commit & push assets (rebased, single commit)
+        run: |
+          set -e
+          # Cosa è cambiato sotto /assets?
+          if [[ -z "$(git status --porcelain assets || true)" ]]; then
+            echo "No asset changes to commit."
+            exit 0
+          fi
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add -A assets
+
+          # Se dopo l'add non c'è nulla, esci
+          if git diff --cached --quiet; then
+            echo "No staged changes."
+            exit 0
+          fi
+
+          git commit -m "ci(thumbs): generate thumbnails & sync index"
+
+          # Allineati al remoto per evitare non-fast-forward
+          git fetch origin main
+          git rebase origin/main || git pull --rebase
+
+          # Push finale
+          git push origin HEAD:main
