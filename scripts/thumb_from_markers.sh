@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+set -x
 
 MARKERS_DIR="S01_Intro/metadata"
 MARKER_GLOB="${MARKERS_DIR}/ep??-thumb.txt"
@@ -35,3 +36,8 @@ if (( FOUND == 0 )); then
 else
   echo "▶ Thumbnail generate/aggiornate: ${FOUND}"
 fi
+
+echo "▶ Post-run check:"
+ls -lah assets/thumbnails || true
+ls -lah assets/thumbnails/* || true
+git status --porcelain assets || true

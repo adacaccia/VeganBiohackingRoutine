@@ -10,7 +10,7 @@ Questo episodio mostra la mia routine quotidiana attuale (2026), frutto di un’
 
 # 1. Origini della mia dieta (17 anni vegan)
 
-Sono vegano da quando avevo 17 anni. All’inizio non è stato facile: nessuna guida, poche risorse, poche alternative, e tanto trial‑and‑error.  
+Sono vegano da 17 anni. All’inizio non è stato facile: nessuna guida, poche risorse, poche alternative, e tanto trial‑and‑error.  
 Con gli anni però tutto è diventato più naturale, intuitivo e strutturato — e dal 2025 ho fatto un vero salto in avanti con un approccio più scientifico, più misurato e più *funzionale* alla mia fisiologia.
 
 ---

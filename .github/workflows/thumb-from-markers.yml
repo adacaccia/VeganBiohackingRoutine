@@ -53,6 +53,17 @@ jobs:
         if: steps.antibot.outputs.from_bot == 'false'
         run: ./scripts/thumb_from_markers.sh
 
+      - name: Inspect repo state (debug)
+        if: steps.antibot.outputs.from_bot == 'false'
+        run: |
+          echo "---- ls thumbnails ----"
+          ls -lah assets/thumbnails || true
+          ls -lah assets/thumbnails/* || true
+          echo "---- git status (assets) ----"
+          git status --porcelain assets || true
+          echo "---- .gitignore ----"
+          sed -n '1,120p' .gitignore || true
+
       - name: Sync assets index
         if: steps.antibot.outputs.from_bot == 'false'
         run: ./scripts/asset_sync.sh
