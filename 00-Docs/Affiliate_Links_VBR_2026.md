@@ -22,6 +22,7 @@ Ogni prodotto viene inserito nelle descrizioni dei video solo se pertinente al c
 | 21  | Cura personale   | [Altrapelle – Gel multifunzionale micosi piede 30 ml](https://tinyurl.com/yc5kr8vj)                                                                                    | EP10 - Fitness                    | http://www.amazon.it/dp/B0BDZL47GC/ref=nosim?tag=veganbioha000-21 |
 | 23  | Cura personale   | [lavera Crema deodorante a base sensitiva, naturale e sensibile, non antitraspirante, protezione 48 ore, vegano, biologico (1 x 50 ml) ](https://tinyurl.com/mzzvfmxn) | EP10-Fitness                      | http://www.amazon.it/dp/B09WJLCFTZ/ref=nosim?tag=veganbioha000-21 |
 | 24  | Strumenti cucina | [DOQAUS Termometro da Cucina Digitale,3s Lettura Istantanea, Display LCD Retroilluminato, per Alimenti(Rosso)](https://tinyurl.com/6a2hppmc)                           | EPnn - Te bianco                  | http://www.amazon.it/dp/B07WKKS4HB/ref=nosim?tag=veganbioha000-21 |
+| 25  | Cura personale | [Bilancia pesapersone digitale BMI con display LED Bilance impedenziometrica a 8 elettrodi](https://tinyurl.com/3jte64j4)                           | EPnn - | http://www.amazon.it/dp/B09XVBKN4Z/ref=nosim?tag=veganbioha000-21 |
 
 ---
 

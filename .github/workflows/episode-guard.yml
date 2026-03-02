@@ -1,0 +1,23 @@
+name: VBR • Episode Guard
+
+on:
+  push:
+    branches: [ main ]
+    # paths:                         # se vuoi limitarlo:
+    #   - "S01_Intro/**"
+    #   - "assets/**"
+    #   - "scripts/**"
+  workflow_dispatch: {}
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ensure scripts are executable
+        run: chmod +x scripts/validate_episodes.sh || true
+
+      - name: Validate episodes vs assets
+        run: ./scripts/validate_episodes.sh

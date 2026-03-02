@@ -1,0 +1,67 @@
+name: VBR • Asset Sync
+
+on:
+  push:
+    branches: [ main ]
+    # Puoi limitare le path per velocizzare:
+    # paths:
+    #   - "assets/**"
+    #   - "scripts/asset_sync.sh"
+    #   - ".github/workflows/asset-sync.yml"
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write   # necessario per committare i cambiamenti (INDEX.md, .gitkeep)
+
+jobs:
+  sync-assets:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      # Evita loop: se l'ultimo commit è del bot, esci senza fare nulla.
+      - name: Avoid commit loop (skip if author is bot)
+        id: antibot
+        run: |
+          if git log -1 --pretty=%an | grep -qi "github-actions\[bot\]"; then
+            echo "from_bot=true" >> $GITHUB_OUTPUT
+          else
+            echo "from_bot=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install minimal deps (tree)
+        if: steps.antibot.outputs.from_bot == 'false'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tree
+
+      - name: Ensure script is executable
+        if: steps.antibot.outputs.from_bot == 'false'
+        run: |
+          chmod +x scripts/asset_sync.sh
+
+      - name: Run asset sync
+        if: steps.antibot.outputs.from_bot == 'false'
+        run: |
+          ./scripts/asset_sync.sh
+
+      - name: Commit & push changes (if any)
+        if: steps.antibot.outputs.from_bot == 'false'
+        run: |
+          set -e
+          if [[ -n "$(git status --porcelain assets || true)" ]]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add assets
+            git commit -m "ci(assets): sync structure & INDEX.md via GitHub Action"
+            git push
+          else
+            echo "No changes to commit."
+          fi

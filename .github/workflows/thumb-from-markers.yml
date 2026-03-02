@@ -1,0 +1,72 @@
+name: VBR • Thumbnails from markers
+
+on:
+  push:
+    branches: [ main ]
+    # Se vuoi limitarla (facoltativo), sblocca e personalizza:
+    # paths:
+    #   - "S01_Intro/metadata/ep??-thumb.txt"
+    #   - "scripts/gen_thumbnail.sh"
+    #   - "scripts/thumb_from_markers.sh"
+    #   - "scripts/asset_sync.sh"
+    #   - ".github/workflows/thumb-from-markers.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  thumbs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      # Evita loop se l'ultimo commit è del bot
+      - name: Avoid commit loop
+        id: antibot
+        run: |
+          if git log -1 --pretty=%an | grep -qi "github-actions\[bot\]"; then
+            echo "from_bot=true" >> $GITHUB_OUTPUT
+          else
+            echo "from_bot=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install deps (ImageMagick + fonts)
+        if: steps.antibot.outputs.from_bot == 'false'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick fonts-dejavu-core tree
+
+      - name: Ensure scripts are executable
+        if: steps.antibot.outputs.from_bot == 'false'
+        run: |
+          chmod +x scripts/gen_thumbnail.sh || true
+          chmod +x scripts/thumb_from_markers.sh || true
+          chmod +x scripts/asset_sync.sh || true
+
+      - name: Generate thumbnails from markers
+        if: steps.antibot.outputs.from_bot == 'false'
+        run: ./scripts/thumb_from_markers.sh
+
+      - name: Sync assets index
+        if: steps.antibot.outputs.from_bot == 'false'
+        run: ./scripts/asset_sync.sh
+
+      - name: Commit & push changes (if any)
+        if: steps.antibot.outputs.from_bot == 'false'
+        run: |
+          set -e
+          if [[ -n "$(git status --porcelain assets || true)" ]]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add assets
+            git commit -m "ci(thumbs): generate thumbnails from markers & sync index"
+            git push
+          else
+            echo "No asset changes to commit."
+          fi
