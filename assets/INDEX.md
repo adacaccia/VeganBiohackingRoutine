@@ -4,6 +4,7 @@ Generato automaticamente da **asset_sync.sh**
 ## Struttura directory
 ```text
 assets
+├── INDEX.md
 ├── graphics
 │   ├── charts
 │   ├── diagrams
@@ -24,13 +25,13 @@ assets
 │       ├── if
 │       ├── routine
 │       └── training
-├── INDEX.md
 ├── thumbnails
 │   ├── ep01
 │   ├── ep02
 │   ├── ep03
 │   ├── ep04
 │   ├── ep05
+│   │   └── ep05-thumb.png
 │   ├── ep06
 │   ├── ep07
 │   └── ep08
@@ -39,7 +40,7 @@ assets
     ├── intro
     └── outro
 
-34 directories, 1 file
+34 directories, 2 files
 ```
 
 ## Note
