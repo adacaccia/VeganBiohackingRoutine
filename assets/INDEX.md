@@ -9,6 +9,7 @@ assets
 │   ├── charts
 │   ├── diagrams
 │   └── icons
+│       └── VBR-logo.png
 ├── images
 │   ├── processed
 │   │   ├── ep01
@@ -43,7 +44,7 @@ assets
     ├── intro
     └── outro
 
-34 directories, 5 files
+34 directories, 6 files
 ```
 
 ## Note
