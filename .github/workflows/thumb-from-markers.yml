@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - "episodes/S01_Intro/metadata/ep??-thumb.txt"
+      - "episodes/S01_Intro/metadata/ep[0-9][0-9]-thumb.txt"
       - "scripts/thumb_from_markers.sh"
       - "scripts/gen_thumbnail.sh"
       - "scripts/asset_sync.sh"
