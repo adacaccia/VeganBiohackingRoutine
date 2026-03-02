@@ -68,16 +68,3 @@ jobs:
         if: steps.antibot.outputs.from_bot == 'false'
         run: ./scripts/asset_sync.sh
 
-      - name: Commit & push changes (if any)
-        if: steps.antibot.outputs.from_bot == 'false'
-        run: |
-          set -e
-          if [[ -n "$(git status --porcelain assets || true)" ]]; then
-            git config user.name  "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add assets
-            git commit -m "ci(thumbs): generate thumbnails from markers & sync index"
-            git push
-          else
-            echo "No asset changes to commit."
-          fi
