@@ -109,3 +109,4 @@ $IM_CMD "$OUTFILE" \
   "$OUTFILE" || true
 
 echo "✅ Thumbnail generata: $OUTFILE"
+
