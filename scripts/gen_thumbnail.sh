@@ -108,9 +108,13 @@ $IM_CMD "$OUTFILE" \
   -annotate +40+40 "$EP_BADGE" \
   "$OUTFILE" || true
 
-
 # ── Overlay automatico del logo VBR (se presente)
-LOGO_PATH="assets/graphics/icons/vbr-logo.png"
+LOGO_PATH=""
+if [[ -f "assets/graphics/icons/vbr-logo.png" ]]; then
+  LOGO_PATH="assets/graphics/icons/vbr-logo.png"
+elif [[ -f "assets/graphics/icons/VBR-logo.png" ]]; then
+  LOGO_PATH="assets/graphics/icons/VBR-logo.png"
+fi
 
 if [[ -f "$LOGO_PATH" ]]; then
   # Ridimensiona il logo a max 220px di larghezza (mantenendo trasparenza)
